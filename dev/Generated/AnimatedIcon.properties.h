@@ -9,17 +9,22 @@ class AnimatedIconProperties
 public:
     AnimatedIconProperties();
 
-    void Placeholder(winrt::IInspectable const& value);
-    winrt::IInspectable Placeholder();
+    void Source(winrt::IRichAnimatedVisualSource const& value);
+    winrt::IRichAnimatedVisualSource Source();
 
-    static winrt::DependencyProperty PlaceholderProperty() { return s_PlaceholderProperty; }
+    static void SetState(winrt::DependencyObject const& target, winrt::hstring const& value);
+    static winrt::hstring GetState(winrt::DependencyObject const& target);
 
-    static GlobalDependencyProperty s_PlaceholderProperty;
+    static winrt::DependencyProperty SourceProperty() { return s_SourceProperty; }
+    static winrt::DependencyProperty StateProperty() { return s_StateProperty; }
+
+    static GlobalDependencyProperty s_SourceProperty;
+    static GlobalDependencyProperty s_StateProperty;
 
     static void EnsureProperties();
     static void ClearProperties();
 
-    static void OnPlaceholderPropertyChanged(
+    static void OnSourcePropertyChanged(
         winrt::DependencyObject const& sender,
         winrt::DependencyPropertyChangedEventArgs const& args);
 };

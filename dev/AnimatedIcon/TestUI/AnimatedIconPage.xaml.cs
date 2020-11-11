@@ -1,4 +1,4 @@
-// Copyright (c) Microsoft Corporation. All rights reserved.
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
 using System;
@@ -11,6 +11,7 @@ using Windows.UI;
 using System.Windows.Input;
 
 using AnimatedIcon = Microsoft.UI.Xaml.Controls.AnimatedIcon;
+using Microsoft.UI.Private.Controls;
 
 namespace MUXControlsTestApp
 {
@@ -20,6 +21,12 @@ namespace MUXControlsTestApp
         public AnimatedIconPage()
         {
             this.InitializeComponent();
+            this.Loaded += AnimatedIconPage_Loaded;
+        }
+
+        private void AnimatedIconPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            AnimatedIconTestHooks.SetAnimationQueueBehavior(this.QueueIcon.GetAnimatedIcon(), AnimatedIconAnimationQueueBehavior.QueueOne);
         }
     }
 }

@@ -1,4 +1,4 @@
-<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. See LICENSE in the project root for license information. -->
+﻿<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. See LICENSE in the project root for license information. -->
 <local:TestPage
     x:Class="MUXControlsTestApp.AnimatedIconPage"
     x:Name="AnimatedIconTestPage"
@@ -6,13 +6,54 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MUXControlsTestApp"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:controls="using:Microsoft.UI.Xaml.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.UI.Xaml.Controls"
+    xmlns:Windows10FallCreatorsUpdate="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 5)"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="12">
+        <Grid.Resources>
+            <local:DoubleToStringConverter x:Key="DoubleToStringConverter"/>
+        </Grid.Resources>
         <StackPanel Orientation="Vertical">
-            <controls:AnimatedIcon />
+            <StackPanel Orientation="Horizontal" Windows10FallCreatorsUpdate:Spacing="5">
+                <StackPanel.Resources>
+                    <local:DoubleToStringConverter x:Key="DoubleToStringConverter"/>
+                </StackPanel.Resources>
+                <StackPanel>
+                    <local:AnimatedIconHost x:Name="CutIcon" Background="DarkSlateGray">
+                        <local:AnimatedIconHost.IconSource>
+                            <controls:AnimatedIconSource>
+                                <controls:AnimatedIconSource.Source>
+                                    <controls:TB_01_Start_1_/>
+                                </controls:AnimatedIconSource.Source>
+                            </controls:AnimatedIconSource>
+                        </local:AnimatedIconHost.IconSource>
+                    </local:AnimatedIconHost>
+                    <TextBlock Text="Cut Behavior" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel>
+                    <local:AnimatedIconHost x:Name="QueueIcon" Background="DarkSlateGray">
+                        <local:AnimatedIconHost.IconSource>
+                            <controls:AnimatedIconSource>
+                                <controls:AnimatedIconSource.Source>
+                                    <controls:TB_01_Start_1_/>
+                                </controls:AnimatedIconSource.Source>
+                            </controls:AnimatedIconSource>
+                        </local:AnimatedIconHost.IconSource>
+                    </local:AnimatedIconHost>
+                    <TextBlock Text="Queue Behavior" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Background="Gray" Width="250" Height="250">
+                <Slider x:Name="Slider" Minimum="0" Maximum="100" Width="100" Value="{x:Bind Mode=TwoWay, Path=SliderIcon.(controls:AnimatedIcon.State), Converter={StaticResource DoubleToStringConverter}}"/>
+                <controls:AnimatedIcon x:Name="SliderIcon" Height="10" Width="10">
+                    <controls:AnimatedIcon.Source>
+                        <local:MockIRichAnimatedIconSource/>
+                    </controls:AnimatedIcon.Source>
+                </controls:AnimatedIcon>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </local:TestPage>

@@ -595,7 +595,7 @@
                                           Subtitle="Documents will now automatically save to OneDrive." 
                                           Target="{x:Bind targetButtonRightEdge}">
                         <muxc:TeachingTip.IconSource>
-                            <muxc:SymbolIconSource Symbol="People"/>
+                            <muxc:AnimatedIconSource/>
                         </muxc:TeachingTip.IconSource>
                         <muxc:TeachingTip.HeroContent>
                             <Grid MinHeight="200" MinWidth="200" Background="red"/>

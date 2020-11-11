@@ -3,15 +3,36 @@
 
 [WUXC_VERSION_PREVIEW]
 [webhosthidden]
-[MUX_PROPERTY_CHANGED_CALLBACK(TRUE)]
-[MUX_PROPERTY_CHANGED_CALLBACK_METHODNAME("OnPropertyChanged")]
-unsealed runtimeclass AnimatedIcon : Windows.UI.Xaml.Controls.Control
+interface IRichAnimatedVisualSource
+{
+    IAnimatedVisual TryCreateAnimatedVisual(Windows.UI.Composition.Compositor compositor, out Object diagnostics);
+    Windows.Foundation.Collections.IMapView<String, Double> Markers { get; };
+    void SetColorProperty(String propertyName, Windows.UI.Color value);
+};
+
+[WUXC_VERSION_PREVIEW]
+[webhosthidden]
+interface IRichAnimatedVisualSource2
+{
+    Double GetPositionFromMarker(String marker);
+};
+
+[WUXC_VERSION_PREVIEW]
+[webhosthidden]
+unsealed runtimeclass AnimatedIcon : Windows.UI.Xaml.Controls.IconElement
 {
     AnimatedIcon();
 
-    Object Placeholder{ get; set; };
+    [MUX_PROPERTY_CHANGED_CALLBACK(TRUE)]
+    IRichAnimatedVisualSource Source{ get; set; };
 
-    static Windows.UI.Xaml.DependencyProperty PlaceholderProperty{ get; };
+    [MUX_DEFAULT_VALUE("Normal")]
+    [MUX_PROPERTY_CHANGED_CALLBACK_METHODNAME("OnAnimatedIconStatePropertyChanged")]
+    static Windows.UI.Xaml.DependencyProperty StateProperty{ get; };
+    static void SetState(Windows.UI.Xaml.DependencyObject object, String value);
+    static String GetState(Windows.UI.Xaml.DependencyObject object);
+
+    static Windows.UI.Xaml.DependencyProperty SourceProperty{ get; };
 }
 
 }

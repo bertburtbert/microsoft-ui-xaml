@@ -14,10 +14,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Themes\AnimatedIconSource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AnimatedIconHost.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AnimatedIconPage.xaml.cs">
       <DependentUpon>AnimatedIconPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls_09_Hamburger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DoubleToStringConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MockAnimatedIconSource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MockIRichAnimatedIconSource.cs" />
   </ItemGroup>
 </Project>

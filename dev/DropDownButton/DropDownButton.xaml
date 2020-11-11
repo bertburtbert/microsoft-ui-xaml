@@ -34,6 +34,9 @@
                                     <Storyboard>
                                         <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
                                     </Storyboard>
+                                    <VisualState.Setters>
+                                        <Setter Target="ChevronIcon.(AnimatedIcon.State)" Value="Normal"/>
+                                    </VisualState.Setters>
                                 </VisualState>
 
                                 <VisualState x:Name="PointerOver">
@@ -49,6 +52,9 @@
                                         </ObjectAnimationUsingKeyFrames>
                                         <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
                                     </Storyboard>
+                                    <VisualState.Setters>
+                                        <Setter Target="ChevronIcon.(AnimatedIcon.State)" Value="PointerOver"/>
+                                    </VisualState.Setters>
                                 </VisualState>
 
                                 <VisualState x:Name="Pressed">
@@ -64,6 +70,9 @@
                                         </ObjectAnimationUsingKeyFrames>
                                         <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
                                     </Storyboard>
+                                    <VisualState.Setters>
+                                        <Setter Target="ChevronIcon.(AnimatedIcon.State)" Value="Pressed"/>
+                                    </VisualState.Setters>
                                 </VisualState>
 
                                 <VisualState x:Name="Disabled">
@@ -81,6 +90,9 @@
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonForegroundDisabled}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
+                                    <VisualState.Setters>
+                                        <Setter Target="ChevronIcon.(AnimatedIcon.State)" Value="Disabled"/>
+                                    </VisualState.Setters>
                                 </VisualState>
                             </VisualStateGroup>
 
@@ -105,16 +117,11 @@
                                 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                 AutomationProperties.AccessibilityView="Raw" />
 
-                            <TextBlock
-                                x:Name="ChevronTextBlock"
-                                Grid.Column="1"
-                                FontFamily="Segoe MDL2 Assets"
-                                FontSize="12"
-                                Text="&#xE70D;"
-                                VerticalAlignment="Center"
-                                Margin="6,0,0,0"
-                                IsTextScaleFactorEnabled="False"
-                                AutomationProperties.AccessibilityView="Raw"/>
+                            <local:AnimatedIcon x:Name="ChevronIcon" Margin="6,0,0,0" VerticalAlignment="Center" Grid.Column="1" MaxHeight="20" MinHeight="20">
+                                <local:AnimatedIcon.Source>
+                                    <local:DropDownWrapper/>
+                                </local:AnimatedIcon.Source>
+                            </local:AnimatedIcon>
                         </Grid>
 
                     </Grid>

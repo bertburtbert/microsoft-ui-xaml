@@ -1,0 +1,23 @@
+﻿namespace MU_PRIVATE_CONTROLS_NAMESPACE
+{
+
+[WUXC_VERSION_INTERNAL]
+[webhosthidden]
+enum AnimatedIconAnimationQueueBehavior
+{
+    Cut,
+    QueueConnected,
+    QueueOne,
+    QueueCombined,
+    SpeedUpQueueOne,
+};
+
+[WUXC_VERSION_INTERNAL]
+[default_interface]
+[webhosthidden]
+runtimeclass AnimatedIconTestHooks
+{
+    static void SetAnimationQueueBehavior(MU_XC_NAMESPACE.AnimatedIcon animatedIcon, AnimatedIconAnimationQueueBehavior easingFunction);
+};
+
+}

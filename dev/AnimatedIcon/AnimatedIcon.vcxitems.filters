@@ -3,12 +3,60 @@
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)..\Generated\AnimatedIcon.properties.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedIcon.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)HamburgerWrapper.cpp">
+      <Filter>AnimatedVisualWrappers</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisuals\AnimatedVisuals.Controls_09_Hamburger.cpp">
+      <Filter>AnimatedVisuals</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisuals\AnimatedVisuals.Controls_02_UpDown_Dropdown.cpp">
+      <Filter>AnimatedVisuals</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisualWrappers\DropDownWrapper.cpp">
+      <Filter>AnimatedVisualWrappers</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedIconTestHooks.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisuals\MU_XC_NAMESPACE.TB_01_Start_1_.cpp">
+      <Filter>AnimatedVisuals</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedIcon.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)HamburgerWrapper.h">
+      <Filter>AnimatedVisualWrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisuals\AnimatedVisuals.Controls_09_Hamburger.h">
+      <Filter>AnimatedVisuals</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisuals\AnimatedVisuals.Controls_02_UpDown_Dropdown.h">
+      <Filter>AnimatedVisuals</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisualWrappers\DropDownWrapper.h">
+      <Filter>AnimatedVisualWrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedIconTestHooks.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisuals\MU_XC_NAMESPACE.TB_01_Start_1_.h">
+      <Filter>AnimatedVisuals</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Midl Include="$(MSBuildThisFileDirectory)AnimatedIcon.idl" />
+    <Midl Include="$(MSBuildThisFileDirectory)HamburgerWrapper.idl">
+      <Filter>AnimatedVisualWrappers</Filter>
+    </Midl>
+    <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisuals\AnimatedVisuals.Controls_09_Hamburger.idl">
+      <Filter>AnimatedVisuals</Filter>
+    </Midl>
+    <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisuals\AnimatedVisuals.Controls_02_UpDown_Dropdown.idl">
+      <Filter>AnimatedVisuals</Filter>
+    </Midl>
+    <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisualWrappers\DropDownWrapper.idl">
+      <Filter>AnimatedVisualWrappers</Filter>
+    </Midl>
+    <Midl Include="$(MSBuildThisFileDirectory)AnimatedIconTestHooks.idl" />
+    <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisuals\MU_XC_NAMESPACE.TB_01_Start_1_.idl">
+      <Filter>AnimatedVisuals</Filter>
+    </Midl>
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)AnimatedIcon.xaml" />
@@ -17,6 +65,15 @@
   <ItemGroup>
     <Filter Include="Docs">
       <UniqueIdentifier>{ab333f5f-ead0-4ff7-ac54-6fe103e3002b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AnimatedVisuals">
+      <UniqueIdentifier>{1843091a-2efc-483d-aebb-0166cf2e040f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IconSources">
+      <UniqueIdentifier>{59a724b2-088f-4dbf-9953-0f67a18cc250}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AnimatedVisualWrappers">
+      <UniqueIdentifier>{7c3aa43b-7c22-476b-9b77-5eba4f94a889}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
