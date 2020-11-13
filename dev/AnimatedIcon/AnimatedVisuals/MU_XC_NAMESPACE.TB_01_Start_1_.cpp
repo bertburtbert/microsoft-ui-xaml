@@ -6,10 +6,10 @@
 //           7.0.0-build.57+g2cc4f0c931
 //       
 //       Command:
-//           LottieGen -Language Cppwinrt -Namespace MU_XC_NAMESPACE -InputFile TB_01_Start (2).json
+//           LottieGen -Language Cppwinrt -Namespace MU_XC_NAMESPACE -InputFile TB_01_Start (1).json
 //       
 //       Input file:
-//           TB_01_Start (2).json (65511 bytes created 19:40-08:00 Nov 10 2020)
+//           TB_01_Start (1).json (66389 bytes created 22:57-08:00 Nov 9 2020)
 //       
 //       LottieGen source:
 //           http://aka.ms/Lottie
@@ -21,11 +21,11 @@
 // ____________________________________
 // |       Object stats       | Count |
 // |__________________________|_______|
-// | All CompositionObjects   |   591 |
+// | All CompositionObjects   |   601 |
 // |--------------------------+-------|
-// | Expression animators     |    89 |
-// | KeyFrame animators       |    64 |
-// | Reference parameters     |    89 |
+// | Expression animators     |    90 |
+// | KeyFrame animators       |    65 |
+// | Reference parameters     |    90 |
 // | Expression operations    |     4 |
 // |--------------------------+-------|
 // | Animated brushes         |    13 |
@@ -36,7 +36,7 @@
 // | ContainerVisuals         |     9 |
 // | ShapeVisuals             |     6 |
 // |--------------------------+-------|
-// | ContainerShapes          |     6 |
+// | ContainerShapes          |     7 |
 // | CompositionSpriteShapes  |    56 |
 // |--------------------------+-------|
 // | Brushes                  |    37 |
@@ -44,8 +44,8 @@
 // | CompositionVisualSurface |     - |
 // ------------------------------------
 #include "pch.h"
-#include "MU_XC_NAMESPACE.TB_01_Start_2_.h"
-#include "MU_XC_NAMESPACE.TB_01_Start_2_.g.cpp"
+#include "MU_XC_NAMESPACE.TB_01_Start_1_.h"
+//#include "MU_XC_NAMESPACE.TB_01_Start_1_.g.cpp"
 #include <winrt/Windows.Foundation.Metadata.h>
 #include <winrt/Windows.UI.Composition.h>
 #include "d2d1.h"
@@ -58,7 +58,7 @@ namespace ABI
 #include <Windows.Graphics.Effects.Interop.h>
 }
 #else
-#include <Windows.Graphics.Effects.Interop.h>
+//#include <Windows.Graphics.Effects.Interop.h>
 #endif
 #include <winrt/Windows.Graphics.Effects.h>
 
@@ -69,11 +69,19 @@ using namespace winrt::Windows::UI;
 using namespace winrt::Windows::UI::Composition;
 using TimeSpan = winrt::Windows::Foundation::TimeSpan;
 
-namespace winrt::MU_XC_NAMESPACE::implementation
+// Added
+namespace winrt::Microsoft::UI::Xaml::Controls
 {
+    CppWinRTActivatableClassWithBasicFactory(TB_01_Start_1_);
+}
+
+#include "TB_01_Start_1_.g.cpp"
+
+//namespace winrt::MU_XC_NAMESPACE::implementation
+//{
     class CanvasGeometry : public winrt::implements<CanvasGeometry,
         IGeometrySource2D,
-        ::ABI::Windows::Graphics::IGeometrySource2DInterop>
+        /*::ABI::*/Windows::Graphics::IGeometrySource2DInterop>
     {
         winrt::com_ptr<ID2D1Geometry> _geometry{ nullptr };
 
@@ -98,19 +106,19 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return E_NOTIMPL;
         }
     };
-    class TB_01_Start_2__AnimatedVisual : public winrt::implements<TB_01_Start_2__AnimatedVisual,
+    class TB_01_Start_1__AnimatedVisual : public winrt::implements<TB_01_Start_1__AnimatedVisual,
             winrt::Microsoft::UI::Xaml::Controls::IAnimatedVisual,
             IClosable>
     {
         winrt::com_ptr<ID2D1Factory> _d2dFactory{ nullptr };
-        static constexpr int64_t c_durationTicks{ 11666666L };
+        static constexpr int64_t c_durationTicks{ 18333333L };
         Compositor const _c{ nullptr };
         ExpressionAnimation const _reusableExpressionAnimation{ nullptr };
         CompositionPropertySet const _themeProperties{ nullptr };
-        CompositionColorBrush _animatedColorBrush_AlmostDarkCyan_FF0063B8_to_TransparentAlmostDarkCyan_000063B8_0{ nullptr };
-        CompositionColorBrush _animatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_0{ nullptr };
-        CompositionColorBrush _animatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_3{ nullptr };
+        CompositionColorBrush _animatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_0{ nullptr };
+        CompositionColorBrush _animatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_3{ nullptr };
         CompositionColorBrush _animatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_0{ nullptr };
+        CompositionColorBrush _animatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_3{ nullptr };
         CompositionColorBrush _themeColor_Foreground{ nullptr };
         CompositionColorGradientStop _gradientStop_0_AlmostDeepSkyBlue_FF00B4ED{ nullptr };
         CompositionColorGradientStop _gradientStop_0_AlmostDodgerBlue_FF0080CD{ nullptr };
@@ -132,27 +140,29 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         CompositionLinearGradientBrush _linearGradientBrush_23{ nullptr };
         CompositionPathGeometry _pathGeometry_0{ nullptr };
         CompositionPathGeometry _pathGeometry_1{ nullptr };
-        CompositionPathGeometry _pathGeometry_2{ nullptr };
-        CompositionPathGeometry _pathGeometry_3{ nullptr };
         CompositionPathGeometry _pathGeometry_4{ nullptr };
-        CompositionPathGeometry _pathGeometry_6{ nullptr };
+        CompositionPathGeometry _pathGeometry_5{ nullptr };
+        CompositionPathGeometry _pathGeometry_7{ nullptr };
+        CompositionPathGeometry _pathGeometry_8{ nullptr };
         ContainerVisual _root{ nullptr };
         CubicBezierEasingFunction _cubicBezierEasingFunction_0{ nullptr };
+        CubicBezierEasingFunction _cubicBezierEasingFunction_1{ nullptr };
+        CubicBezierEasingFunction _cubicBezierEasingFunction_2{ nullptr };
         ExpressionAnimation _rootProgress{ nullptr };
         InsetClip _insetClip_0{ nullptr };
         ScalarKeyFrameAnimation _opacity0ScalarAnimation_0_to_255{ nullptr };
         ScalarKeyFrameAnimation _opacity0ScalarAnimation_255_to_0_0{ nullptr };
         ScalarKeyFrameAnimation _opacity0ScalarAnimation_255_to_0_1{ nullptr };
-        ScalarKeyFrameAnimation _scalarAnimation_0p6_to_0p48{ nullptr };
-        ScalarKeyFrameAnimation _scalarAnimation_0p48_to_0p6{ nullptr };
+        ScalarKeyFrameAnimation _scalarAnimation_0p6_to_0p6_0{ nullptr };
+        ScalarKeyFrameAnimation _scalarAnimation_0p6_to_0p6_1{ nullptr };
         StepEasingFunction _holdThenStepEasingFunction{ nullptr };
         StepEasingFunction _stepThenHoldEasingFunction{ nullptr };
-        Vector2KeyFrameAnimation _shapeVisibilityAnimation_01{ nullptr };
-        Vector2KeyFrameAnimation _shapeVisibilityAnimation_04{ nullptr };
-        Vector2KeyFrameAnimation _shapeVisibilityAnimation_10{ nullptr };
-        Vector2KeyFrameAnimation _shapeVisibilityAnimation_15{ nullptr };
-        Vector2KeyFrameAnimation _shapeVisibilityAnimation_18{ nullptr };
-        Vector2KeyFrameAnimation _shapeVisibilityAnimation_21{ nullptr };
+        Vector2KeyFrameAnimation _shapeVisibilityAnimation_03{ nullptr };
+        Vector2KeyFrameAnimation _shapeVisibilityAnimation_06{ nullptr };
+        Vector2KeyFrameAnimation _shapeVisibilityAnimation_11{ nullptr };
+        Vector2KeyFrameAnimation _shapeVisibilityAnimation_14{ nullptr };
+        Vector2KeyFrameAnimation _shapeVisibilityAnimation_17{ nullptr };
+        Vector2KeyFrameAnimation _shapeVisibilityAnimation_20{ nullptr };
 
         static void StartProgressBoundAnimation(
             CompositionObject target,
@@ -204,7 +214,7 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        Vector2KeyFrameAnimation CreateVector2KeyFrameAnimation(float initialProgress, float2 initialValue, CompositionEasingFunction initialEasingFunction)
+        Vector2KeyFrameAnimation CreateVector2KeyFrameAnimation(float initialProgress, winrt::float2 initialValue, CompositionEasingFunction initialEasingFunction)
         {
             const auto result = _c.CreateVector2KeyFrameAnimation();
             result.Duration(TimeSpan{ c_durationTicks });
@@ -212,7 +222,7 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        CompositionSpriteShape CreateSpriteShape(CompositionGeometry geometry, float3x2 transformMatrix, CompositionBrush fillBrush)
+        CompositionSpriteShape CreateSpriteShape(CompositionGeometry geometry, winrt::float3x2 transformMatrix, CompositionBrush fillBrush)
         {
             const auto result = _c.CreateSpriteShape(geometry);
             result.TransformMatrix(transformMatrix);
@@ -223,104 +233,50 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // PreComp layer: TB - Start - 06 - PressedToHover
         BooleanKeyFrameAnimation IsVisibleBooleanAnimation_0()
         {
-            const auto result = CreateBooleanKeyFrameAnimation(0.714285731F, true);
+            const auto result = CreateBooleanKeyFrameAnimation(0.909090936F, true);
             return result;
         }
 
         // PreComp layer: TB - Start - 05 - PressedToNormal
         BooleanKeyFrameAnimation IsVisibleBooleanAnimation_1()
         {
-            const auto result = CreateBooleanKeyFrameAnimation(0.571428597F, true);
-            result.InsertKeyFrame(0.714285731F, false);
+            const auto result = CreateBooleanKeyFrameAnimation(0.818181813F, true);
+            result.InsertKeyFrame(0.909090936F, false);
             return result;
         }
 
         // PreComp layer: TB - Start - 04 - Hover to Pressed
         BooleanKeyFrameAnimation IsVisibleBooleanAnimation_2()
         {
-            const auto result = CreateBooleanKeyFrameAnimation(0.428571433F, true);
-            result.InsertKeyFrame(0.571428597F, false);
+            const auto result = CreateBooleanKeyFrameAnimation(0.545454562F, true);
+            result.InsertKeyFrame(0.818181813F, false);
             return result;
         }
 
         // PreComp layer: TB - Start - 03 - HoverToNormal
         BooleanKeyFrameAnimation IsVisibleBooleanAnimation_3()
         {
-            const auto result = CreateBooleanKeyFrameAnimation(0.285714298F, true);
-            result.InsertKeyFrame(0.428571433F, false);
+            const auto result = CreateBooleanKeyFrameAnimation(0.454545468F, true);
+            result.InsertKeyFrame(0.545454562F, false);
             return result;
         }
 
         // PreComp layer: TB - Start - 02 - Normal to Pressed
         BooleanKeyFrameAnimation IsVisibleBooleanAnimation_4()
         {
-            const auto result = CreateBooleanKeyFrameAnimation(0.142857149F, true);
-            result.InsertKeyFrame(0.285714298F, false);
+            const auto result = CreateBooleanKeyFrameAnimation(0.181818187F, true);
+            result.InsertKeyFrame(0.454545468F, false);
             return result;
         }
 
         // PreComp layer: TB - Start - 01 - NormalToHover
         BooleanKeyFrameAnimation IsVisibleBooleanAnimation_5()
         {
-            const auto result = CreateBooleanKeyFrameAnimation(0.142857149F, false);
+            const auto result = CreateBooleanKeyFrameAnimation(0.181818187F, false);
             return result;
         }
 
         winrt::com_ptr<CanvasGeometry> Geometry_0()
-        {
-            winrt::com_ptr<ID2D1PathGeometry> path{ nullptr };
-            winrt::check_hresult(_d2dFactory->CreatePathGeometry(path.put()));
-            winrt::com_ptr<ID2D1GeometrySink> sink{ nullptr };
-            winrt::check_hresult(path->Open(sink.put()));
-            sink->SetFillMode(D2D1_FILL_MODE_WINDING);
-            sink->BeginFigure({ 32.4090004F, -3.0710001F }, D2D1_FIGURE_BEGIN_FILLED);
-            sink->AddLine({ 32.3860016F, 7.76200008F });
-            sink->AddBezier({ { 32.3860016F, 7.76200008F }, { 43.2840004F, 7.80999994F }, { 43.2840004F, 7.74800014F } });
-            sink->AddLine({ 43.3069992F, -3.05299997F });
-            sink->AddLine({ 32.4090004F, -3.0710001F });
-            sink->EndFigure(D2D1_FIGURE_END_CLOSED);
-            winrt::check_hresult(sink->Close());
-            auto result = winrt::make_self<CanvasGeometry>(path);
-            return result;
-        }
-
-        winrt::com_ptr<CanvasGeometry> Geometry_1()
-        {
-            winrt::com_ptr<ID2D1PathGeometry> path{ nullptr };
-            winrt::check_hresult(_d2dFactory->CreatePathGeometry(path.put()));
-            winrt::com_ptr<ID2D1GeometrySink> sink{ nullptr };
-            winrt::check_hresult(path->Open(sink.put()));
-            sink->SetFillMode(D2D1_FILL_MODE_WINDING);
-            sink->BeginFigure({ 30.5340004F, -3.09599996F }, D2D1_FIGURE_BEGIN_FILLED);
-            sink->AddLine({ 19.7229996F, -3.09500003F });
-            sink->AddLine({ 19.7290001F, 7.78100014F });
-            sink->AddLine({ 30.5629997F, 7.81699991F });
-            sink->AddLine({ 30.5340004F, -3.09599996F });
-            sink->EndFigure(D2D1_FIGURE_END_CLOSED);
-            winrt::check_hresult(sink->Close());
-            auto result = winrt::make_self<CanvasGeometry>(path);
-            return result;
-        }
-
-        winrt::com_ptr<CanvasGeometry> Geometry_2()
-        {
-            winrt::com_ptr<ID2D1PathGeometry> path{ nullptr };
-            winrt::check_hresult(_d2dFactory->CreatePathGeometry(path.put()));
-            winrt::com_ptr<ID2D1GeometrySink> sink{ nullptr };
-            winrt::check_hresult(path->Open(sink.put()));
-            sink->SetFillMode(D2D1_FILL_MODE_WINDING);
-            sink->BeginFigure({ 32.4290009F, -4.95699978F }, D2D1_FIGURE_BEGIN_FILLED);
-            sink->AddLine({ 43.2630005F, -4.94999981F });
-            sink->AddLine({ 43.2630005F, -15.7720003F });
-            sink->AddLine({ 32.4290009F, -15.776F });
-            sink->AddLine({ 32.4290009F, -4.95699978F });
-            sink->EndFigure(D2D1_FIGURE_END_CLOSED);
-            winrt::check_hresult(sink->Close());
-            auto result = winrt::make_self<CanvasGeometry>(path);
-            return result;
-        }
-
-        winrt::com_ptr<CanvasGeometry> Geometry_3()
         {
             winrt::com_ptr<ID2D1PathGeometry> path{ nullptr };
             winrt::check_hresult(_d2dFactory->CreatePathGeometry(path.put()));
@@ -338,6 +294,68 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
+        winrt::com_ptr<CanvasGeometry> Geometry_1()
+        {
+            winrt::com_ptr<ID2D1PathGeometry> path{ nullptr };
+            winrt::check_hresult(_d2dFactory->CreatePathGeometry(path.put()));
+            winrt::com_ptr<ID2D1GeometrySink> sink{ nullptr };
+            winrt::check_hresult(path->Open(sink.put()));
+            sink->SetFillMode(D2D1_FILL_MODE_WINDING);
+            sink->BeginFigure({ 32.4290009F, -4.95699978F }, D2D1_FIGURE_BEGIN_FILLED);
+            sink->AddLine({ 43.2630005F, -4.94999981F });
+            sink->AddLine({ 43.2630005F, -15.7720003F });
+            sink->AddLine({ 32.4290009F, -15.776F });
+            sink->AddLine({ 32.4290009F, -4.95699978F });
+            sink->EndFigure(D2D1_FIGURE_END_CLOSED);
+            winrt::check_hresult(sink->Close());
+            auto result = winrt::make_self<CanvasGeometry>(path);
+            return result;
+        }
+
+        // - - - - PreComp layer: TB - Start - 06 - PressedToHover
+        // - - - Transforms for TB - Start - 06 - PressedToHover Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // - - Layer: Layer 4
+        winrt::com_ptr<CanvasGeometry> Geometry_2()
+        {
+            winrt::com_ptr<ID2D1PathGeometry> path{ nullptr };
+            winrt::check_hresult(_d2dFactory->CreatePathGeometry(path.put()));
+            winrt::com_ptr<ID2D1GeometrySink> sink{ nullptr };
+            winrt::check_hresult(path->Open(sink.put()));
+            sink->SetFillMode(D2D1_FILL_MODE_WINDING);
+            sink->BeginFigure({ 30.5909996F, -3.0999999F }, D2D1_FIGURE_BEGIN_FILLED);
+            sink->AddLine({ 19.7229996F, -3.09500003F });
+            sink->AddLine({ 19.7290001F, 7.78100014F });
+            sink->AddLine({ 30.6189995F, 7.8130002F });
+            sink->AddLine({ 30.5909996F, -3.0999999F });
+            sink->EndFigure(D2D1_FIGURE_END_CLOSED);
+            winrt::check_hresult(sink->Close());
+            auto result = winrt::make_self<CanvasGeometry>(path);
+            return result;
+        }
+
+        // - - - - PreComp layer: TB - Start - 06 - PressedToHover
+        // - - - Transforms for TB - Start - 06 - PressedToHover Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // - - Layer: Layer 4
+        winrt::com_ptr<CanvasGeometry> Geometry_3()
+        {
+            winrt::com_ptr<ID2D1PathGeometry> path{ nullptr };
+            winrt::check_hresult(_d2dFactory->CreatePathGeometry(path.put()));
+            winrt::com_ptr<ID2D1GeometrySink> sink{ nullptr };
+            winrt::check_hresult(path->Open(sink.put()));
+            sink->SetFillMode(D2D1_FILL_MODE_WINDING);
+            sink->BeginFigure({ 32.4090004F, -3.10800004F }, D2D1_FIGURE_BEGIN_FILLED);
+            sink->AddLine({ 32.3860016F, 7.78200006F });
+            sink->AddBezier({ { 32.3860016F, 7.78200006F }, { 43.2840004F, 7.80999994F }, { 43.2840004F, 7.74800014F } });
+            sink->AddLine({ 43.3069992F, -3.10899997F });
+            sink->AddLine({ 32.4090004F, -3.10800004F });
+            sink->EndFigure(D2D1_FIGURE_END_CLOSED);
+            winrt::check_hresult(sink->Close());
+            auto result = winrt::make_self<CanvasGeometry>(path);
+            return result;
+        }
+
         winrt::com_ptr<CanvasGeometry> Geometry_4()
         {
             winrt::com_ptr<ID2D1PathGeometry> path{ nullptr };
@@ -345,21 +363,17 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             winrt::com_ptr<ID2D1GeometrySink> sink{ nullptr };
             winrt::check_hresult(path->Open(sink.put()));
             sink->SetFillMode(D2D1_FILL_MODE_WINDING);
-            sink->BeginFigure({ 32.4659996F, -3.12800002F }, D2D1_FIGURE_BEGIN_FILLED);
-            sink->AddLine({ 32.4430008F, 7.76200008F });
-            sink->AddBezier({ { 32.4430008F, 7.76200008F }, { 43.2840004F, 7.80999994F }, { 43.2840004F, 7.74800014F } });
-            sink->AddLine({ 43.3069992F, -3.10899997F });
-            sink->AddLine({ 32.4659996F, -3.12800002F });
+            sink->BeginFigure({ 32.4090004F, -3.0710001F }, D2D1_FIGURE_BEGIN_FILLED);
+            sink->AddLine({ 32.3860016F, 7.76200008F });
+            sink->AddBezier({ { 32.3860016F, 7.76200008F }, { 43.2840004F, 7.80999994F }, { 43.2840004F, 7.74800014F } });
+            sink->AddLine({ 43.3069992F, -3.05299997F });
+            sink->AddLine({ 32.4090004F, -3.0710001F });
             sink->EndFigure(D2D1_FIGURE_END_CLOSED);
             winrt::check_hresult(sink->Close());
             auto result = winrt::make_self<CanvasGeometry>(path);
             return result;
         }
 
-        // - - - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - - - Transforms for TB - Start - 06 - PressedToHover
-        // - - - Layer aggregator
-        // - - Layer: Layer 15
         winrt::com_ptr<CanvasGeometry> Geometry_5()
         {
             winrt::com_ptr<ID2D1PathGeometry> path{ nullptr };
@@ -370,7 +384,7 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             sink->BeginFigure({ 30.5340004F, -3.09599996F }, D2D1_FIGURE_BEGIN_FILLED);
             sink->AddLine({ 19.7229996F, -3.09500003F });
             sink->AddLine({ 19.7290001F, 7.78100014F });
-            sink->AddLine({ 30.5629997F, 7.81799984F });
+            sink->AddLine({ 30.5629997F, 7.81699991F });
             sink->AddLine({ 30.5340004F, -3.09599996F });
             sink->EndFigure(D2D1_FIGURE_END_CLOSED);
             winrt::check_hresult(sink->Close());
@@ -378,30 +392,12 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        winrt::com_ptr<CanvasGeometry> Geometry_6()
-        {
-            winrt::com_ptr<ID2D1PathGeometry> path{ nullptr };
-            winrt::check_hresult(_d2dFactory->CreatePathGeometry(path.put()));
-            winrt::com_ptr<ID2D1GeometrySink> sink{ nullptr };
-            winrt::check_hresult(path->Open(sink.put()));
-            sink->SetFillMode(D2D1_FILL_MODE_WINDING);
-            sink->BeginFigure({ 30.5629997F, -3.03900003F }, D2D1_FIGURE_BEGIN_FILLED);
-            sink->AddLine({ 19.7509995F, -3.03800011F });
-            sink->AddLine({ 19.7290001F, 7.78100014F });
-            sink->AddLine({ 30.5629997F, 7.81799984F });
-            sink->AddLine({ 30.5629997F, -3.03900003F });
-            sink->EndFigure(D2D1_FIGURE_END_CLOSED);
-            winrt::check_hresult(sink->Close());
-            auto result = winrt::make_self<CanvasGeometry>(path);
-            return result;
-        }
-
-        // - - - - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - - - - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - - - - Transforms for TB - Start - 04 - Hover to Pressed
+        // - - - - Layer aggregator
         // - - - Layer: Layer 1
         // - -  Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
-        winrt::com_ptr<CanvasGeometry> Geometry_7()
+        winrt::com_ptr<CanvasGeometry> Geometry_6()
         {
             winrt::com_ptr<ID2D1PathGeometry> path{ nullptr };
             winrt::check_hresult(_d2dFactory->CreatePathGeometry(path.put()));
@@ -419,96 +415,121 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // Color
-        ColorKeyFrameAnimation ColorAnimation_AlmostDarkCyan_FF0063B8_to_TransparentAlmostDarkCyan_000063B8_0()
+        winrt::com_ptr<CanvasGeometry> Geometry_7()
         {
-            const auto result = CreateColorKeyFrameAnimation(0.0F, { 0xFF, 0x00, 0x63, 0xB8 }, _stepThenHoldEasingFunction);
-            // AlmostDarkCyan_FF0063B8
-            result.InsertKeyFrame(0.742857158F, { 0xFF, 0x00, 0x63, 0xB8 }, _holdThenStepEasingFunction);
-            // TransparentAlmostDarkCyan_000063B8
-            result.InsertKeyFrame(0.800000012F, { 0x00, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
+            winrt::com_ptr<ID2D1PathGeometry> path{ nullptr };
+            winrt::check_hresult(_d2dFactory->CreatePathGeometry(path.put()));
+            winrt::com_ptr<ID2D1GeometrySink> sink{ nullptr };
+            winrt::check_hresult(path->Open(sink.put()));
+            sink->SetFillMode(D2D1_FILL_MODE_WINDING);
+            sink->BeginFigure({ 32.4659996F, -3.12800002F }, D2D1_FIGURE_BEGIN_FILLED);
+            sink->AddLine({ 32.4430008F, 7.76200008F });
+            sink->AddBezier({ { 32.4430008F, 7.76200008F }, { 43.2840004F, 7.80999994F }, { 43.2840004F, 7.74800014F } });
+            sink->AddLine({ 43.3069992F, -3.10899997F });
+            sink->AddLine({ 32.4659996F, -3.12800002F });
+            sink->EndFigure(D2D1_FIGURE_END_CLOSED);
+            winrt::check_hresult(sink->Close());
+            auto result = winrt::make_self<CanvasGeometry>(path);
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - - Transforms for TB - Start - 06 - PressedToHover
+        winrt::com_ptr<CanvasGeometry> Geometry_8()
+        {
+            winrt::com_ptr<ID2D1PathGeometry> path{ nullptr };
+            winrt::check_hresult(_d2dFactory->CreatePathGeometry(path.put()));
+            winrt::com_ptr<ID2D1GeometrySink> sink{ nullptr };
+            winrt::check_hresult(path->Open(sink.put()));
+            sink->SetFillMode(D2D1_FILL_MODE_WINDING);
+            sink->BeginFigure({ 30.5629997F, -3.03900003F }, D2D1_FIGURE_BEGIN_FILLED);
+            sink->AddLine({ 19.7509995F, -3.03800011F });
+            sink->AddLine({ 19.7290001F, 7.78100014F });
+            sink->AddLine({ 30.5629997F, 7.81799984F });
+            sink->AddLine({ 30.5629997F, -3.03900003F });
+            sink->EndFigure(D2D1_FIGURE_END_CLOSED);
+            winrt::check_hresult(sink->Close());
+            auto result = winrt::make_self<CanvasGeometry>(path);
+            return result;
+        }
+
+        // - - - - - PreComp layer: TB - Start - 02 - Normal to Pressed
+        // - - - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - - Layer aggregator
+        // - - Layer: Layer 15
+        winrt::com_ptr<CanvasGeometry> Geometry_9()
+        {
+            winrt::com_ptr<ID2D1PathGeometry> path{ nullptr };
+            winrt::check_hresult(_d2dFactory->CreatePathGeometry(path.put()));
+            winrt::com_ptr<ID2D1GeometrySink> sink{ nullptr };
+            winrt::check_hresult(path->Open(sink.put()));
+            sink->SetFillMode(D2D1_FILL_MODE_WINDING);
+            sink->BeginFigure({ 30.5340004F, -3.09599996F }, D2D1_FIGURE_BEGIN_FILLED);
+            sink->AddLine({ 19.7229996F, -3.09500003F });
+            sink->AddLine({ 19.7290001F, 7.78100014F });
+            sink->AddLine({ 30.5629997F, 7.81799984F });
+            sink->AddLine({ 30.5340004F, -3.09599996F });
+            sink->EndFigure(D2D1_FIGURE_END_CLOSED);
+            winrt::check_hresult(sink->Close());
+            auto result = winrt::make_self<CanvasGeometry>(path);
+            return result;
+        }
+
+        // Color
+        ColorKeyFrameAnimation ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_0()
+        {
+            const auto result = CreateColorKeyFrameAnimation(0.0F, { 0x00, 0x00, 0x63, 0xB8 }, _stepThenHoldEasingFunction);
+            // TransparentAlmostDarkCyan_000063B8
+            result.InsertKeyFrame(0.563636363F, { 0x00, 0x00, 0x63, 0xB8 }, _holdThenStepEasingFunction);
+            // AlmostDarkCyan_FF0063B8
+            result.InsertKeyFrame(0.600000024F, { 0xFF, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
+            // TransparentAlmostDarkCyan_000063B8
+            result.InsertKeyFrame(0.636363626F, { 0x00, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
+            return result;
+        }
+
+        // - - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - - Transforms for TB - Start - 04 - Hover to Pressed
         // - - Layer aggregator
         // - Layer: Layer 18
         // Color
-        ColorKeyFrameAnimation ColorAnimation_AlmostDarkCyan_FF0063B8_to_TransparentAlmostDarkCyan_000063B8_1()
+        ColorKeyFrameAnimation ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_1()
         {
-            const auto result = CreateColorKeyFrameAnimation(0.0F, { 0xFF, 0x00, 0x63, 0xB8 }, _stepThenHoldEasingFunction);
-            // AlmostDarkCyan_FF0063B8
-            result.InsertKeyFrame(0.714285731F, { 0xFF, 0x00, 0x63, 0xB8 }, _holdThenStepEasingFunction);
+            const auto result = CreateColorKeyFrameAnimation(0.0F, { 0x00, 0x00, 0x63, 0xB8 }, _stepThenHoldEasingFunction);
             // TransparentAlmostDarkCyan_000063B8
-            result.InsertKeyFrame(0.771428585F, { 0x00, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
+            result.InsertKeyFrame(0.545454562F, { 0x00, 0x00, 0x63, 0xB8 }, _holdThenStepEasingFunction);
+            // AlmostDarkCyan_FF0063B8
+            result.InsertKeyFrame(0.581818163F, { 0xFF, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
+            // TransparentAlmostDarkCyan_000063B8
+            result.InsertKeyFrame(0.618181825F, { 0x00, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - - Transforms for TB - Start - 04 - Hover to Pressed
         // - - Layer aggregator
         // - Layer: Layer 19
         // Color
-        ColorKeyFrameAnimation ColorAnimation_AlmostDarkCyan_FF0063B8_to_TransparentAlmostDarkCyan_000063B8_2()
+        ColorKeyFrameAnimation ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_2()
         {
-            const auto result = CreateColorKeyFrameAnimation(0.0F, { 0xFF, 0x00, 0x63, 0xB8 }, _stepThenHoldEasingFunction);
-            // AlmostDarkCyan_FF0063B8
-            result.InsertKeyFrame(0.728571415F, { 0xFF, 0x00, 0x63, 0xB8 }, _holdThenStepEasingFunction);
+            const auto result = CreateColorKeyFrameAnimation(0.0F, { 0x00, 0x00, 0x63, 0xB8 }, _stepThenHoldEasingFunction);
             // TransparentAlmostDarkCyan_000063B8
-            result.InsertKeyFrame(0.785714269F, { 0x00, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
+            result.InsertKeyFrame(0.554545462F, { 0x00, 0x00, 0x63, 0xB8 }, _holdThenStepEasingFunction);
+            // AlmostDarkCyan_FF0063B8
+            result.InsertKeyFrame(0.590909064F, { 0xFF, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
+            // TransparentAlmostDarkCyan_000063B8
+            result.InsertKeyFrame(0.627272725F, { 0x00, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
             return result;
         }
 
         // Color
-        ColorKeyFrameAnimation ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_0()
+        ColorKeyFrameAnimation ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_3()
         {
             const auto result = CreateColorKeyFrameAnimation(0.0F, { 0x00, 0x00, 0x63, 0xB8 }, _stepThenHoldEasingFunction);
             // TransparentAlmostDarkCyan_000063B8
-            result.InsertKeyFrame(0.45714286F, { 0x00, 0x00, 0x63, 0xB8 }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.200000003F, { 0x00, 0x00, 0x63, 0xB8 }, _holdThenStepEasingFunction);
             // AlmostDarkCyan_FF0063B8
-            result.InsertKeyFrame(0.514285743F, { 0xFF, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
-            return result;
-        }
-
-        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // - Layer: Layer 18
-        // Color
-        ColorKeyFrameAnimation ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_1()
-        {
-            const auto result = CreateColorKeyFrameAnimation(0.0F, { 0x00, 0x00, 0x63, 0xB8 }, _stepThenHoldEasingFunction);
+            result.InsertKeyFrame(0.236363634F, { 0xFF, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
             // TransparentAlmostDarkCyan_000063B8
-            result.InsertKeyFrame(0.428571433F, { 0x00, 0x00, 0x63, 0xB8 }, _holdThenStepEasingFunction);
-            // AlmostDarkCyan_FF0063B8
-            result.InsertKeyFrame(0.485714287F, { 0xFF, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
-            return result;
-        }
-
-        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // - Layer: Layer 19
-        // Color
-        ColorKeyFrameAnimation ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_2()
-        {
-            const auto result = CreateColorKeyFrameAnimation(0.0F, { 0x00, 0x00, 0x63, 0xB8 }, _stepThenHoldEasingFunction);
-            // TransparentAlmostDarkCyan_000063B8
-            result.InsertKeyFrame(0.442857146F, { 0x00, 0x00, 0x63, 0xB8 }, _holdThenStepEasingFunction);
-            // AlmostDarkCyan_FF0063B8
-            result.InsertKeyFrame(0.5F, { 0xFF, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
-            return result;
-        }
-
-        // Color
-        ColorKeyFrameAnimation ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_3()
-        {
-            const auto result = CreateColorKeyFrameAnimation(0.0F, { 0x00, 0x00, 0x63, 0xB8 }, _stepThenHoldEasingFunction);
-            // TransparentAlmostDarkCyan_000063B8
-            result.InsertKeyFrame(0.171428576F, { 0x00, 0x00, 0x63, 0xB8 }, _holdThenStepEasingFunction);
-            // AlmostDarkCyan_FF0063B8
-            result.InsertKeyFrame(0.22857143F, { 0xFF, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
+            result.InsertKeyFrame(0.272727281F, { 0x00, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
             return result;
         }
 
@@ -517,13 +538,15 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // - - Layer aggregator
         // - Layer: Layer 18
         // Color
-        ColorKeyFrameAnimation ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_4()
+        ColorKeyFrameAnimation ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_4()
         {
             const auto result = CreateColorKeyFrameAnimation(0.0F, { 0x00, 0x00, 0x63, 0xB8 }, _stepThenHoldEasingFunction);
             // TransparentAlmostDarkCyan_000063B8
-            result.InsertKeyFrame(0.142857149F, { 0x00, 0x00, 0x63, 0xB8 }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.181818187F, { 0x00, 0x00, 0x63, 0xB8 }, _holdThenStepEasingFunction);
             // AlmostDarkCyan_FF0063B8
-            result.InsertKeyFrame(0.200000003F, { 0xFF, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
+            result.InsertKeyFrame(0.218181819F, { 0xFF, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
+            // TransparentAlmostDarkCyan_000063B8
+            result.InsertKeyFrame(0.25454545F, { 0x00, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
             return result;
         }
 
@@ -532,31 +555,33 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // - - Layer aggregator
         // - Layer: Layer 19
         // Color
-        ColorKeyFrameAnimation ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_5()
+        ColorKeyFrameAnimation ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_5()
         {
             const auto result = CreateColorKeyFrameAnimation(0.0F, { 0x00, 0x00, 0x63, 0xB8 }, _stepThenHoldEasingFunction);
             // TransparentAlmostDarkCyan_000063B8
-            result.InsertKeyFrame(0.157142863F, { 0x00, 0x00, 0x63, 0xB8 }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.190909088F, { 0x00, 0x00, 0x63, 0xB8 }, _holdThenStepEasingFunction);
             // AlmostDarkCyan_FF0063B8
-            result.InsertKeyFrame(0.214285716F, { 0xFF, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
+            result.InsertKeyFrame(0.227272734F, { 0xFF, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
+            // TransparentAlmostDarkCyan_000063B8
+            result.InsertKeyFrame(0.263636351F, { 0x00, 0x00, 0x63, 0xB8 }, _cubicBezierEasingFunction_0);
             return result;
         }
 
         // Color
         ColorKeyFrameAnimation ColorAnimation_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_0()
         {
-            const auto result = CreateColorKeyFrameAnimation(0.0F, { 0x00, 0x00, 0xDB, 0xFF }, StepThenHoldEasingFunction());
+            const auto result = CreateColorKeyFrameAnimation(0.0F, { 0x00, 0x00, 0xDB, 0xFF }, _stepThenHoldEasingFunction);
             // TransparentAlmostDeepSkyBlue_0000DBFF
-            result.InsertKeyFrame(0.800000012F, { 0x00, 0x00, 0xDB, 0xFF }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.636363626F, { 0x00, 0x00, 0xDB, 0xFF }, _holdThenStepEasingFunction);
             // AlmostDeepSkyBlue_FF00DBFF
-            result.InsertKeyFrame(0.871428549F, { 0xFF, 0x00, 0xDB, 0xFF }, CubicBezierEasingFunction_0());
+            result.InsertKeyFrame(0.681818187F, { 0xFF, 0x00, 0xDB, 0xFF }, _cubicBezierEasingFunction_0);
             // TransparentAlmostDeepSkyBlue_0000DBFF
-            result.InsertKeyFrame(0.985714257F, { 0x00, 0x00, 0xDB, 0xFF }, _cubicBezierEasingFunction_0);
+            result.InsertKeyFrame(0.763636351F, { 0x00, 0x00, 0xDB, 0xFF }, _cubicBezierEasingFunction_0);
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - - Transforms for TB - Start - 04 - Hover to Pressed
         // - - Layer aggregator
         // - Layer: Layer 15
         // Color
@@ -564,16 +589,16 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         {
             const auto result = CreateColorKeyFrameAnimation(0.0F, { 0x00, 0x00, 0xDB, 0xFF }, _stepThenHoldEasingFunction);
             // TransparentAlmostDeepSkyBlue_0000DBFF
-            result.InsertKeyFrame(0.771428585F, { 0x00, 0x00, 0xDB, 0xFF }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.618181825F, { 0x00, 0x00, 0xDB, 0xFF }, _holdThenStepEasingFunction);
             // AlmostDeepSkyBlue_FF00DBFF
-            result.InsertKeyFrame(0.842857122F, { 0xFF, 0x00, 0xDB, 0xFF }, _cubicBezierEasingFunction_0);
+            result.InsertKeyFrame(0.663636386F, { 0xFF, 0x00, 0xDB, 0xFF }, _cubicBezierEasingFunction_0);
             // TransparentAlmostDeepSkyBlue_0000DBFF
-            result.InsertKeyFrame(0.95714283F, { 0x00, 0x00, 0xDB, 0xFF }, _cubicBezierEasingFunction_0);
+            result.InsertKeyFrame(0.74545455F, { 0x00, 0x00, 0xDB, 0xFF }, _cubicBezierEasingFunction_0);
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - - Transforms for TB - Start - 04 - Hover to Pressed
         // - - Layer aggregator
         // - Layer: Layer 14
         // Color
@@ -581,76 +606,94 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         {
             const auto result = CreateColorKeyFrameAnimation(0.0F, { 0x00, 0x00, 0xDB, 0xFF }, _stepThenHoldEasingFunction);
             // TransparentAlmostDeepSkyBlue_0000DBFF
-            result.InsertKeyFrame(0.814285696F, { 0x00, 0x00, 0xDB, 0xFF }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.645454526F, { 0x00, 0x00, 0xDB, 0xFF }, _holdThenStepEasingFunction);
             // AlmostDeepSkyBlue_FF00DBFF
-            result.InsertKeyFrame(0.885714293F, { 0xFF, 0x00, 0xDB, 0xFF }, _cubicBezierEasingFunction_0);
+            result.InsertKeyFrame(0.690909088F, { 0xFF, 0x00, 0xDB, 0xFF }, _cubicBezierEasingFunction_0);
             // TransparentAlmostDeepSkyBlue_0000DBFF
-            result.InsertKeyFrame(0.985714257F, { 0x00, 0x00, 0xDB, 0xFF }, _cubicBezierEasingFunction_0);
+            result.InsertKeyFrame(0.772727251F, { 0x00, 0x00, 0xDB, 0xFF }, _cubicBezierEasingFunction_0);
             return result;
         }
 
-        CompositionColorBrush AnimatedColorBrush_AlmostDarkCyan_FF0063B8_to_TransparentAlmostDarkCyan_000063B8_0()
+        // Color
+        ColorKeyFrameAnimation ColorAnimation_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_3()
         {
-            const auto result = _animatedColorBrush_AlmostDarkCyan_FF0063B8_to_TransparentAlmostDarkCyan_000063B8_0 = _c.CreateColorBrush();
-            StartProgressBoundAnimation(result, L"Color", ColorAnimation_AlmostDarkCyan_FF0063B8_to_TransparentAlmostDarkCyan_000063B8_0(), _rootProgress);
+            const auto result = CreateColorKeyFrameAnimation(0.0F, { 0x00, 0x00, 0xDB, 0xFF }, _stepThenHoldEasingFunction);
+            // TransparentAlmostDeepSkyBlue_0000DBFF
+            result.InsertKeyFrame(0.272727281F, { 0x00, 0x00, 0xDB, 0xFF }, _holdThenStepEasingFunction);
+            // AlmostDeepSkyBlue_FF00DBFF
+            result.InsertKeyFrame(0.318181813F, { 0xFF, 0x00, 0xDB, 0xFF }, _cubicBezierEasingFunction_0);
+            // TransparentAlmostDeepSkyBlue_0000DBFF
+            result.InsertKeyFrame(0.400000006F, { 0x00, 0x00, 0xDB, 0xFF }, _cubicBezierEasingFunction_0);
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - - PreComp layer: TB - Start - 02 - Normal to Pressed
+        // - - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - Layer aggregator
+        // - Layer: Layer 15
+        // Color
+        ColorKeyFrameAnimation ColorAnimation_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_4()
+        {
+            const auto result = CreateColorKeyFrameAnimation(0.0F, { 0x00, 0x00, 0xDB, 0xFF }, _stepThenHoldEasingFunction);
+            // TransparentAlmostDeepSkyBlue_0000DBFF
+            result.InsertKeyFrame(0.25454545F, { 0x00, 0x00, 0xDB, 0xFF }, _holdThenStepEasingFunction);
+            // AlmostDeepSkyBlue_FF00DBFF
+            result.InsertKeyFrame(0.300000012F, { 0xFF, 0x00, 0xDB, 0xFF }, _cubicBezierEasingFunction_0);
+            // TransparentAlmostDeepSkyBlue_0000DBFF
+            result.InsertKeyFrame(0.381818175F, { 0x00, 0x00, 0xDB, 0xFF }, _cubicBezierEasingFunction_0);
+            return result;
+        }
+
+        // - - - - PreComp layer: TB - Start - 02 - Normal to Pressed
+        // - - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - Layer aggregator
+        // - Layer: Layer 14
+        // Color
+        ColorKeyFrameAnimation ColorAnimation_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_5()
+        {
+            const auto result = CreateColorKeyFrameAnimation(0.0F, { 0x00, 0x00, 0xDB, 0xFF }, _stepThenHoldEasingFunction);
+            // TransparentAlmostDeepSkyBlue_0000DBFF
+            result.InsertKeyFrame(0.281818181F, { 0x00, 0x00, 0xDB, 0xFF }, _holdThenStepEasingFunction);
+            // AlmostDeepSkyBlue_FF00DBFF
+            result.InsertKeyFrame(0.327272713F, { 0xFF, 0x00, 0xDB, 0xFF }, _cubicBezierEasingFunction_0);
+            // TransparentAlmostDeepSkyBlue_0000DBFF
+            result.InsertKeyFrame(0.409090906F, { 0x00, 0x00, 0xDB, 0xFF }, _cubicBezierEasingFunction_0);
+            return result;
+        }
+
+        CompositionColorBrush AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_0()
+        {
+            const auto result = _animatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_0 = _c.CreateColorBrush();
+            StartProgressBoundAnimation(result, L"Color", ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_0(), _rootProgress);
+            return result;
+        }
+
+        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - Transforms for TB - Start - 04 - Hover to Pressed
         // - Layer aggregator
         // Layer: Layer 18
-        CompositionColorBrush AnimatedColorBrush_AlmostDarkCyan_FF0063B8_to_TransparentAlmostDarkCyan_000063B8_1()
+        CompositionColorBrush AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_1()
         {
             const auto result = _c.CreateColorBrush();
-            StartProgressBoundAnimation(result, L"Color", ColorAnimation_AlmostDarkCyan_FF0063B8_to_TransparentAlmostDarkCyan_000063B8_1(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Color", ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_1(), _rootProgress);
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - Transforms for TB - Start - 04 - Hover to Pressed
         // - Layer aggregator
         // Layer: Layer 19
-        CompositionColorBrush AnimatedColorBrush_AlmostDarkCyan_FF0063B8_to_TransparentAlmostDarkCyan_000063B8_2()
+        CompositionColorBrush AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_2()
         {
             const auto result = _c.CreateColorBrush();
-            StartProgressBoundAnimation(result, L"Color", ColorAnimation_AlmostDarkCyan_FF0063B8_to_TransparentAlmostDarkCyan_000063B8_2(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Color", ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_2(), _rootProgress);
             return result;
         }
 
-        CompositionColorBrush AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_0()
+        CompositionColorBrush AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_3()
         {
-            const auto result = _animatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_0 = _c.CreateColorBrush();
-            StartProgressBoundAnimation(result, L"Color", ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_0(), _rootProgress);
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 18
-        CompositionColorBrush AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_1()
-        {
-            const auto result = _c.CreateColorBrush();
-            StartProgressBoundAnimation(result, L"Color", ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_1(), _rootProgress);
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 19
-        CompositionColorBrush AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_2()
-        {
-            const auto result = _c.CreateColorBrush();
-            StartProgressBoundAnimation(result, L"Color", ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_2(), _rootProgress);
-            return result;
-        }
-
-        CompositionColorBrush AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_3()
-        {
-            const auto result = _animatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_3 = _c.CreateColorBrush();
-            StartProgressBoundAnimation(result, L"Color", ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_3(), _rootProgress);
+            const auto result = _animatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_3 = _c.CreateColorBrush();
+            StartProgressBoundAnimation(result, L"Color", ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_3(), _rootProgress);
             return result;
         }
 
@@ -658,10 +701,10 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // - - Transforms for TB - Start - 02 - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 18
-        CompositionColorBrush AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_4()
+        CompositionColorBrush AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_4()
         {
             const auto result = _c.CreateColorBrush();
-            StartProgressBoundAnimation(result, L"Color", ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_4(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Color", ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_4(), _rootProgress);
             return result;
         }
 
@@ -669,10 +712,10 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // - - Transforms for TB - Start - 02 - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 19
-        CompositionColorBrush AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_5()
+        CompositionColorBrush AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_5()
         {
             const auto result = _c.CreateColorBrush();
-            StartProgressBoundAnimation(result, L"Color", ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_5(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Color", ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_5(), _rootProgress);
             return result;
         }
 
@@ -683,8 +726,8 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - Transforms for TB - Start - 04 - Hover to Pressed
         // - Layer aggregator
         // Layer: Layer 15
         CompositionColorBrush AnimatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_1()
@@ -694,14 +737,43 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - Transforms for TB - Start - 04 - Hover to Pressed
         // - Layer aggregator
         // Layer: Layer 14
         CompositionColorBrush AnimatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_2()
         {
             const auto result = _c.CreateColorBrush();
             StartProgressBoundAnimation(result, L"Color", ColorAnimation_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_2(), _rootProgress);
+            return result;
+        }
+
+        CompositionColorBrush AnimatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_3()
+        {
+            const auto result = _animatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_3 = _c.CreateColorBrush();
+            StartProgressBoundAnimation(result, L"Color", ColorAnimation_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_3(), _rootProgress);
+            return result;
+        }
+
+        // - - - PreComp layer: TB - Start - 02 - Normal to Pressed
+        // - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - Layer aggregator
+        // Layer: Layer 15
+        CompositionColorBrush AnimatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_4()
+        {
+            const auto result = _c.CreateColorBrush();
+            StartProgressBoundAnimation(result, L"Color", ColorAnimation_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_4(), _rootProgress);
+            return result;
+        }
+
+        // - - - PreComp layer: TB - Start - 02 - Normal to Pressed
+        // - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - Layer aggregator
+        // Layer: Layer 14
+        CompositionColorBrush AnimatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_5()
+        {
+            const auto result = _c.CreateColorBrush();
+            StartProgressBoundAnimation(result, L"Color", ColorAnimation_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_5(), _rootProgress);
             return result;
         }
 
@@ -817,10 +889,11 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
-        // - Layer: Layer 13
+        // - - Layer: Layer 1
+        // -  Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
         // Stop 0
         CompositionColorGradientStop AnimatedGradientStop_0_08()
         {
@@ -829,10 +902,11 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
-        // - Layer: Layer 13
+        // - - Layer: Layer 1
+        // -  Scale:1.1,1.1, Offset:<-16.136, 20.639>
         // Stop 0
         CompositionColorGradientStop AnimatedGradientStop_0_09()
         {
@@ -841,10 +915,11 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
-        // - Layer: Layer 13
+        // - - Layer: Layer 1
+        // -  Scale:1.1,1.1, Offset:<-14.866001, 19.364>
         // Stop 0
         CompositionColorGradientStop AnimatedGradientStop_0_10()
         {
@@ -853,10 +928,11 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
-        // - Layer: Layer 13
+        // - - Layer: Layer 1
+        // -  Scale:1.1,1.1, Offset:<-16.2, 19.497002>
         // Stop 0
         CompositionColorGradientStop AnimatedGradientStop_0_11()
         {
@@ -969,10 +1045,11 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
-        // - Layer: Layer 13
+        // - - Layer: Layer 1
+        // -  Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
         // Stop 1
         CompositionColorGradientStop AnimatedGradientStop_1_08()
         {
@@ -981,10 +1058,11 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
-        // - Layer: Layer 13
+        // - - Layer: Layer 1
+        // -  Scale:1.1,1.1, Offset:<-16.136, 20.639>
         // Stop 1
         CompositionColorGradientStop AnimatedGradientStop_1_09()
         {
@@ -993,10 +1071,11 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
-        // - Layer: Layer 13
+        // - - Layer: Layer 1
+        // -  Scale:1.1,1.1, Offset:<-14.866001, 19.364>
         // Stop 1
         CompositionColorGradientStop AnimatedGradientStop_1_10()
         {
@@ -1005,10 +1084,11 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
-        // - Layer: Layer 13
+        // - - Layer: Layer 1
+        // -  Scale:1.1,1.1, Offset:<-16.2, 19.497002>
         // Stop 1
         CompositionColorGradientStop AnimatedGradientStop_1_11()
         {
@@ -1053,51 +1133,51 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return _gradientStop_1_AlmostDeepSkyBlue_FF00DCFF = _c.CreateColorGradientStop(1.0F, { 0xFF, 0x00, 0xDC, 0xFF });
         }
 
-        // - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - Transforms for TB - Start - 06 - PressedToHover
-        // Layer aggregator
-        // Layer: Layer 25
+        // - PreComp layer: TB - Start - 05 - PressedToNormal
+        // Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 17
         CompositionContainerShape ContainerShape_0()
         {
             const auto result = _c.CreateContainerShape();
             result.Scale({ 0.0F, 0.0F });
             const auto shapes = result.Shapes();
-            // Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
-            shapes.Append(SpriteShape_00());
-            // Scale:1.1,1.1, Offset:<-16.136, 20.639>
-            shapes.Append(SpriteShape_01());
+            // Scale:1.1,1.1, Offset:<-14.865999, 20.636>
+            shapes.Append(SpriteShape_04());
+            // Scale:1.1,1.1, Offset:<-16.136, 20.636>
+            shapes.Append(SpriteShape_05());
             // Scale:1.1,1.1, Offset:<-14.866001, 19.364>
-            shapes.Append(SpriteShape_02());
-            // Scale:1.1,1.1, Offset:<-16.2, 19.497002>
-            shapes.Append(SpriteShape_03());
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_00(), RootProgress());
+            shapes.Append(SpriteShape_06());
+            // Scale:1.1,1.1, Offset:<-16.127998, 19.362>
+            shapes.Append(SpriteShape_07());
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_00(), _rootProgress);
             return result;
         }
 
         // - PreComp layer: TB - Start - 05 - PressedToNormal
         // Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
-        // Layer: Layer 17
+        // Layer: Layer 1
         CompositionContainerShape ContainerShape_1()
         {
             const auto result = _c.CreateContainerShape();
             result.Scale({ 0.0F, 0.0F });
             const auto shapes = result.Shapes();
-            // Scale:1.1,1.1, Offset:<-14.865999, 20.636>
-            shapes.Append(SpriteShape_12());
-            // Scale:1.1,1.1, Offset:<-16.136, 20.636>
-            shapes.Append(SpriteShape_13());
+            // Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
+            shapes.Append(SpriteShape_08());
+            // Scale:1.1,1.1, Offset:<-16.136, 20.639>
+            shapes.Append(SpriteShape_09());
             // Scale:1.1,1.1, Offset:<-14.866001, 19.364>
-            shapes.Append(SpriteShape_14());
-            // Scale:1.1,1.1, Offset:<-16.127998, 19.362>
-            shapes.Append(SpriteShape_15());
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_07(), _rootProgress);
+            shapes.Append(SpriteShape_10());
+            // Scale:1.1,1.1, Offset:<-16.2, 19.497002>
+            shapes.Append(SpriteShape_11());
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_01(), _rootProgress);
             return result;
         }
 
-        // - PreComp layer: TB - Start - 05 - PressedToNormal
-        // Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - Transforms for TB - Start - 04 - Hover to Pressed
+        // Layer aggregator
         // Layer: Layer 1
         CompositionContainerShape ContainerShape_2()
         {
@@ -1105,35 +1185,14 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             result.Scale({ 0.0F, 0.0F });
             const auto shapes = result.Shapes();
             // Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
-            shapes.Append(SpriteShape_16());
+            shapes.Append(SpriteShape_12());
             // Scale:1.1,1.1, Offset:<-16.136, 20.639>
-            shapes.Append(SpriteShape_17());
+            shapes.Append(SpriteShape_13());
             // Scale:1.1,1.1, Offset:<-14.866001, 19.364>
-            shapes.Append(SpriteShape_18());
+            shapes.Append(SpriteShape_14());
             // Scale:1.1,1.1, Offset:<-16.2, 19.497002>
-            shapes.Append(SpriteShape_19());
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_08(), _rootProgress);
-            return result;
-        }
-
-        // - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 1
-        CompositionContainerShape ContainerShape_3()
-        {
-            const auto result = _c.CreateContainerShape();
-            result.Scale({ 0.0F, 0.0F });
-            const auto shapes = result.Shapes();
-            // Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
-            shapes.Append(SpriteShape_20());
-            // Scale:1.1,1.1, Offset:<-16.136, 20.639>
-            shapes.Append(SpriteShape_21());
-            // Scale:1.1,1.1, Offset:<-14.866001, 19.364>
-            shapes.Append(SpriteShape_22());
-            // Scale:1.1,1.1, Offset:<-16.2, 19.497002>
-            shapes.Append(SpriteShape_23());
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_09(), _rootProgress);
+            shapes.Append(SpriteShape_15());
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_02(), _rootProgress);
             return result;
         }
 
@@ -1141,20 +1200,20 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 13
-        CompositionContainerShape ContainerShape_4()
+        CompositionContainerShape ContainerShape_3()
         {
             const auto result = _c.CreateContainerShape();
             result.Scale({ 0.0F, 0.0F });
             const auto shapes = result.Shapes();
             // Scale:1.1,1.1, Offset:<-14.865999, 20.636>
-            shapes.Append(SpriteShape_28());
+            shapes.Append(SpriteShape_24());
             // Scale:1.1,1.1, Offset:<-16.136, 20.636>
-            shapes.Append(SpriteShape_29());
+            shapes.Append(SpriteShape_25());
             // Scale:1.1,1.1, Offset:<-14.866001, 19.364>
-            shapes.Append(SpriteShape_30());
+            shapes.Append(SpriteShape_26());
             // Scale:1.1,1.1, Offset:<-16.127998, 19.362>
-            shapes.Append(SpriteShape_31());
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_13(), _rootProgress);
+            shapes.Append(SpriteShape_27());
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_09(), _rootProgress);
             return result;
         }
 
@@ -1162,28 +1221,67 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 1
-        CompositionContainerShape ContainerShape_5()
+        CompositionContainerShape ContainerShape_4()
         {
             const auto result = _c.CreateContainerShape();
             result.Scale({ 0.0F, 0.0F });
             const auto shapes = result.Shapes();
             // Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
-            shapes.Append(SpriteShape_32());
+            shapes.Append(SpriteShape_28());
             // Scale:1.1,1.1, Offset:<-16.136, 20.639>
-            shapes.Append(SpriteShape_33());
+            shapes.Append(SpriteShape_29());
             // Scale:1.1,1.1, Offset:<-14.866001, 19.364>
-            shapes.Append(SpriteShape_34());
+            shapes.Append(SpriteShape_30());
             // Scale:1.1,1.1, Offset:<-16.2, 19.497002>
-            shapes.Append(SpriteShape_35());
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_14(), _rootProgress);
+            shapes.Append(SpriteShape_31());
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_10(), _rootProgress);
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - - Transforms for TB - Start - 06 - PressedToHover
-        // - - Layer aggregator
-        // - Layer: Layer 25
-        // Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
+        // - PreComp layer: TB - Start - 01 - NormalToHover
+        // Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 13
+        CompositionContainerShape ContainerShape_5()
+        {
+            const auto result = _c.CreateContainerShape();
+            const auto shapes = result.Shapes();
+            // Scale:1.1,1.1, Offset:<-14.865999, 20.636>
+            shapes.Append(SpriteShape_48());
+            // Scale:1.1,1.1, Offset:<-16.136, 20.636>
+            shapes.Append(SpriteShape_49());
+            // Scale:1.1,1.1, Offset:<-14.866001, 19.364>
+            shapes.Append(SpriteShape_50());
+            // Scale:1.1,1.1, Offset:<-16.127998, 19.362>
+            shapes.Append(SpriteShape_51());
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_23(), _rootProgress);
+            return result;
+        }
+
+        // - PreComp layer: TB - Start - 01 - NormalToHover
+        // Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 1
+        CompositionContainerShape ContainerShape_6()
+        {
+            const auto result = _c.CreateContainerShape();
+            const auto shapes = result.Shapes();
+            // Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
+            shapes.Append(SpriteShape_52());
+            // Scale:1.1,1.1, Offset:<-16.136, 20.639>
+            shapes.Append(SpriteShape_53());
+            // Scale:1.1,1.1, Offset:<-14.866001, 19.364>
+            shapes.Append(SpriteShape_54());
+            // Scale:1.1,1.1, Offset:<-16.2, 19.497002>
+            shapes.Append(SpriteShape_55());
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_24(), _rootProgress);
+            return result;
+        }
+
+        // - - PreComp layer: TB - Start - 06 - PressedToHover
+        // - Transforms for TB - Start - 06 - PressedToHover Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 4
         CompositionLinearGradientBrush LinearGradientBrush_00()
         {
             const auto result = _c.CreateLinearGradientBrush();
@@ -1191,34 +1289,16 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             colorStops.Append(GradientStop_0_AlmostDodgerBlue_FF0080CD());
             colorStops.Append(GradientStop_1_AlmostDeepSkyBlue_FF00ACF8());
             result.MappingMode(CompositionMappingMode::Absolute);
-            result.StartPoint({ 40.0F, 7.5F });
-            result.EndPoint({ 32.223999F, -5.96799994F });
+            result.StartPoint({ 27.0F, -4.5F });
+            result.EndPoint({ 21.5F, -14.026F });
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - - Transforms for TB - Start - 06 - PressedToHover
-        // - - Layer aggregator
-        // - Layer: Layer 25
-        // Scale:1.1,1.1, Offset:<-16.136, 20.639>
+        // - - PreComp layer: TB - Start - 06 - PressedToHover
+        // - Transforms for TB - Start - 06 - PressedToHover Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 4
         CompositionLinearGradientBrush LinearGradientBrush_01()
-        {
-            const auto result = _c.CreateLinearGradientBrush();
-            const auto colorStops = result.ColorStops();
-            colorStops.Append(GradientStop_0_AlmostTeal_FF00459B());
-            colorStops.Append(GradientStop_1_AlmostDarkCyan_FF0063B8());
-            result.MappingMode(CompositionMappingMode::Absolute);
-            result.StartPoint({ 27.0F, 5.5F });
-            result.EndPoint({ 20.8330002F, -5.18100023F });
-            return result;
-        }
-
-        // - - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - - Transforms for TB - Start - 06 - PressedToHover
-        // - - Layer aggregator
-        // - Layer: Layer 25
-        // Scale:1.1,1.1, Offset:<-14.866001, 19.364>
-        CompositionLinearGradientBrush LinearGradientBrush_02()
         {
             const auto result = _c.CreateLinearGradientBrush();
             const auto colorStops = result.ColorStops();
@@ -1230,11 +1310,26 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - - Transforms for TB - Start - 06 - PressedToHover
-        // - - Layer aggregator
-        // - Layer: Layer 25
-        // Scale:1.1,1.1, Offset:<-16.2, 19.497002>
+        // - - PreComp layer: TB - Start - 06 - PressedToHover
+        // - Transforms for TB - Start - 06 - PressedToHover Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 4
+        CompositionLinearGradientBrush LinearGradientBrush_02()
+        {
+            const auto result = _c.CreateLinearGradientBrush();
+            const auto colorStops = result.ColorStops();
+            colorStops.Append(GradientStop_0_AlmostTeal_FF00459B());
+            colorStops.Append(GradientStop_1_AlmostDarkCyan_FF0063B8());
+            result.MappingMode(CompositionMappingMode::Absolute);
+            result.StartPoint({ 27.0F, 5.5F });
+            result.EndPoint({ 20.8330002F, -5.18100023F });
+            return result;
+        }
+
+        // - - PreComp layer: TB - Start - 06 - PressedToHover
+        // - Transforms for TB - Start - 06 - PressedToHover Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 4
         CompositionLinearGradientBrush LinearGradientBrush_03()
         {
             const auto result = _c.CreateLinearGradientBrush();
@@ -1242,8 +1337,8 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             colorStops.Append(_gradientStop_0_AlmostDodgerBlue_FF0080CD);
             colorStops.Append(_gradientStop_1_AlmostDeepSkyBlue_FF00ACF8);
             result.MappingMode(CompositionMappingMode::Absolute);
-            result.StartPoint({ 27.0F, -4.5F });
-            result.EndPoint({ 21.5F, -14.026F });
+            result.StartPoint({ 40.0F, 7.5F });
+            result.EndPoint({ 32.223999F, -5.96799994F });
             return result;
         }
 
@@ -1327,9 +1422,9 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - - Transforms for TB - Start - 04 - Hover to Pressed
+        // - - Layer aggregator
         // - Layer: Layer 1
         // Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
         CompositionLinearGradientBrush LinearGradientBrush_08()
@@ -1344,9 +1439,9 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - - Transforms for TB - Start - 04 - Hover to Pressed
+        // - - Layer aggregator
         // - Layer: Layer 1
         // Scale:1.1,1.1, Offset:<-16.136, 20.639>
         CompositionLinearGradientBrush LinearGradientBrush_09()
@@ -1361,9 +1456,9 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - - Transforms for TB - Start - 04 - Hover to Pressed
+        // - - Layer aggregator
         // - Layer: Layer 1
         // Scale:1.1,1.1, Offset:<-14.866001, 19.364>
         CompositionLinearGradientBrush LinearGradientBrush_10()
@@ -1378,9 +1473,9 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - - Transforms for TB - Start - 04 - Hover to Pressed
+        // - - Layer aggregator
         // - Layer: Layer 1
         // Scale:1.1,1.1, Offset:<-16.2, 19.497002>
         CompositionLinearGradientBrush LinearGradientBrush_11()
@@ -1539,10 +1634,11 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
-        // Layer: Layer 13
+        // - Layer: Layer 1
+        // Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
         CompositionLinearGradientBrush LinearGradientBrush_20()
         {
             const auto result = _linearGradientBrush_20 = _c.CreateLinearGradientBrush();
@@ -1558,10 +1654,11 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
-        // Layer: Layer 13
+        // - Layer: Layer 1
+        // Scale:1.1,1.1, Offset:<-16.136, 20.639>
         CompositionLinearGradientBrush LinearGradientBrush_21()
         {
             const auto result = _linearGradientBrush_21 = _c.CreateLinearGradientBrush();
@@ -1577,10 +1674,11 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
-        // Layer: Layer 13
+        // - Layer: Layer 1
+        // Scale:1.1,1.1, Offset:<-14.866001, 19.364>
         CompositionLinearGradientBrush LinearGradientBrush_22()
         {
             const auto result = _linearGradientBrush_22 = _c.CreateLinearGradientBrush();
@@ -1596,10 +1694,11 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
-        // Layer: Layer 13
+        // - Layer: Layer 1
+        // Scale:1.1,1.1, Offset:<-16.2, 19.497002>
         CompositionLinearGradientBrush LinearGradientBrush_23()
         {
             const auto result = _linearGradientBrush_23 = _c.CreateLinearGradientBrush();
@@ -1625,14 +1724,22 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return _pathGeometry_1 = _c.CreatePathGeometry(CompositionPath(CanvasGeometryToIGeometrySource2D(Geometry_1())));
         }
 
+        // - - PreComp layer: TB - Start - 06 - PressedToHover
+        // - Transforms for TB - Start - 06 - PressedToHover Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 4
         CompositionPathGeometry PathGeometry_2()
         {
-            return _pathGeometry_2 = _c.CreatePathGeometry(CompositionPath(CanvasGeometryToIGeometrySource2D(Geometry_2())));
+            return _c.CreatePathGeometry(CompositionPath(CanvasGeometryToIGeometrySource2D(Geometry_2())));
         }
 
+        // - - PreComp layer: TB - Start - 06 - PressedToHover
+        // - Transforms for TB - Start - 06 - PressedToHover Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 4
         CompositionPathGeometry PathGeometry_3()
         {
-            return _pathGeometry_3 = _c.CreatePathGeometry(CompositionPath(CanvasGeometryToIGeometrySource2D(Geometry_3())));
+            return _c.CreatePathGeometry(CompositionPath(CanvasGeometryToIGeometrySource2D(Geometry_3())));
         }
 
         CompositionPathGeometry PathGeometry_4()
@@ -1640,471 +1747,477 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return _pathGeometry_4 = _c.CreatePathGeometry(CompositionPath(CanvasGeometryToIGeometrySource2D(Geometry_4())));
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
-        // - Layer aggregator
-        // Layer: Layer 15
         CompositionPathGeometry PathGeometry_5()
         {
-            return _c.CreatePathGeometry(CompositionPath(CanvasGeometryToIGeometrySource2D(Geometry_5())));
+            return _pathGeometry_5 = _c.CreatePathGeometry(CompositionPath(CanvasGeometryToIGeometrySource2D(Geometry_5())));
         }
 
-        CompositionPathGeometry PathGeometry_6()
-        {
-            return _pathGeometry_6 = _c.CreatePathGeometry(CompositionPath(CanvasGeometryToIGeometrySource2D(Geometry_6())));
-        }
-
-        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - - Transforms for TB - Start - 04 - Hover to Pressed
+        // - - Layer aggregator
         // - Layer: Layer 1
         // Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
-        CompositionPathGeometry PathGeometry_7()
+        CompositionPathGeometry PathGeometry_6()
         {
-            return _c.CreatePathGeometry(CompositionPath(CanvasGeometryToIGeometrySource2D(Geometry_7())));
+            return _c.CreatePathGeometry(CompositionPath(CanvasGeometryToIGeometrySource2D(Geometry_6())));
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
+        CompositionPathGeometry PathGeometry_7()
+        {
+            return _pathGeometry_7 = _c.CreatePathGeometry(CompositionPath(CanvasGeometryToIGeometrySource2D(Geometry_7())));
+        }
+
+        CompositionPathGeometry PathGeometry_8()
+        {
+            return _pathGeometry_8 = _c.CreatePathGeometry(CompositionPath(CanvasGeometryToIGeometrySource2D(Geometry_8())));
+        }
+
+        // - - - PreComp layer: TB - Start - 02 - Normal to Pressed
+        // - - Transforms for TB - Start - 02 - Normal to Pressed
         // - Layer aggregator
-        // Layer: Layer 25
+        // Layer: Layer 15
+        CompositionPathGeometry PathGeometry_9()
+        {
+            return _c.CreatePathGeometry(CompositionPath(CanvasGeometryToIGeometrySource2D(Geometry_9())));
+        }
+
+        // - PreComp layer: TB - Start - 06 - PressedToHover
+        // Transforms for TB - Start - 06 - PressedToHover Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
         // Path 1
         CompositionSpriteShape SpriteShape_00()
         {
-            // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(PathGeometry_0(), { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, LinearGradientBrush_00());
+            // Offset:<-18.650002, 20.399202>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(PathGeometry_0(), { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, LinearGradientBrush_00());
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
-        // - Layer aggregator
-        // Layer: Layer 25
+        // - PreComp layer: TB - Start - 06 - PressedToHover
+        // Transforms for TB - Start - 06 - PressedToHover Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
         // Path 1
         CompositionSpriteShape SpriteShape_01()
         {
-            // Offset:<-18.6506, 20.4001>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(PathGeometry_1(), { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, LinearGradientBrush_01());
+            // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(PathGeometry_1(), { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, LinearGradientBrush_01());
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
-        // - Layer aggregator
-        // Layer: Layer 25
+        // - PreComp layer: TB - Start - 06 - PressedToHover
+        // Transforms for TB - Start - 06 - PressedToHover Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
         // Path 1
         CompositionSpriteShape SpriteShape_02()
         {
-            // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(PathGeometry_2(), { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, LinearGradientBrush_02());
+            // Offset:<-18.6506, 20.4001>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(PathGeometry_2(), { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, LinearGradientBrush_02());
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
-        // - Layer aggregator
-        // Layer: Layer 25
+        // - PreComp layer: TB - Start - 06 - PressedToHover
+        // Transforms for TB - Start - 06 - PressedToHover Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
         // Path 1
         CompositionSpriteShape SpriteShape_03()
         {
-            // Offset:<-18.650002, 20.399202>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(PathGeometry_3(), { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, LinearGradientBrush_03());
+            // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(PathGeometry_3(), { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, LinearGradientBrush_03());
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - Transforms for TB - Start - 06 - PressedToHover
-        // Layer aggregator
+        // - - PreComp layer: TB - Start - 05 - PressedToNormal
+        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 17
         // Path 1
         CompositionSpriteShape SpriteShape_04()
         {
-            // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(PathGeometry_4(), { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, AnimatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_0());
-            result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_01(), _rootProgress);
+            // Offset:<-18.6507, 20.4006>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(PathGeometry_4(), { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506996F, 20.4006004F }, ThemeColor_Foreground());
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - Transforms for TB - Start - 06 - PressedToHover
-        // Layer aggregator
+        // - - PreComp layer: TB - Start - 05 - PressedToNormal
+        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 17
         // Path 1
         CompositionSpriteShape SpriteShape_05()
         {
-            // Offset:<-18.6506, 20.4001>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(PathGeometry_5(), { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, AnimatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_1());
-            result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_02(), _rootProgress);
+            // Offset:<-18.650301, 20.4>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(PathGeometry_5(), { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.650301F, 20.3999996F }, _themeColor_Foreground);
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - Transforms for TB - Start - 06 - PressedToHover
-        // Layer aggregator
+        // - - PreComp layer: TB - Start - 05 - PressedToNormal
+        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 17
         // Path 1
         CompositionSpriteShape SpriteShape_06()
         {
             // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_2, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, AnimatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_2());
+            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, _themeColor_Foreground);
+            return result;
+        }
+
+        // - - PreComp layer: TB - Start - 05 - PressedToNormal
+        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 17
+        // Path 1
+        CompositionSpriteShape SpriteShape_07()
+        {
+            // Offset:<-18.649698, 20.3998>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6496983F, 20.3997993F }, _themeColor_Foreground);
+            return result;
+        }
+
+        // - - PreComp layer: TB - Start - 05 - PressedToNormal
+        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 1
+        // Path 1
+        CompositionSpriteShape SpriteShape_08()
+        {
+            // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_4, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, LinearGradientBrush_04());
+            return result;
+        }
+
+        // - - PreComp layer: TB - Start - 05 - PressedToNormal
+        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 1
+        // Path 1
+        CompositionSpriteShape SpriteShape_09()
+        {
+            // Offset:<-18.6506, 20.4001>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_5, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, LinearGradientBrush_05());
+            return result;
+        }
+
+        // - - PreComp layer: TB - Start - 05 - PressedToNormal
+        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 1
+        // Path 1
+        CompositionSpriteShape SpriteShape_10()
+        {
+            // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, LinearGradientBrush_06());
+            return result;
+        }
+
+        // - - PreComp layer: TB - Start - 05 - PressedToNormal
+        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 1
+        // Path 1
+        CompositionSpriteShape SpriteShape_11()
+        {
+            // Offset:<-18.650002, 20.399202>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, LinearGradientBrush_07());
+            return result;
+        }
+
+        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - Transforms for TB - Start - 04 - Hover to Pressed
+        // - Layer aggregator
+        // Layer: Layer 1
+        // Path 1
+        CompositionSpriteShape SpriteShape_12()
+        {
+            // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(PathGeometry_6(), { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, LinearGradientBrush_08());
+            return result;
+        }
+
+        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - Transforms for TB - Start - 04 - Hover to Pressed
+        // - Layer aggregator
+        // Layer: Layer 1
+        // Path 1
+        CompositionSpriteShape SpriteShape_13()
+        {
+            // Offset:<-18.6506, 20.4001>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_5, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, LinearGradientBrush_09());
+            return result;
+        }
+
+        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - Transforms for TB - Start - 04 - Hover to Pressed
+        // - Layer aggregator
+        // Layer: Layer 1
+        // Path 1
+        CompositionSpriteShape SpriteShape_14()
+        {
+            // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, LinearGradientBrush_10());
+            return result;
+        }
+
+        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - Transforms for TB - Start - 04 - Hover to Pressed
+        // - Layer aggregator
+        // Layer: Layer 1
+        // Path 1
+        CompositionSpriteShape SpriteShape_15()
+        {
+            // Offset:<-18.650002, 20.399202>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, LinearGradientBrush_11());
+            return result;
+        }
+
+        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - Transforms for TB - Start - 04 - Hover to Pressed
+        // Layer aggregator
+        // Path 1
+        CompositionSpriteShape SpriteShape_16()
+        {
+            // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(PathGeometry_7(), { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, AnimatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_0());
             result.Scale({ 0.0F, 0.0F });
             StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_03(), _rootProgress);
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - Transforms for TB - Start - 06 - PressedToHover
+        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - Transforms for TB - Start - 04 - Hover to Pressed
         // Layer aggregator
         // Path 1
-        CompositionSpriteShape SpriteShape_07()
+        CompositionSpriteShape SpriteShape_17()
         {
-            // Offset:<-18.650002, 20.399202>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_3, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, _animatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_0);
-            result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", _shapeVisibilityAnimation_01, _rootProgress);
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - Transforms for TB - Start - 06 - PressedToHover
-        // Layer aggregator
-        // Path 1
-        CompositionSpriteShape SpriteShape_08()
-        {
-            // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_4, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, AnimatedColorBrush_AlmostDarkCyan_FF0063B8_to_TransparentAlmostDarkCyan_000063B8_0());
+            // Offset:<-18.6506, 20.4001>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(PathGeometry_8(), { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, AnimatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_1());
             result.Scale({ 0.0F, 0.0F });
             StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_04(), _rootProgress);
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - Transforms for TB - Start - 06 - PressedToHover
+        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - Transforms for TB - Start - 04 - Hover to Pressed
         // Layer aggregator
         // Path 1
-        CompositionSpriteShape SpriteShape_09()
+        CompositionSpriteShape SpriteShape_18()
         {
-            // Offset:<-18.6506, 20.4001>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(PathGeometry_6(), { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, AnimatedColorBrush_AlmostDarkCyan_FF0063B8_to_TransparentAlmostDarkCyan_000063B8_1());
+            // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, AnimatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_2());
             result.Scale({ 0.0F, 0.0F });
             StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_05(), _rootProgress);
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - Transforms for TB - Start - 06 - PressedToHover
+        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - Transforms for TB - Start - 04 - Hover to Pressed
         // Layer aggregator
         // Path 1
-        CompositionSpriteShape SpriteShape_10()
+        CompositionSpriteShape SpriteShape_19()
         {
-            // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_2, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, AnimatedColorBrush_AlmostDarkCyan_FF0063B8_to_TransparentAlmostDarkCyan_000063B8_2());
+            // Offset:<-18.650002, 20.399202>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, _animatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_0);
+            result.Scale({ 0.0F, 0.0F });
+            StartProgressBoundAnimation(result, L"Scale", _shapeVisibilityAnimation_03, _rootProgress);
+            return result;
+        }
+
+        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - Transforms for TB - Start - 04 - Hover to Pressed
+        // Layer aggregator
+        // Path 1
+        CompositionSpriteShape SpriteShape_20()
+        {
+            // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_7, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_0());
             result.Scale({ 0.0F, 0.0F });
             StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_06(), _rootProgress);
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - Transforms for TB - Start - 06 - PressedToHover
+        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - Transforms for TB - Start - 04 - Hover to Pressed
         // Layer aggregator
-        // Path 1
-        CompositionSpriteShape SpriteShape_11()
-        {
-            // Offset:<-18.650002, 20.399202>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_3, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, _animatedColorBrush_AlmostDarkCyan_FF0063B8_to_TransparentAlmostDarkCyan_000063B8_0);
-            result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", _shapeVisibilityAnimation_04, _rootProgress);
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 17
-        // Path 1
-        CompositionSpriteShape SpriteShape_12()
-        {
-            // Offset:<-18.6507, 20.4006>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506996F, 20.4006004F }, ThemeColor_Foreground());
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 17
-        // Path 1
-        CompositionSpriteShape SpriteShape_13()
-        {
-            // Offset:<-18.650301, 20.4>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.650301F, 20.3999996F }, _themeColor_Foreground);
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 17
-        // Path 1
-        CompositionSpriteShape SpriteShape_14()
-        {
-            // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_2, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, _themeColor_Foreground);
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 17
-        // Path 1
-        CompositionSpriteShape SpriteShape_15()
-        {
-            // Offset:<-18.649698, 20.3998>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_3, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6496983F, 20.3997993F }, _themeColor_Foreground);
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 1
-        // Path 1
-        CompositionSpriteShape SpriteShape_16()
-        {
-            // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, LinearGradientBrush_04());
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 1
-        // Path 1
-        CompositionSpriteShape SpriteShape_17()
-        {
-            // Offset:<-18.6506, 20.4001>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, LinearGradientBrush_05());
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 1
-        // Path 1
-        CompositionSpriteShape SpriteShape_18()
-        {
-            // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_2, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, LinearGradientBrush_06());
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 1
-        // Path 1
-        CompositionSpriteShape SpriteShape_19()
-        {
-            // Offset:<-18.650002, 20.399202>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_3, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, LinearGradientBrush_07());
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 1
-        // Path 1
-        CompositionSpriteShape SpriteShape_20()
-        {
-            // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(PathGeometry_7(), { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, LinearGradientBrush_08());
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 1
         // Path 1
         CompositionSpriteShape SpriteShape_21()
         {
             // Offset:<-18.6506, 20.4001>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, LinearGradientBrush_09());
+            const auto result = CreateSpriteShape(_pathGeometry_8, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_1());
+            result.Scale({ 0.0F, 0.0F });
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_07(), _rootProgress);
             return result;
         }
 
         // - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 1
+        // - Transforms for TB - Start - 04 - Hover to Pressed
+        // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_22()
         {
             // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_2, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, LinearGradientBrush_10());
+            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_2());
+            result.Scale({ 0.0F, 0.0F });
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_08(), _rootProgress);
             return result;
         }
 
         // - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 1
+        // - Transforms for TB - Start - 04 - Hover to Pressed
+        // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_23()
         {
             // Offset:<-18.650002, 20.399202>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_3, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, LinearGradientBrush_11());
+            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, _animatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_0);
+            result.Scale({ 0.0F, 0.0F });
+            StartProgressBoundAnimation(result, L"Scale", _shapeVisibilityAnimation_06, _rootProgress);
             return result;
         }
 
-        // - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - Start - 03 - HoverToNormal
+        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
+        // Layer: Layer 13
         // Path 1
         CompositionSpriteShape SpriteShape_24()
         {
-            // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_4, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_0());
-            result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_10(), _rootProgress);
+            // Offset:<-18.6507, 20.4006>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_4, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506996F, 20.4006004F }, _themeColor_Foreground);
             return result;
         }
 
-        // - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - Start - 03 - HoverToNormal
+        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
+        // Layer: Layer 13
         // Path 1
         CompositionSpriteShape SpriteShape_25()
         {
+            // Offset:<-18.650301, 20.4>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_5, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.650301F, 20.3999996F }, _themeColor_Foreground);
+            return result;
+        }
+
+        // - - PreComp layer: TB - Start - 03 - HoverToNormal
+        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 13
+        // Path 1
+        CompositionSpriteShape SpriteShape_26()
+        {
+            // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, _themeColor_Foreground);
+            return result;
+        }
+
+        // - - PreComp layer: TB - Start - 03 - HoverToNormal
+        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 13
+        // Path 1
+        CompositionSpriteShape SpriteShape_27()
+        {
+            // Offset:<-18.649698, 20.3998>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6496983F, 20.3997993F }, _themeColor_Foreground);
+            return result;
+        }
+
+        // - - PreComp layer: TB - Start - 03 - HoverToNormal
+        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 1
+        // Path 1
+        CompositionSpriteShape SpriteShape_28()
+        {
+            // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_4, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, LinearGradientBrush_12());
+            return result;
+        }
+
+        // - - PreComp layer: TB - Start - 03 - HoverToNormal
+        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 1
+        // Path 1
+        CompositionSpriteShape SpriteShape_29()
+        {
             // Offset:<-18.6506, 20.4001>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_6, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_1());
+            const auto result = CreateSpriteShape(_pathGeometry_5, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, LinearGradientBrush_13());
+            return result;
+        }
+
+        // - - PreComp layer: TB - Start - 03 - HoverToNormal
+        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 1
+        // Path 1
+        CompositionSpriteShape SpriteShape_30()
+        {
+            // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, LinearGradientBrush_14());
+            return result;
+        }
+
+        // - - PreComp layer: TB - Start - 03 - HoverToNormal
+        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 1
+        // Path 1
+        CompositionSpriteShape SpriteShape_31()
+        {
+            // Offset:<-18.650002, 20.399202>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, LinearGradientBrush_15());
+            return result;
+        }
+
+        // - - PreComp layer: TB - Start - 02 - Normal to Pressed
+        // - Transforms for TB - Start - 02 - Normal to Pressed
+        // Layer aggregator
+        // Path 1
+        CompositionSpriteShape SpriteShape_32()
+        {
+            // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_4, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, LinearGradientBrush_16());
             result.Scale({ 0.0F, 0.0F });
             StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_11(), _rootProgress);
             return result;
         }
 
-        // - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - PreComp layer: TB - Start - 02 - Normal to Pressed
+        // - Transforms for TB - Start - 02 - Normal to Pressed
+        // Layer aggregator
         // Path 1
-        CompositionSpriteShape SpriteShape_26()
+        CompositionSpriteShape SpriteShape_33()
         {
-            // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_2, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_2());
+            // Offset:<-18.6506, 20.4001>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_5, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, LinearGradientBrush_17());
             result.Scale({ 0.0F, 0.0F });
             StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_12(), _rootProgress);
             return result;
         }
 
-        // - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Path 1
-        CompositionSpriteShape SpriteShape_27()
-        {
-            // Offset:<-18.650002, 20.399202>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_3, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, _animatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_0);
-            result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", _shapeVisibilityAnimation_10, _rootProgress);
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 13
-        // Path 1
-        CompositionSpriteShape SpriteShape_28()
-        {
-            // Offset:<-18.6507, 20.4006>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506996F, 20.4006004F }, _themeColor_Foreground);
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 13
-        // Path 1
-        CompositionSpriteShape SpriteShape_29()
-        {
-            // Offset:<-18.650301, 20.4>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.650301F, 20.3999996F }, _themeColor_Foreground);
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 13
-        // Path 1
-        CompositionSpriteShape SpriteShape_30()
-        {
-            // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_2, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, _themeColor_Foreground);
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 13
-        // Path 1
-        CompositionSpriteShape SpriteShape_31()
-        {
-            // Offset:<-18.649698, 20.3998>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_3, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6496983F, 20.3997993F }, _themeColor_Foreground);
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 1
-        // Path 1
-        CompositionSpriteShape SpriteShape_32()
-        {
-            // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, LinearGradientBrush_12());
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 1
-        // Path 1
-        CompositionSpriteShape SpriteShape_33()
-        {
-            // Offset:<-18.6506, 20.4001>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, LinearGradientBrush_13());
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 1
+        // - - PreComp layer: TB - Start - 02 - Normal to Pressed
+        // - Transforms for TB - Start - 02 - Normal to Pressed
+        // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_34()
         {
             // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_2, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, LinearGradientBrush_14());
+            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, LinearGradientBrush_18());
+            result.Scale({ 0.0F, 0.0F });
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_13(), _rootProgress);
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 1
+        // - - PreComp layer: TB - Start - 02 - Normal to Pressed
+        // - Transforms for TB - Start - 02 - Normal to Pressed
+        // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_35()
         {
             // Offset:<-18.650002, 20.399202>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_3, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, LinearGradientBrush_15());
+            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, LinearGradientBrush_19());
+            result.Scale({ 0.0F, 0.0F });
+            StartProgressBoundAnimation(result, L"Scale", _shapeVisibilityAnimation_11, _rootProgress);
             return result;
         }
 
@@ -2114,10 +2227,10 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // Path 1
         CompositionSpriteShape SpriteShape_36()
         {
-            // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, LinearGradientBrush_16());
+            // Offset:<-18.6507, 20.4006>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_4, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506996F, 20.4006004F }, _themeColor_Foreground);
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_15(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_14(), _rootProgress);
             return result;
         }
 
@@ -2127,10 +2240,10 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // Path 1
         CompositionSpriteShape SpriteShape_37()
         {
-            // Offset:<-18.6506, 20.4001>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, LinearGradientBrush_17());
+            // Offset:<-18.650301, 20.4>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_5, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.650301F, 20.3999996F }, _themeColor_Foreground);
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_16(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_15(), _rootProgress);
             return result;
         }
 
@@ -2141,9 +2254,9 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         CompositionSpriteShape SpriteShape_38()
         {
             // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_2, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, LinearGradientBrush_18());
+            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, _themeColor_Foreground);
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_17(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_16(), _rootProgress);
             return result;
         }
 
@@ -2153,10 +2266,10 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // Path 1
         CompositionSpriteShape SpriteShape_39()
         {
-            // Offset:<-18.650002, 20.399202>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_3, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, LinearGradientBrush_19());
+            // Offset:<-18.649698, 20.3998>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6496983F, 20.3997993F }, _themeColor_Foreground);
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", _shapeVisibilityAnimation_15, _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", _shapeVisibilityAnimation_14, _rootProgress);
             return result;
         }
 
@@ -2166,10 +2279,10 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // Path 1
         CompositionSpriteShape SpriteShape_40()
         {
-            // Offset:<-18.6507, 20.4006>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506996F, 20.4006004F }, _themeColor_Foreground);
+            // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_7, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, AnimatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_3());
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_18(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_17(), _rootProgress);
             return result;
         }
 
@@ -2179,10 +2292,10 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // Path 1
         CompositionSpriteShape SpriteShape_41()
         {
-            // Offset:<-18.650301, 20.4>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.650301F, 20.3999996F }, _themeColor_Foreground);
+            // Offset:<-18.6506, 20.4001>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(PathGeometry_9(), { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, AnimatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_4());
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_19(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_18(), _rootProgress);
             return result;
         }
 
@@ -2193,9 +2306,9 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         CompositionSpriteShape SpriteShape_42()
         {
             // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_2, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, _themeColor_Foreground);
+            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, AnimatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_5());
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_20(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_19(), _rootProgress);
             return result;
         }
 
@@ -2205,10 +2318,10 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // Path 1
         CompositionSpriteShape SpriteShape_43()
         {
-            // Offset:<-18.649698, 20.3998>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_3, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6496983F, 20.3997993F }, _themeColor_Foreground);
+            // Offset:<-18.650002, 20.399202>, Scale:<1.1, 1.1>
+            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, _animatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_3);
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", _shapeVisibilityAnimation_18, _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", _shapeVisibilityAnimation_17, _rootProgress);
             return result;
         }
 
@@ -2219,9 +2332,9 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         CompositionSpriteShape SpriteShape_44()
         {
             // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_4, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_3());
+            const auto result = CreateSpriteShape(_pathGeometry_7, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_3());
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_21(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_20(), _rootProgress);
             return result;
         }
 
@@ -2232,9 +2345,9 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         CompositionSpriteShape SpriteShape_45()
         {
             // Offset:<-18.6506, 20.4001>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_6, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_4());
+            const auto result = CreateSpriteShape(_pathGeometry_8, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_4());
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_22(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_21(), _rootProgress);
             return result;
         }
 
@@ -2245,9 +2358,9 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         CompositionSpriteShape SpriteShape_46()
         {
             // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_2, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_5());
+            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_5());
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_23(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_22(), _rootProgress);
             return result;
         }
 
@@ -2258,97 +2371,105 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         CompositionSpriteShape SpriteShape_47()
         {
             // Offset:<-18.650002, 20.399202>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_3, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, _animatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_3);
+            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, _animatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_TransparentAlmostDarkCyan_000063B8_3);
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", _shapeVisibilityAnimation_21, _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", _shapeVisibilityAnimation_20, _rootProgress);
             return result;
         }
 
-        // - PreComp layer: TB - Start - 01 - NormalToHover
-        // Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
+        // Layer: Layer 13
         // Path 1
         CompositionSpriteShape SpriteShape_48()
         {
             // Offset:<-18.6507, 20.4006>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506996F, 20.4006004F }, _themeColor_Foreground);
+            const auto result = CreateSpriteShape(_pathGeometry_4, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506996F, 20.4006004F }, _themeColor_Foreground);
             return result;
         }
 
-        // - PreComp layer: TB - Start - 01 - NormalToHover
-        // Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
+        // Layer: Layer 13
         // Path 1
         CompositionSpriteShape SpriteShape_49()
         {
             // Offset:<-18.650301, 20.4>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.650301F, 20.3999996F }, _themeColor_Foreground);
+            const auto result = CreateSpriteShape(_pathGeometry_5, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.650301F, 20.3999996F }, _themeColor_Foreground);
             return result;
         }
 
-        // - PreComp layer: TB - Start - 01 - NormalToHover
-        // Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
+        // Layer: Layer 13
         // Path 1
         CompositionSpriteShape SpriteShape_50()
         {
             // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_2, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, _themeColor_Foreground);
+            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, _themeColor_Foreground);
             return result;
         }
 
-        // - PreComp layer: TB - Start - 01 - NormalToHover
-        // Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
+        // Layer: Layer 13
         // Path 1
         CompositionSpriteShape SpriteShape_51()
         {
             // Offset:<-18.649698, 20.3998>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_3, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6496983F, 20.3997993F }, _themeColor_Foreground);
+            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6496983F, 20.3997993F }, _themeColor_Foreground);
             return result;
         }
 
-        // - PreComp layer: TB - Start - 01 - NormalToHover
-        // Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
+        // Layer: Layer 1
         // Path 1
         CompositionSpriteShape SpriteShape_52()
         {
             // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, LinearGradientBrush_20());
+            const auto result = CreateSpriteShape(_pathGeometry_4, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, LinearGradientBrush_20());
             return result;
         }
 
-        // - PreComp layer: TB - Start - 01 - NormalToHover
-        // Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
+        // Layer: Layer 1
         // Path 1
         CompositionSpriteShape SpriteShape_53()
         {
             // Offset:<-18.6506, 20.4001>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, LinearGradientBrush_21());
+            const auto result = CreateSpriteShape(_pathGeometry_5, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, LinearGradientBrush_21());
             return result;
         }
 
-        // - PreComp layer: TB - Start - 01 - NormalToHover
-        // Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
+        // Layer: Layer 1
         // Path 1
         CompositionSpriteShape SpriteShape_54()
         {
             // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_2, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, LinearGradientBrush_22());
+            const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, LinearGradientBrush_22());
             return result;
         }
 
-        // - PreComp layer: TB - Start - 01 - NormalToHover
-        // Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
+        // Layer: Layer 1
         // Path 1
         CompositionSpriteShape SpriteShape_55()
         {
             // Offset:<-18.650002, 20.399202>, Scale:<1.1, 1.1>
-            const auto result = CreateSpriteShape(_pathGeometry_3, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, LinearGradientBrush_23());
+            const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, LinearGradientBrush_23());
             return result;
         }
 
@@ -2356,31 +2477,20 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         ContainerVisual ContainerVisual_0()
         {
             const auto result = _c.CreateContainerVisual();
-            result.CenterPoint({ 16.0F, 16.0F, 0.0F });
-            result.IsVisible(false);
-            result.Offset({ -3.86100006F, -4.00199986F, 0.0F });
-            // Transforms for TB - Start - 06 - PressedToHover
-            result.Children().InsertAtTop(ContainerVisual_1());
-            StartProgressBoundAnimation(result, L"IsVisible", IsVisibleBooleanAnimation_0(), _rootProgress);
-            StartProgressBoundAnimation(result, L"Scale.X", ScalarAnimation_0p48_to_0p6(), _rootProgress);
-            StartProgressBoundAnimation(result, L"Scale.Y", _scalarAnimation_0p48_to_0p6, _rootProgress);
-            return result;
-        }
-
-        // PreComp layer: TB - Start - 06 - PressedToHover
-        // Transforms for TB - Start - 06 - PressedToHover
-        ContainerVisual ContainerVisual_1()
-        {
-            const auto result = _c.CreateContainerVisual();
             result.Clip(InsetClip_0());
+            result.IsVisible(false);
             result.Size({ 32.0F, 32.0F });
-            // Layer aggregator
+            // Offset:<2.5389996, 2.3979998>, Scale:<0.6, 0.6>
+            result.TransformMatrix({ 0.600000024F, 0.0F, 0.0F, 0.0F, 0.0F, 0.600000024F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 2.53899956F, 2.39799976F, 0.0F, 1.0F });
+            // Transforms for TB - Start - 06 - PressedToHover Scale(0.6,0.6,0),
+            // Offset(-3.861,-4.002,0)
             result.Children().InsertAtTop(ShapeVisual_0());
+            StartProgressBoundAnimation(result, L"IsVisible", IsVisibleBooleanAnimation_0(), RootProgress());
             return result;
         }
 
         // PreComp layer: TB - Start - 05 - PressedToNormal
-        ContainerVisual ContainerVisual_2()
+        ContainerVisual ContainerVisual_1()
         {
             const auto result = _c.CreateContainerVisual();
             result.Clip(_insetClip_0);
@@ -2396,18 +2506,29 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         }
 
         // PreComp layer: TB - Start - 04 - Hover to Pressed
+        ContainerVisual ContainerVisual_2()
+        {
+            const auto result = _c.CreateContainerVisual();
+            result.CenterPoint({ 16.0F, 16.0F, 0.0F });
+            result.IsVisible(false);
+            result.Offset({ -3.86100006F, -4.00199986F, 0.0F });
+            // Transforms for TB - Start - 04 - Hover to Pressed
+            result.Children().InsertAtTop(ContainerVisual_3());
+            StartProgressBoundAnimation(result, L"IsVisible", IsVisibleBooleanAnimation_2(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale.X", ScalarAnimation_0p6_to_0p6_0(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale.Y", _scalarAnimation_0p6_to_0p6_0, _rootProgress);
+            return result;
+        }
+
+        // PreComp layer: TB - Start - 04 - Hover to Pressed
+        // Transforms for TB - Start - 04 - Hover to Pressed
         ContainerVisual ContainerVisual_3()
         {
             const auto result = _c.CreateContainerVisual();
             result.Clip(_insetClip_0);
-            result.IsVisible(false);
             result.Size({ 32.0F, 32.0F });
-            // Offset:<2.5389996, 2.3979998>, Scale:<0.6, 0.6>
-            result.TransformMatrix({ 0.600000024F, 0.0F, 0.0F, 0.0F, 0.0F, 0.600000024F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 2.53899956F, 2.39799976F, 0.0F, 1.0F });
-            // Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-            // Offset(-3.861,-4.002,0)
+            // Layer aggregator
             result.Children().InsertAtTop(ShapeVisual_2());
-            StartProgressBoundAnimation(result, L"IsVisible", IsVisibleBooleanAnimation_2(), _rootProgress);
             return result;
         }
 
@@ -2437,8 +2558,8 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             // Transforms for TB - Start - 02 - Normal to Pressed
             result.Children().InsertAtTop(ContainerVisual_6());
             StartProgressBoundAnimation(result, L"IsVisible", IsVisibleBooleanAnimation_4(), _rootProgress);
-            StartProgressBoundAnimation(result, L"Scale.X", ScalarAnimation_0p6_to_0p48(), _rootProgress);
-            StartProgressBoundAnimation(result, L"Scale.Y", _scalarAnimation_0p6_to_0p48, _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale.X", ScalarAnimation_0p6_to_0p6_1(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale.Y", _scalarAnimation_0p6_to_0p6_1, _rootProgress);
             return result;
         }
 
@@ -2479,9 +2600,9 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             // PreComp layer: TB - Start - 06 - PressedToHover
             children.InsertAtTop(ContainerVisual_0());
             // PreComp layer: TB - Start - 05 - PressedToNormal
-            children.InsertAtTop(ContainerVisual_2());
+            children.InsertAtTop(ContainerVisual_1());
             // PreComp layer: TB - Start - 04 - Hover to Pressed
-            children.InsertAtTop(ContainerVisual_3());
+            children.InsertAtTop(ContainerVisual_2());
             // PreComp layer: TB - Start - 03 - HoverToNormal
             children.InsertAtTop(ContainerVisual_4());
             // PreComp layer: TB - Start - 02 - Normal to Pressed
@@ -2494,6 +2615,16 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         CubicBezierEasingFunction CubicBezierEasingFunction_0()
         {
             return _cubicBezierEasingFunction_0 = _c.CreateCubicBezierEasingFunction({ 0.166999996F, 0.166999996F }, { 0.833000004F, 0.833000004F });
+        }
+
+        CubicBezierEasingFunction CubicBezierEasingFunction_1()
+        {
+            return _cubicBezierEasingFunction_1 = _c.CreateCubicBezierEasingFunction({ 0.850000024F, 0.0F }, { 0.75F, 1.0F });
+        }
+
+        CubicBezierEasingFunction CubicBezierEasingFunction_2()
+        {
+            return _cubicBezierEasingFunction_2 = _c.CreateCubicBezierEasingFunction({ 0.349999994F, 0.0F }, { 0.0F, 1.0F });
         }
 
         ExpressionAnimation RootProgress()
@@ -2513,16 +2644,16 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         ScalarKeyFrameAnimation Opacity0ScalarAnimation_0_to_255()
         {
             const auto result = _opacity0ScalarAnimation_0_to_255 = CreateScalarKeyFrameAnimation(0.0F, 0.0F, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.142857149F, 255.0F, _cubicBezierEasingFunction_0);
+            result.InsertKeyFrame(0.0909090936F, 255.0F, _cubicBezierEasingFunction_0);
             return result;
         }
 
         // Opacity0
         ScalarKeyFrameAnimation Opacity0ScalarAnimation_255_to_0_0()
         {
-            const auto result = _opacity0ScalarAnimation_255_to_0_0 = CreateScalarKeyFrameAnimation(0.0F, 255.0F, _stepThenHoldEasingFunction);
-            result.InsertKeyFrame(0.571428597F, 255.0F, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.699999988F, 0.0F, _cubicBezierEasingFunction_0);
+            const auto result = _opacity0ScalarAnimation_255_to_0_0 = CreateScalarKeyFrameAnimation(0.0F, 255.0F, StepThenHoldEasingFunction());
+            result.InsertKeyFrame(0.818181813F, 255.0F, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.899999976F, 0.0F, CubicBezierEasingFunction_0());
             return result;
         }
 
@@ -2530,55 +2661,46 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         ScalarKeyFrameAnimation Opacity0ScalarAnimation_255_to_0_1()
         {
             const auto result = _opacity0ScalarAnimation_255_to_0_1 = CreateScalarKeyFrameAnimation(0.0F, 255.0F, _stepThenHoldEasingFunction);
-            result.InsertKeyFrame(0.285714298F, 255.0F, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.414285719F, 0.0F, _cubicBezierEasingFunction_0);
+            result.InsertKeyFrame(0.454545468F, 255.0F, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.536363661F, 0.0F, _cubicBezierEasingFunction_0);
             return result;
         }
 
         // Scale
-        ScalarKeyFrameAnimation ScalarAnimation_0p6_to_0p48()
+        ScalarKeyFrameAnimation ScalarAnimation_0p6_to_0p6_0()
         {
-            const auto result = _scalarAnimation_0p6_to_0p48 = CreateScalarKeyFrameAnimation(0.0F, 0.600000024F, _stepThenHoldEasingFunction);
-            result.InsertKeyFrame(0.142857149F, 0.600000024F, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.214285716F, 0.479999989F, _c.CreateCubicBezierEasingFunction({ 0.850000024F, 0.0F }, { 0.75F, 1.0F }));
+            const auto result = _scalarAnimation_0p6_to_0p6_0 = CreateScalarKeyFrameAnimation(0.0F, 0.600000024F, _stepThenHoldEasingFunction);
+            result.InsertKeyFrame(0.545454562F, 0.600000024F, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.590909064F, 0.479999989F, CubicBezierEasingFunction_1());
+            result.InsertKeyFrame(0.681818187F, 0.600000024F, CubicBezierEasingFunction_2());
             return result;
         }
 
         // Scale
-        ScalarKeyFrameAnimation ScalarAnimation_0p48_to_0p6()
+        ScalarKeyFrameAnimation ScalarAnimation_0p6_to_0p6_1()
         {
-            const auto result = _scalarAnimation_0p48_to_0p6 = CreateScalarKeyFrameAnimation(0.0F, 0.479999989F, _stepThenHoldEasingFunction);
-            result.InsertKeyFrame(0.714285731F, 0.479999989F, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.985714257F, 0.600000024F, _c.CreateCubicBezierEasingFunction({ 0.349999994F, 0.0F }, { 0.0F, 1.0F }));
+            const auto result = _scalarAnimation_0p6_to_0p6_1 = CreateScalarKeyFrameAnimation(0.0F, 0.600000024F, _stepThenHoldEasingFunction);
+            result.InsertKeyFrame(0.181818187F, 0.600000024F, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.227272734F, 0.479999989F, _cubicBezierEasingFunction_1);
+            result.InsertKeyFrame(0.318181813F, 0.600000024F, _cubicBezierEasingFunction_2);
             return result;
         }
 
-        // - PreComp layer: TB - Start - 06 - PressedToHover
-        // Transforms for TB - Start - 06 - PressedToHover
+        // PreComp layer: TB - Start - 06 - PressedToHover
         // Layer aggregator
         ShapeVisual ShapeVisual_0()
         {
             const auto result = _c.CreateShapeVisual();
             result.Size({ 32.0F, 32.0F });
             const auto shapes = result.Shapes();
-            // Layer: Layer 25
-            shapes.Append(ContainerShape_0());
-            // Layer: Layer 16
-            shapes.Append(SpriteShape_04());
-            // Layer: Layer 15
-            shapes.Append(SpriteShape_05());
-            // Layer: Layer 14
-            shapes.Append(SpriteShape_06());
-            // Layer: Layer 13
-            shapes.Append(SpriteShape_07());
-            // Layer: Layer 17
-            shapes.Append(SpriteShape_08());
-            // Layer: Layer 18
-            shapes.Append(SpriteShape_09());
-            // Layer: Layer 19
-            shapes.Append(SpriteShape_10());
-            // Layer: Layer 20
-            shapes.Append(SpriteShape_11());
+            // Layer: Layer 4
+            shapes.Append(SpriteShape_00());
+            // Layer: Layer 4
+            shapes.Append(SpriteShape_01());
+            // Layer: Layer 4
+            shapes.Append(SpriteShape_02());
+            // Layer: Layer 4
+            shapes.Append(SpriteShape_03());
             return result;
         }
 
@@ -2590,13 +2712,14 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             result.Size({ 32.0F, 32.0F });
             const auto shapes = result.Shapes();
             // Layer: Layer 17
-            shapes.Append(ContainerShape_1());
+            shapes.Append(ContainerShape_0());
             // Layer: Layer 1
-            shapes.Append(ContainerShape_2());
+            shapes.Append(ContainerShape_1());
             return result;
         }
 
-        // PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // Transforms for TB - Start - 04 - Hover to Pressed
         // Layer aggregator
         ShapeVisual ShapeVisual_2()
         {
@@ -2604,15 +2727,23 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             result.Size({ 32.0F, 32.0F });
             const auto shapes = result.Shapes();
             // Layer: Layer 1
-            shapes.Append(ContainerShape_3());
+            shapes.Append(ContainerShape_2());
+            // Layer: Layer 16
+            shapes.Append(SpriteShape_16());
+            // Layer: Layer 15
+            shapes.Append(SpriteShape_17());
+            // Layer: Layer 14
+            shapes.Append(SpriteShape_18());
+            // Layer: Layer 13
+            shapes.Append(SpriteShape_19());
             // Layer: Layer 17
-            shapes.Append(SpriteShape_24());
+            shapes.Append(SpriteShape_20());
             // Layer: Layer 18
-            shapes.Append(SpriteShape_25());
+            shapes.Append(SpriteShape_21());
             // Layer: Layer 19
-            shapes.Append(SpriteShape_26());
+            shapes.Append(SpriteShape_22());
             // Layer: Layer 20
-            shapes.Append(SpriteShape_27());
+            shapes.Append(SpriteShape_23());
             return result;
         }
 
@@ -2624,9 +2755,9 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             result.Size({ 32.0F, 32.0F });
             const auto shapes = result.Shapes();
             // Layer: Layer 13
-            shapes.Append(ContainerShape_4());
+            shapes.Append(ContainerShape_3());
             // Layer: Layer 1
-            shapes.Append(ContainerShape_5());
+            shapes.Append(ContainerShape_4());
             return result;
         }
 
@@ -2639,20 +2770,28 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             result.Size({ 32.0F, 32.0F });
             const auto shapes = result.Shapes();
             // Layer: Layer 25
-            shapes.Append(SpriteShape_36());
+            shapes.Append(SpriteShape_32());
             // Layer: Layer 26
-            shapes.Append(SpriteShape_37());
+            shapes.Append(SpriteShape_33());
             // Layer: Layer 27
-            shapes.Append(SpriteShape_38());
+            shapes.Append(SpriteShape_34());
             // Layer: Layer 28
-            shapes.Append(SpriteShape_39());
+            shapes.Append(SpriteShape_35());
             // Layer: Layer 21
-            shapes.Append(SpriteShape_40());
+            shapes.Append(SpriteShape_36());
             // Layer: Layer 22
-            shapes.Append(SpriteShape_41());
+            shapes.Append(SpriteShape_37());
             // Layer: Layer 23
-            shapes.Append(SpriteShape_42());
+            shapes.Append(SpriteShape_38());
             // Layer: Layer 24
+            shapes.Append(SpriteShape_39());
+            // Layer: Layer 16
+            shapes.Append(SpriteShape_40());
+            // Layer: Layer 15
+            shapes.Append(SpriteShape_41());
+            // Layer: Layer 14
+            shapes.Append(SpriteShape_42());
+            // Layer: Layer 13
             shapes.Append(SpriteShape_43());
             // Layer: Layer 17
             shapes.Append(SpriteShape_44());
@@ -2673,21 +2812,9 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             result.Size({ 32.0F, 32.0F });
             const auto shapes = result.Shapes();
             // Layer: Layer 13
-            shapes.Append(SpriteShape_48());
-            // Layer: Layer 13
-            shapes.Append(SpriteShape_49());
-            // Layer: Layer 13
-            shapes.Append(SpriteShape_50());
-            // Layer: Layer 13
-            shapes.Append(SpriteShape_51());
-            // Layer: Layer 13
-            shapes.Append(SpriteShape_52());
-            // Layer: Layer 13
-            shapes.Append(SpriteShape_53());
-            // Layer: Layer 13
-            shapes.Append(SpriteShape_54());
-            // Layer: Layer 13
-            shapes.Append(SpriteShape_55());
+            shapes.Append(ContainerShape_5());
+            // Layer: Layer 1
+            shapes.Append(ContainerShape_6());
             return result;
         }
 
@@ -2705,80 +2832,14 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
-        // - Layer aggregator
-        // Layer: Layer 25
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_00()
-        {
-            const auto result = CreateVector2KeyFrameAnimation(0.714285731F, { 1.0F, 1.0F }, HoldThenStepEasingFunction());
-            return result;
-        }
-
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_01()
-        {
-            const auto result = _shapeVisibilityAnimation_01 = CreateVector2KeyFrameAnimation(0.800000012F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            return result;
-        }
-
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
-        // - Layer aggregator
-        // Layer: Layer 15
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_02()
-        {
-            const auto result = CreateVector2KeyFrameAnimation(0.771428585F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.971428573F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
-            return result;
-        }
-
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
-        // - Layer aggregator
-        // Layer: Layer 14
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_03()
-        {
-            const auto result = CreateVector2KeyFrameAnimation(0.814285696F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            return result;
-        }
-
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_04()
-        {
-            const auto result = _shapeVisibilityAnimation_04 = CreateVector2KeyFrameAnimation(0.714285731F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.800000012F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
-            return result;
-        }
-
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
-        // - Layer aggregator
-        // Layer: Layer 18
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_05()
-        {
-            const auto result = CreateVector2KeyFrameAnimation(0.714285731F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.771428585F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
-            return result;
-        }
-
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
-        // - Layer aggregator
-        // Layer: Layer 19
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_06()
-        {
-            const auto result = CreateVector2KeyFrameAnimation(0.714285731F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.785714269F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
-            return result;
-        }
-
         // - - PreComp layer: TB - Start - 05 - PressedToNormal
         // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 17
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_07()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_00()
         {
-            const auto result = CreateVector2KeyFrameAnimation(0.585714281F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.728571415F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            const auto result = CreateVector2KeyFrameAnimation(0.827272713F, { 1.0F, 1.0F }, HoldThenStepEasingFunction());
+            result.InsertKeyFrame(0.918181837F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
@@ -2786,50 +2847,78 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 1
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_01()
+        {
+            const auto result = CreateVector2KeyFrameAnimation(0.818181813F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            return result;
+        }
+
+        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - Transforms for TB - Start - 04 - Hover to Pressed
+        // - Layer aggregator
+        // Layer: Layer 1
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_02()
+        {
+            const auto result = CreateVector2KeyFrameAnimation(0.545454562F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.818181813F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            return result;
+        }
+
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_03()
+        {
+            const auto result = _shapeVisibilityAnimation_03 = CreateVector2KeyFrameAnimation(0.636363626F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.763636351F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            return result;
+        }
+
+        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - Transforms for TB - Start - 04 - Hover to Pressed
+        // - Layer aggregator
+        // Layer: Layer 15
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_04()
+        {
+            const auto result = CreateVector2KeyFrameAnimation(0.618181825F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.74545455F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            return result;
+        }
+
+        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - Transforms for TB - Start - 04 - Hover to Pressed
+        // - Layer aggregator
+        // Layer: Layer 14
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_05()
+        {
+            const auto result = CreateVector2KeyFrameAnimation(0.645454526F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.772727251F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            return result;
+        }
+
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_06()
+        {
+            const auto result = _shapeVisibilityAnimation_06 = CreateVector2KeyFrameAnimation(0.563636363F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.636363626F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            return result;
+        }
+
+        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - Transforms for TB - Start - 04 - Hover to Pressed
+        // - Layer aggregator
+        // Layer: Layer 18
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_07()
+        {
+            const auto result = CreateVector2KeyFrameAnimation(0.545454562F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.618181825F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            return result;
+        }
+
+        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - - Transforms for TB - Start - 04 - Hover to Pressed
+        // - Layer aggregator
+        // Layer: Layer 19
         Vector2KeyFrameAnimation ShapeVisibilityAnimation_08()
         {
-            const auto result = CreateVector2KeyFrameAnimation(0.571428597F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.857142866F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 1
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_09()
-        {
-            const auto result = CreateVector2KeyFrameAnimation(0.428571433F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.571428597F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
-            return result;
-        }
-
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_10()
-        {
-            const auto result = _shapeVisibilityAnimation_10 = CreateVector2KeyFrameAnimation(0.45714286F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.571428597F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 18
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_11()
-        {
-            const auto result = CreateVector2KeyFrameAnimation(0.428571433F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.54285717F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 19
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_12()
-        {
-            const auto result = CreateVector2KeyFrameAnimation(0.442857146F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.557142854F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            const auto result = CreateVector2KeyFrameAnimation(0.554545462F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.627272725F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
@@ -2837,10 +2926,10 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 13
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_13()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_09()
         {
-            const auto result = CreateVector2KeyFrameAnimation(0.300000012F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.442857146F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            const auto result = CreateVector2KeyFrameAnimation(0.463636369F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.554545462F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
@@ -2848,17 +2937,17 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 1
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_14()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_10()
         {
-            const auto result = CreateVector2KeyFrameAnimation(0.285714298F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.571428597F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            const auto result = CreateVector2KeyFrameAnimation(0.454545468F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.636363626F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_15()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_11()
         {
-            const auto result = _shapeVisibilityAnimation_15 = CreateVector2KeyFrameAnimation(0.22857143F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.285714298F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            const auto result = _shapeVisibilityAnimation_11 = CreateVector2KeyFrameAnimation(0.236363634F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.472727269F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
@@ -2866,10 +2955,10 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // - - Transforms for TB - Start - 02 - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 26
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_16()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_12()
         {
-            const auto result = CreateVector2KeyFrameAnimation(0.200000003F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.285714298F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            const auto result = CreateVector2KeyFrameAnimation(0.218181819F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.454545468F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
@@ -2877,17 +2966,17 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // - - Transforms for TB - Start - 02 - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 27
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_17()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_13()
         {
-            const auto result = CreateVector2KeyFrameAnimation(0.214285716F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.285714298F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            const auto result = CreateVector2KeyFrameAnimation(0.227272734F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.463636369F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_18()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_14()
         {
-            const auto result = _shapeVisibilityAnimation_18 = CreateVector2KeyFrameAnimation(0.142857149F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.22857143F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            const auto result = _shapeVisibilityAnimation_14 = CreateVector2KeyFrameAnimation(0.145454541F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.236363634F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
@@ -2895,10 +2984,10 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // - - Transforms for TB - Start - 02 - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 22
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_19()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_15()
         {
-            const auto result = CreateVector2KeyFrameAnimation(0.142857149F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.200000003F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            const auto result = CreateVector2KeyFrameAnimation(0.127272725F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.218181819F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
@@ -2906,17 +2995,46 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // - - Transforms for TB - Start - 02 - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 23
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_20()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_16()
         {
-            const auto result = CreateVector2KeyFrameAnimation(0.142857149F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.214285716F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            const auto result = CreateVector2KeyFrameAnimation(0.13636364F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.227272734F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_21()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_17()
         {
-            const auto result = _shapeVisibilityAnimation_21 = CreateVector2KeyFrameAnimation(0.171428576F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.285714298F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            const auto result = _shapeVisibilityAnimation_17 = CreateVector2KeyFrameAnimation(0.272727281F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.400000006F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            return result;
+        }
+
+        // - - - PreComp layer: TB - Start - 02 - Normal to Pressed
+        // - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - Layer aggregator
+        // Layer: Layer 15
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_18()
+        {
+            const auto result = CreateVector2KeyFrameAnimation(0.25454545F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.381818175F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            return result;
+        }
+
+        // - - - PreComp layer: TB - Start - 02 - Normal to Pressed
+        // - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - Layer aggregator
+        // Layer: Layer 14
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_19()
+        {
+            const auto result = CreateVector2KeyFrameAnimation(0.281818181F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.409090906F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            return result;
+        }
+
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_20()
+        {
+            const auto result = _shapeVisibilityAnimation_20 = CreateVector2KeyFrameAnimation(0.200000003F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.272727281F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
@@ -2924,10 +3042,10 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // - - Transforms for TB - Start - 02 - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 18
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_22()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_21()
         {
-            const auto result = CreateVector2KeyFrameAnimation(0.142857149F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.285714298F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            const auto result = CreateVector2KeyFrameAnimation(0.181818187F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.25454545F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
@@ -2935,10 +3053,30 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         // - - Transforms for TB - Start - 02 - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 19
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_22()
+        {
+            const auto result = CreateVector2KeyFrameAnimation(0.190909088F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.263636351F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            return result;
+        }
+
+        // - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 13
         Vector2KeyFrameAnimation ShapeVisibilityAnimation_23()
         {
-            const auto result = CreateVector2KeyFrameAnimation(0.157142863F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.285714298F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            const auto result = CreateVector2KeyFrameAnimation(0.0909090936F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            return result;
+        }
+
+        // - - PreComp layer: TB - Start - 01 - NormalToHover
+        // - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // Offset(-3.861,-4.002,0)
+        // Layer: Layer 1
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_24()
+        {
+            const auto result = CreateVector2KeyFrameAnimation(0.181818187F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
@@ -2948,7 +3086,7 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         }
 
     public:
-        TB_01_Start_2__AnimatedVisual(
+        TB_01_Start_1__AnimatedVisual(
             Compositor compositor,
             CompositionPropertySet themeProperties)
             : _c{compositor}
@@ -2977,7 +3115,7 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return _root;
         }
 
-        float2 Size() const
+        winrt::float2 Size() const
         {
             return { 24.0F, 24.0F };
         }
@@ -2988,12 +3126,12 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         }
     };
 
-    float4 TB_01_Start_2_::ColorAsVector4(Color color)
+    winrt::float4 TB_01_Start_1_::ColorAsVector4(Color color)
     {
         return { static_cast<float>(color.R), static_cast<float>(color.G), static_cast<float>(color.B), static_cast<float>(color.A) };
     }
 
-    CompositionPropertySet TB_01_Start_2_::EnsureThemeProperties(Compositor compositor)
+    CompositionPropertySet TB_01_Start_1_::EnsureThemeProperties(Compositor compositor)
     {
         if (_themeProperties == nullptr)
         {
@@ -3004,12 +3142,12 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         return _themeProperties;
     }
 
-    Color TB_01_Start_2_::Foreground()
+    Color TB_01_Start_1_::Foreground()
     {
         return _themeForeground;
     }
 
-    void TB_01_Start_2_::Foreground(Color value)
+    void TB_01_Start_1_::Foreground(Color value)
     {
         _themeForeground = value;
         if (_themeProperties != nullptr)
@@ -3018,48 +3156,49 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         }
     }
 
-    winrt::Microsoft::UI::Xaml::Controls::IAnimatedVisual TB_01_Start_2_::TryCreateAnimatedVisual(
+    winrt::Microsoft::UI::Xaml::Controls::IAnimatedVisual TB_01_Start_1_::TryCreateAnimatedVisual(
         Compositor const& compositor,
         IInspectable& diagnostics)
     {
         const auto _ = EnsureThemeProperties(compositor);
         diagnostics = nullptr;
 
-        if (TB_01_Start_2__AnimatedVisual::IsRuntimeCompatible())
+        if (TB_01_Start_1__AnimatedVisual::IsRuntimeCompatible())
         {
-            return winrt::make<TB_01_Start_2__AnimatedVisual>(compositor, _themeProperties);
+            return winrt::make<TB_01_Start_1__AnimatedVisual>(compositor, _themeProperties);
         }
 
         return nullptr;
     }
 
-    double TB_01_Start_2_::FrameToProgress(double frameNumber)
+    double TB_01_Start_1_::FrameToProgress(double frameNumber)
     {
-        return frameNumber / 70.0;
+        return frameNumber / 110.0;
     }
 
-    winrt::Windows::Foundation::Collections::IMapView<hstring, double> TB_01_Start_2_::Markers()
+    winrt::Windows::Foundation::Collections::IMapView<hstring, double> TB_01_Start_1_::Markers()
     {
         return winrt::single_threaded_map<winrt::hstring, double>(
             std::map<winrt::hstring, double>
             {
                 { L"NormalToHover_Start", 0.0 },
-                { L"NormalToHover_End", 0.128571428571429 },
-                { L"NormalToPressed_Start", 0.142857142857143 },
-                { L"NormalToPressed_End", 0.271428571428571 },
-                { L"HoverToNormal_Start", 0.285714285714286 },
-                { L"HoverToNormal_End", 0.414285714285714 },
-                { L"HoverToPressed_Start", 0.428571428571429 },
-                { L"HoverToPressed_End", 0.557142857142857 },
-                { L"PressedToNormal_Start", 0.571428571428571 },
-                { L"PressedToNormal_End", 0.7 },
-                { L"PressedToHover_Start", 0.714285714285714 },
-                { L"PressedToHover_End", 0.985714285714286 },
+                { L"NormalToHover_End", 0.172727272727273 },
+                { L"NormalToPressed_Start", 0.181818181818182 },
+                { L"NormalToPressed_End", 0.445454545454545 },
+                { L"HoverToNormal_Start", 0.454545454545455 },
+                { L"HoverToNormal_End", 0.536363636363636 },
+                { L"HoverToPressed_Start", 0.545454545454545 },
+                { L"HoverToPressed_End", 0.609090909090909 },
+                { L"PressedToNormal_Start", 0.818181818181818 },
+                { L"PressedToNormal_End", 0.9 },
+                { L"PressedToHover_Start", 0.609990909090909 },
+                //{ L"PressedToHover_Start", 0.909090909090909 },
+                { L"PressedToHover_End", 0.809090909090909 },
             }
         ).GetView();
     }
 
-    void TB_01_Start_2_::SetColorProperty(hstring const& propertyName, Color value)
+    void TB_01_Start_1_::SetColorProperty(hstring const& propertyName, Color value)
     {
         if (propertyName == L"Foreground")
         {
@@ -3076,7 +3215,7 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         }
     }
 
-    void TB_01_Start_2_::SetScalarProperty(hstring const&, double)
+    void TB_01_Start_1_::SetScalarProperty(hstring const&, double)
     {
     }
-} // end namespace
+//} // end namespace

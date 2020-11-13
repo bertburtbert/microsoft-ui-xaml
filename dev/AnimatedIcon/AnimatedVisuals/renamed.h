@@ -7,10 +7,10 @@
 //           7.0.0-build.57+g2cc4f0c931
 //       
 //       Command:
-//           LottieGen -Language Cppwinrt -Namespace MU_XC_NAMESPACE -InputFile TB_01_Start (1).json
+//           LottieGen -Language Cppwinrt -Namespace MU_XC_NAMESPACE -InputFile TB_01_Start.json
 //       
 //       Input file:
-//           TB_01_Start (1).json (66389 bytes created 22:57-08:00 Nov 9 2020)
+//           TB_01_Start.json (65511 bytes created 22:56-08:00 Nov 9 2020)
 //       
 //       LottieGen source:
 //           http://aka.ms/Lottie
@@ -19,40 +19,34 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-//REPLACED #include "MU_XC_NAMESPACE.TB_01_Start_1_.g.h"
 #include "common.h"
 #include "TB_01_Start_1_.g.h"
 
-//namespace winrt::MU_XC_NAMESPACE
-//{
     // Name:        TB_01_Start
     // Frame rate:  60 fps
-    // Frame count: 110
-    // Duration:    1833.3 mS
+    // Frame count: 70
+    // Duration:    1166.7 mS
     // ___________________________________________________________________________________
     // |        Marker         |        Constant         | Frame |   mS   |   Progress   |
     // |_______________________|_________________________|_______|________|______________|
     // | NormalToHover_Start   | M_NormalToHover_Start   |   0.0 |    0.0 | 0.0F         |
-    // | NormalToHover_End     | M_NormalToHover_End     |  19.0 |  316.7 | 0.172727272F |
-    // | NormalToPressed_Start | M_NormalToPressed_Start |  20.0 |  333.3 | 0.181818187F |
-    // | NormalToPressed_End   | M_NormalToPressed_End   |  49.0 |  816.7 | 0.445454538F |
-    // | HoverToNormal_Start   | M_HoverToNormal_Start   |  50.0 |  833.3 | 0.454545468F |
-    // | HoverToNormal_End     | M_HoverToNormal_End     |  59.0 |  983.3 | 0.536363661F |
-    // | HoverToPressed_Start  | M_HoverToPressed_Start  |  60.0 | 1000.0 | 0.545454562F |
-    // | HoverToPressed_End    | M_HoverToPressed_End    |  89.0 | 1483.3 | 0.809090912F |
-    // | PressedToNormal_Start | M_PressedToNormal_Start |  90.0 | 1500.0 | 0.818181813F |
-    // | PressedToNormal_End   | M_PressedToNormal_End   |  99.0 | 1650.0 | 0.899999976F |
-    // | PressedToHover_Start  | M_PressedToHover_Start  | 100.0 | 1666.7 | 0.909090936F |
-    // | PressedToHover_End    | M_PressedToHover_End    | 109.0 | 1816.7 | 0.9909091F   |
+    // | NormalToHover_End     | M_NormalToHover_End     |   9.0 |  150.0 | 0.128571436F |
+    // | NormalToPressed_Start | M_NormalToPressed_Start |  10.0 |  166.7 | 0.142857149F |
+    // | NormalToPressed_End   | M_NormalToPressed_End   |  19.0 |  316.7 | 0.271428585F |
+    // | HoverToNormal_Start   | M_HoverToNormal_Start   |  20.0 |  333.3 | 0.285714298F |
+    // | HoverToNormal_End     | M_HoverToNormal_End     |  29.0 |  483.3 | 0.414285719F |
+    // | HoverToPressed_Start  | M_HoverToPressed_Start  |  30.0 |  500.0 | 0.428571433F |
+    // | HoverToPressed_End    | M_HoverToPressed_End    |  39.0 |  650.0 | 0.557142854F |
+    // | PressedToNormal_Start | M_PressedToNormal_Start |  40.0 |  666.7 | 0.571428597F |
+    // | PressedToNormal_End   | M_PressedToNormal_End   |  49.0 |  816.7 | 0.699999988F |
+    // | PressedToHover_Start  | M_PressedToHover_Start  |  50.0 |  833.3 | 0.714285731F |
+    // | PressedToHover_End    | M_PressedToHover_End    |  69.0 | 1150.0 | 0.985714257F |
     // -----------------------------------------------------------------------------------
     // _________________________________________________________
     // | Theme property |  Accessor  | Type  |  Default value  |
     // |________________|____________|_______|_________________|
     // | Foreground     | Foreground | Color | #FF000000 Black |
     // ---------------------------------------------------------
-    //namespace implementation
-    //{
         class TB_01_Start_1_
             : public winrt::implementation::TB_01_Start_1_T<TB_01_Start_1_>
         {
@@ -62,44 +56,44 @@
 
             static winrt::Windows::Foundation::Numerics::float4 ColorAsVector4(winrt::Windows::UI::Color color);
         public:
-            // Animation duration: 1.833 seconds.
-            static constexpr int64_t c_durationTicks{ 18333333L };
+            // Animation duration: 1.167 seconds.
+            static constexpr int64_t c_durationTicks{ 11666666L };
 
             // Marker: NormalToHover_Start.
             static constexpr float M_NormalToHover_Start{ 0.0F };
 
             // Marker: NormalToHover_End.
-            static constexpr float M_NormalToHover_End{ 0.172727272F };
+            static constexpr float M_NormalToHover_End{ 0.128571436F };
 
             // Marker: NormalToPressed_Start.
-            static constexpr float M_NormalToPressed_Start{ 0.181818187F };
+            static constexpr float M_NormalToPressed_Start{ 0.142857149F };
 
             // Marker: NormalToPressed_End.
-            static constexpr float M_NormalToPressed_End{ 0.445454538F };
+            static constexpr float M_NormalToPressed_End{ 0.271428585F };
 
             // Marker: HoverToNormal_Start.
-            static constexpr float M_HoverToNormal_Start{ 0.454545468F };
+            static constexpr float M_HoverToNormal_Start{ 0.285714298F };
 
             // Marker: HoverToNormal_End.
-            static constexpr float M_HoverToNormal_End{ 0.536363661F };
+            static constexpr float M_HoverToNormal_End{ 0.414285719F };
 
             // Marker: HoverToPressed_Start.
-            static constexpr float M_HoverToPressed_Start{ 0.545454562F };
+            static constexpr float M_HoverToPressed_Start{ 0.428571433F };
 
             // Marker: HoverToPressed_End.
-            static constexpr float M_HoverToPressed_End{ 0.809090912F };
+            static constexpr float M_HoverToPressed_End{ 0.557142854F };
 
             // Marker: PressedToNormal_Start.
-            static constexpr float M_PressedToNormal_Start{ 0.818181813F };
+            static constexpr float M_PressedToNormal_Start{ 0.571428597F };
 
             // Marker: PressedToNormal_End.
-            static constexpr float M_PressedToNormal_End{ 0.899999976F };
+            static constexpr float M_PressedToNormal_End{ 0.699999988F };
 
             // Marker: PressedToHover_Start.
-            static constexpr float M_PressedToHover_Start{ 0.909090936F };
+            static constexpr float M_PressedToHover_Start{ 0.714285731F };
 
             // Marker: PressedToHover_End.
-            static constexpr float M_PressedToHover_End{ 0.9909091F };
+            static constexpr float M_PressedToHover_End{ 0.985714257F };
 
             // Theme property: Foreground.
             static inline const winrt::Windows::UI::Color c_themeForeground{ 0xFF, 0x00, 0x00, 0x00 };
@@ -126,12 +120,3 @@
             // exists.
             void SetScalarProperty(winrt::hstring const& propertyName, double value);
         };
-//    }
-//
-//    namespace factory_implementation
-//    {
-//        struct TB_01_Start_1_ : TB_01_Start_1_T<TB_01_Start_1_, implementation::TB_01_Start_1_>
-//        {
-//        };
-//    }
-//}

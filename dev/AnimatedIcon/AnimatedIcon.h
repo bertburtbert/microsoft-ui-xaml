@@ -38,6 +38,7 @@ public:
     void SetAnimationQueueBehavior(winrt::AnimatedIconAnimationQueueBehavior behavior);
 private:
     void TransitionStates(const winrt::hstring& fromState, const winrt::hstring& toState);
+    void PlaySegment(float from, float to, float playbackMultiplier = 1.0f);
     void OnAnimationCompleted(winrt::IInspectable const&, winrt::CompositionBatchCompletedEventArgs const&);
     tracker_ref<winrt::IAnimatedVisual> m_animatedVisual{ this };
     tracker_ref<winrt::Grid> m_rootGrid{ this };
@@ -46,6 +47,7 @@ private:
     winrt::hstring m_previousState{ L"" };
     winrt::hstring m_queuedState{ L"" };
     bool m_isPlaying{ false };
+    float m_currentSegmentLength{ 1.0f };
 
 
     winrt::Composition::CompositionPropertySet m_progressPropertySet{ nullptr };

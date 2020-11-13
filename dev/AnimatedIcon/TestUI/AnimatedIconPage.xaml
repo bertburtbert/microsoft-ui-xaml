@@ -44,15 +44,30 @@
                     </local:AnimatedIconHost>
                     <TextBlock Text="Queue Behavior" HorizontalAlignment="Center"/>
                 </StackPanel>
+                <StackPanel>
+                    <local:AnimatedIconHost x:Name="SpeedUpQueueIcon" Background="DarkSlateGray">
+                        <local:AnimatedIconHost.IconSource>
+                            <controls:AnimatedIconSource>
+                                <controls:AnimatedIconSource.Source>
+                                    <controls:TB_01_Start_1_/>
+                                </controls:AnimatedIconSource.Source>
+                            </controls:AnimatedIconSource>
+                        </local:AnimatedIconHost.IconSource>
+                    </local:AnimatedIconHost>
+                    <TextBlock Text="Speed Up Queue Behavior" HorizontalAlignment="Center"/>
+                </StackPanel>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" Background="Gray" Width="250" Height="250">
-                <Slider x:Name="Slider" Minimum="0" Maximum="100" Width="100" Value="{x:Bind Mode=TwoWay, Path=SliderIcon.(controls:AnimatedIcon.State), Converter={StaticResource DoubleToStringConverter}}"/>
-                <controls:AnimatedIcon x:Name="SliderIcon" Height="10" Width="10">
-                    <controls:AnimatedIcon.Source>
-                        <local:MockIRichAnimatedIconSource/>
-                    </controls:AnimatedIcon.Source>
-                </controls:AnimatedIcon>
+                <Slider x:Name="Slider" Minimum="0" Maximum="100" Width="100" Value="{x:Bind Mode=TwoWay, Path=SliderIcon.(controls:AnimatedIcon.State), Converter={StaticResource DoubleToStringConverter}}">
+                    <Slider.Header>
+                        <controls:AnimatedIcon x:Name="SliderIcon" Height="100" Width="100">
+                            <controls:AnimatedIcon.Source>
+                                <local:MockIRichAnimatedIconSource/>
+                            </controls:AnimatedIcon.Source>
+                        </controls:AnimatedIcon>
+                    </Slider.Header>
+                </Slider>
             </StackPanel>
         </StackPanel>
     </Grid>

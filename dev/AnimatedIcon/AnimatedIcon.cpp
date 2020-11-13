@@ -143,6 +143,19 @@ void AnimatedIcon::OnStatePropertyChanged()
         if (m_isPlaying)
         {
             m_queuedState = toState;
+            //Cancel the previous animation completed handler, before we cancel that animation by starting a new one.
+            if (m_batch)
+            {
+                m_batch.Completed(m_batchCompletedToken);
+                m_batchCompletedToken = { 0 };
+            }
+            auto const markers = Source().Markers();
+            winrt::hstring transitionEndName = m_previousState + L"To" + m_currentState + L"_End";
+            auto const hasEndMarker = markers.HasKey(transitionEndName);
+            if (hasEndMarker)
+            {
+                PlaySegment(NAN, static_cast<float>(markers.Lookup(transitionEndName)), 7.0f);
+            }
         }
         else
         {
@@ -163,43 +176,13 @@ void AnimatedIcon::TransitionStates(const winrt::hstring& fromState, const winrt
     winrt::hstring transitionEndName = fromState + L"To" + toState + L"_End";
     winrt::hstring transitionName = fromState + L"To" + toState;
 
-    if (markers.HasKey(transitionStartName))
+    auto const hasStartMarker = markers.HasKey(transitionStartName);
+    auto const hasEndMarker = markers.HasKey(transitionEndName);
+    if (hasStartMarker && hasEndMarker)
     {
         auto const fromProgress = static_cast<float>(markers.Lookup(transitionStartName));
-        m_progressPropertySet.InsertScalar(L"Progress", fromProgress);
-
-        if (markers.HasKey(transitionEndName))
-        {
-            auto const toProgress = static_cast<float>(markers.Lookup(transitionEndName));
-            auto const segmentLength = std::abs(toProgress - fromProgress);
-            m_progressPropertySet.InsertScalar(L"Progress", toProgress);
-
-            auto compositor = m_progressPropertySet.Compositor();
-            auto animation = compositor.CreateScalarKeyFrameAnimation();
-            animation.Duration(std::chrono::duration_cast<winrt::TimeSpan>(m_animatedVisual.get().Duration() * segmentLength));
-            auto linearEasing = compositor.CreateLinearEasingFunction();
-
-            // Play from fromProgress.
-            animation.InsertKeyFrame(0, fromProgress);
-
-            // Play to toProgress
-            animation.InsertKeyFrame(1, toProgress, linearEasing);
-
-            animation.IterationBehavior(winrt::AnimationIterationBehavior::Count);
-            animation.IterationCount(1);
-
-            if (m_batch)
-            {
-                m_batch.Completed(m_batchCompletedToken);
-                m_batchCompletedToken = { 0 };
-            }
-            m_batch = compositor.CreateScopedBatch(winrt::CompositionBatchTypes::Animation);
-            m_batchCompletedToken = m_batch.Completed({ this, &AnimatedIcon::OnAnimationCompleted });
-
-            m_isPlaying = true;
-            m_progressPropertySet.StartAnimation(L"Progress", animation);
-            m_batch.End();
-        }
+        auto const toProgress = static_cast<float>(markers.Lookup(transitionEndName));
+        PlaySegment(fromProgress, toProgress);
     }
     else if (markers.HasKey(transitionEndName))
     {
@@ -212,6 +195,7 @@ void AnimatedIcon::TransitionStates(const winrt::hstring& fromState, const winrt
         m_progressPropertySet.InsertScalar(L"Progress", toProgress);
     }
 
+    // Hack to support slider scenario.
     if (auto const rich2 = Source().try_as<winrt::IRichAnimatedVisualSource2>())
     {
         auto const progress = rich2.GetPositionFromMarker(toState);
@@ -220,6 +204,49 @@ void AnimatedIcon::TransitionStates(const winrt::hstring& fromState, const winrt
             m_progressPropertySet.InsertScalar(L"Progress", static_cast<float>(progress));
         }
     }
+}
+
+void AnimatedIcon::PlaySegment(float from, float to, float playbackMultiplier)
+{
+    auto const segmentLength = [from, to, previousSegmentLength = m_currentSegmentLength]()
+    {
+        if (std::isnan(from))
+        {
+            return previousSegmentLength;
+        }
+        return std::abs(to - from);
+    }();
+
+    auto compositor = m_progressPropertySet.Compositor();
+    auto animation = compositor.CreateScalarKeyFrameAnimation();
+    animation.Duration(std::chrono::duration_cast<winrt::TimeSpan>(m_animatedVisual.get().Duration() * segmentLength * (1.0 / playbackMultiplier)));
+    auto linearEasing = compositor.CreateLinearEasingFunction();
+
+    // Play from fromProgress.
+    if (!std::isnan(from))
+    {
+        //m_progressPropertySet.InsertScalar(L"Progress", from);
+        animation.InsertKeyFrame(0, from);
+    }
+
+    // Play to toProgress
+    animation.InsertKeyFrame(1, to, linearEasing);
+
+    animation.IterationBehavior(winrt::AnimationIterationBehavior::Count);
+    animation.IterationCount(1);
+
+    if (m_batch)
+    {
+        m_batch.Completed(m_batchCompletedToken);
+        m_batchCompletedToken = { 0 };
+    }
+    m_batch = compositor.CreateScopedBatch(winrt::CompositionBatchTypes::Animation);
+    m_batchCompletedToken = m_batch.Completed({ this, &AnimatedIcon::OnAnimationCompleted });
+
+    m_isPlaying = true;
+    m_currentSegmentLength = segmentLength;
+    m_progressPropertySet.StartAnimation(L"Progress", animation);
+    m_batch.End();
 }
 
 void AnimatedIcon::OnSourcePropertyChanged(const winrt::DependencyPropertyChangedEventArgs& args)
@@ -262,6 +289,7 @@ void AnimatedIcon::OnAnimationCompleted(winrt::IInspectable const&, winrt::Compo
         m_batchCompletedToken = { 0 };
     }
     m_isPlaying = false;
+    m_currentSegmentLength = 1.0f;
     switch (m_queueBehavior)
     {
     case winrt::AnimatedIconAnimationQueueBehavior::Cut:
@@ -276,6 +304,13 @@ void AnimatedIcon::OnAnimationCompleted(winrt::IInspectable const&, winrt::Compo
         }
         break;
     case winrt::AnimatedIconAnimationQueueBehavior::SpeedUpQueueOne:
+        if (!m_queuedState.empty())
+        {
+            TransitionStates(m_currentState, m_queuedState);
+            m_previousState = m_currentState;
+            m_currentState = m_queuedState;
+            m_queuedState = L"";
+        }
         break;
     }
 }

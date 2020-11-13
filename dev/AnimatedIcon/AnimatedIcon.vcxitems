@@ -20,6 +20,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisuals\AnimatedVisuals.Controls_02_UpDown_Dropdown.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisuals\AnimatedVisuals.Controls_09_Hamburger.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisuals\MU_XC_NAMESPACE.TB_01_Start_1_.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisuals\MU_XC_NAMESPACE.TB_Start.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisualWrappers\DropDownWrapper.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)HamburgerWrapper.h" />
   </ItemGroup>
@@ -30,6 +31,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisuals\AnimatedVisuals.Controls_02_UpDown_Dropdown.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisuals\AnimatedVisuals.Controls_09_Hamburger.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisuals\MU_XC_NAMESPACE.TB_01_Start_1_.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisuals\MU_XC_NAMESPACE.TB_Start.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisualWrappers\DropDownWrapper.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)HamburgerWrapper.cpp" />
   </ItemGroup>
@@ -49,6 +51,7 @@
     <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisuals\AnimatedVisuals.Controls_02_UpDown_Dropdown.idl" />
     <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisuals\AnimatedVisuals.Controls_09_Hamburger.idl" />
     <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisuals\MU_XC_NAMESPACE.TB_01_Start_1_.idl" />
+    <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisuals\MU_XC_NAMESPACE.TB_Start.idl" />
     <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisualWrappers\DropDownWrapper.idl" />
     <Midl Include="$(MSBuildThisFileDirectory)HamburgerWrapper.idl" />
   </ItemGroup>

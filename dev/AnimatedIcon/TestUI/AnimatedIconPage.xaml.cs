@@ -27,6 +27,7 @@ namespace MUXControlsTestApp
         private void AnimatedIconPage_Loaded(object sender, RoutedEventArgs e)
         {
             AnimatedIconTestHooks.SetAnimationQueueBehavior(this.QueueIcon.GetAnimatedIcon(), AnimatedIconAnimationQueueBehavior.QueueOne);
+            AnimatedIconTestHooks.SetAnimationQueueBehavior(this.SpeedUpQueueIcon.GetAnimatedIcon(), AnimatedIconAnimationQueueBehavior.SpeedUpQueueOne);
         }
     }
 }
