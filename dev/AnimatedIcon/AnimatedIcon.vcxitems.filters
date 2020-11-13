@@ -19,6 +19,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisuals\MU_XC_NAMESPACE.TB_01_Start_1_.cpp">
       <Filter>AnimatedVisuals</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisuals\MU_XC_NAMESPACE.TB_Start.cpp">
+      <Filter>AnimatedVisuals</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedIcon.h" />
@@ -38,6 +41,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisuals\MU_XC_NAMESPACE.TB_01_Start_1_.h">
       <Filter>AnimatedVisuals</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisuals\MU_XC_NAMESPACE.TB_Start.h">
+      <Filter>AnimatedVisuals</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Midl Include="$(MSBuildThisFileDirectory)AnimatedIcon.idl" />
@@ -55,6 +61,9 @@
     </Midl>
     <Midl Include="$(MSBuildThisFileDirectory)AnimatedIconTestHooks.idl" />
     <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisuals\MU_XC_NAMESPACE.TB_01_Start_1_.idl">
+      <Filter>AnimatedVisuals</Filter>
+    </Midl>
+    <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisuals\MU_XC_NAMESPACE.TB_Start.idl">
       <Filter>AnimatedVisuals</Filter>
     </Midl>
   </ItemGroup>
