@@ -20,8 +20,10 @@
 //------------------------------------------------------------------------------
 namespace MU_XC_NAMESPACE
 {
+    [WUXC_VERSION_PREVIEW]
+    [webhosthidden]
     runtimeclass TB_Start
-        : [default] Microsoft.UI.Xaml.Controls.IAnimatedVisualSource
+        : [default] Microsoft.UI.Xaml.Controls.IAnimatedVisualSource, Microsoft.UI.Xaml.Controls.IRichAnimatedVisualSource
     {
         TB_Start();
     };

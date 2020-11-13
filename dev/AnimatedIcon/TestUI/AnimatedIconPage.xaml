@@ -25,7 +25,7 @@
                         <local:AnimatedIconHost.IconSource>
                             <controls:AnimatedIconSource>
                                 <controls:AnimatedIconSource.Source>
-                                    <controls:TB_01_Start_1_/>
+                                    <controls:TB_Start/>
                                 </controls:AnimatedIconSource.Source>
                             </controls:AnimatedIconSource>
                         </local:AnimatedIconHost.IconSource>
@@ -37,7 +37,7 @@
                         <local:AnimatedIconHost.IconSource>
                             <controls:AnimatedIconSource>
                                 <controls:AnimatedIconSource.Source>
-                                    <controls:TB_01_Start_1_/>
+                                    <controls:TB_Start/>
                                 </controls:AnimatedIconSource.Source>
                             </controls:AnimatedIconSource>
                         </local:AnimatedIconHost.IconSource>
@@ -49,7 +49,7 @@
                         <local:AnimatedIconHost.IconSource>
                             <controls:AnimatedIconSource>
                                 <controls:AnimatedIconSource.Source>
-                                    <controls:TB_01_Start_1_/>
+                                    <controls:TB_Start/>
                                 </controls:AnimatedIconSource.Source>
                             </controls:AnimatedIconSource>
                         </local:AnimatedIconHost.IconSource>

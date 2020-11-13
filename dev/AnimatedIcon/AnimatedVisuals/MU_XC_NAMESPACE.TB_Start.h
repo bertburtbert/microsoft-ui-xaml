@@ -19,10 +19,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-#include "MU_XC_NAMESPACE.TB_Start.g.h"
+#include "common.h"
+#include "TB_Start.g.h"
 
-namespace winrt::MU_XC_NAMESPACE
-{
     // Name:        TB_01_Start
     // Frame rate:  60 fps
     // Frame count: 70
@@ -48,10 +47,8 @@ namespace winrt::MU_XC_NAMESPACE
     // |________________|____________|_______|_________________|
     // | Foreground     | Foreground | Color | #FF000000 Black |
     // ---------------------------------------------------------
-    namespace implementation
-    {
         class TB_Start
-            : public TB_StartT<TB_Start>
+            : public winrt::implementation::TB_StartT<TB_Start>
         {
             winrt::Windows::UI::Composition::CompositionPropertySet _themeProperties{ nullptr };
             winrt::Windows::UI::Color _themeForeground{ 0xFF, 0x00, 0x00, 0x00 };
@@ -123,12 +120,3 @@ namespace winrt::MU_XC_NAMESPACE
             // exists.
             void SetScalarProperty(hstring const& propertyName, double value);
         };
-    }
-
-    namespace factory_implementation
-    {
-        struct TB_Start : TB_StartT<TB_Start, implementation::TB_Start>
-        {
-        };
-    }
-}

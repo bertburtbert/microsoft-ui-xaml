@@ -45,21 +45,12 @@
 // ------------------------------------
 #include "pch.h"
 #include "MU_XC_NAMESPACE.TB_Start.h"
-#include "MU_XC_NAMESPACE.TB_Start.g.cpp"
 #include <winrt/Windows.Foundation.Metadata.h>
 #include <winrt/Windows.UI.Composition.h>
 #include "d2d1.h"
 #include <d2d1_1.h>
 #include <d2d1helper.h>
 #include <Windows.Graphics.Interop.h>
-#ifdef BUILD_WINDOWS
-namespace ABI
-{
-#include <Windows.Graphics.Effects.Interop.h>
-}
-#else
-#include <Windows.Graphics.Effects.Interop.h>
-#endif
 #include <winrt/Windows.Graphics.Effects.h>
 
 using namespace winrt::Windows::Foundation;
@@ -69,11 +60,15 @@ using namespace winrt::Windows::UI;
 using namespace winrt::Windows::UI::Composition;
 using TimeSpan = winrt::Windows::Foundation::TimeSpan;
 
-namespace winrt::MU_XC_NAMESPACE::implementation
+namespace winrt::Microsoft::UI::Xaml::Controls
 {
+    CppWinRTActivatableClassWithBasicFactory(TB_Start);
+}
+#include "TB_Start.g.cpp"
+
     class CanvasGeometry : public winrt::implements<CanvasGeometry,
         IGeometrySource2D,
-        ::ABI::Windows::Graphics::IGeometrySource2DInterop>
+        Windows::Graphics::IGeometrySource2DInterop>
     {
         winrt::com_ptr<ID2D1Geometry> _geometry{ nullptr };
 
@@ -208,7 +203,7 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        Vector2KeyFrameAnimation CreateVector2KeyFrameAnimation(float initialProgress, float2 initialValue, CompositionEasingFunction initialEasingFunction)
+        Vector2KeyFrameAnimation CreateVector2KeyFrameAnimation(float initialProgress, winrt::float2 initialValue, CompositionEasingFunction initialEasingFunction)
         {
             const auto result = _c.CreateVector2KeyFrameAnimation();
             result.Duration(TimeSpan{ c_durationTicks });
@@ -216,7 +211,7 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return result;
         }
 
-        CompositionSpriteShape CreateSpriteShape(CompositionGeometry geometry, float3x2 transformMatrix, CompositionBrush fillBrush)
+        CompositionSpriteShape CreateSpriteShape(CompositionGeometry geometry, winrt::float3x2 transformMatrix, CompositionBrush fillBrush)
         {
             const auto result = _c.CreateSpriteShape(geometry);
             result.TransformMatrix(transformMatrix);
@@ -3013,7 +3008,7 @@ namespace winrt::MU_XC_NAMESPACE::implementation
             return _root;
         }
 
-        float2 Size() const
+        winrt::float2 Size() const
         {
             return { 24.0F, 24.0F };
         }
@@ -3024,7 +3019,7 @@ namespace winrt::MU_XC_NAMESPACE::implementation
         }
     };
 
-    float4 TB_Start::ColorAsVector4(Color color)
+    winrt::float4 TB_Start::ColorAsVector4(Color color)
     {
         return { static_cast<float>(color.R), static_cast<float>(color.G), static_cast<float>(color.B), static_cast<float>(color.A) };
     }
@@ -3115,4 +3110,3 @@ namespace winrt::MU_XC_NAMESPACE::implementation
     void TB_Start::SetScalarProperty(hstring const&, double)
     {
     }
-} // end namespace
