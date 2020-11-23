@@ -119,7 +119,7 @@
 
                             <local:AnimatedIcon x:Name="ChevronIcon" Margin="6,0,0,0" VerticalAlignment="Center" Grid.Column="1" MaxHeight="20" MinHeight="20">
                                 <local:AnimatedIcon.Source>
-                                    <local:DropDownWrapper/>
+                                    <local:Controls_02_UpDown_Dropdown/>
                                 </local:AnimatedIcon.Source>
                             </local:AnimatedIcon>
                         </Grid>

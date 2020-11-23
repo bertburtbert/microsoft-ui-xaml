@@ -379,7 +379,7 @@
 
                             <local:AnimatedIcon x:Name="Icon" AutomationProperties.AccessibilityView="Raw">
                                 <local:AnimatedIcon.Source>
-                                    <local:HamburgerWrapper/>
+                                    <local:Controls_09_Hamburger/>
                                 </local:AnimatedIcon.Source>
                             </local:AnimatedIcon>
                         </Viewbox>

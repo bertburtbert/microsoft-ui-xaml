@@ -7,10 +7,10 @@
 //           7.0.0-build.57+g2cc4f0c931
 //       
 //       Command:
-//           LottieGen -Language Cppwinrt -Namespace MU_XC_NAMESPACE -InputFile TB_01_Start.json
+//           LottieGen -Language Cppwinrt -Namespace MU_XC_NAMESPACE -InputFile Controls_01_Checkmark.json
 //       
 //       Input file:
-//           TB_01_Start.json (65511 bytes created 22:56-08:00 Nov 9 2020)
+//           Controls_01_Checkmark.json (10205 bytes created 11:08-08:00 Nov 18 2020)
 //       
 //       LottieGen source:
 //           http://aka.ms/Lottie
@@ -20,9 +20,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 #include "common.h"
-#include "TB_01_Start_1_.g.h"
+#include "Controls_01_Checkmark.g.h"
 
-    // Name:        TB_01_Start
+    // Name:        Controls_01_Checkmark
     // Frame rate:  60 fps
     // Frame count: 70
     // Duration:    1166.7 mS
@@ -47,8 +47,8 @@
     // |________________|____________|_______|_________________|
     // | Foreground     | Foreground | Color | #FF000000 Black |
     // ---------------------------------------------------------
-        class TB_01_Start_1_
-            : public winrt::implementation::TB_01_Start_1_T<TB_01_Start_1_>
+        class Controls_01_Checkmark
+            : public winrt::implementation::Controls_01_CheckmarkT<Controls_01_Checkmark>
         {
             winrt::Windows::UI::Composition::CompositionPropertySet _themeProperties{ nullptr };
             winrt::Windows::UI::Color _themeForeground{ 0xFF, 0x00, 0x00, 0x00 };
@@ -110,13 +110,13 @@
             double FrameToProgress(double frameNumber);
 
             // Returns a map from marker names to corresponding progress values.
-            winrt::Windows::Foundation::Collections::IMapView<winrt::hstring, double> Markers();
+            winrt::Windows::Foundation::Collections::IMapView<hstring, double> Markers();
 
             // Sets the color property with the given name, or does nothing if no such property
             // exists.
-            void SetColorProperty(winrt::hstring const& propertyName, winrt::Windows::UI::Color value);
+            void SetColorProperty(hstring const& propertyName, winrt::Windows::UI::Color value);
 
             // Sets the scalar property with the given name, or does nothing if no such property
             // exists.
-            void SetScalarProperty(winrt::hstring const& propertyName, double value);
+            void SetScalarProperty(hstring const& propertyName, double value);
         };

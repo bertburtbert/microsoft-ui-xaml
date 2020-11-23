@@ -6,10 +6,10 @@
 //           7.0.0-build.57+g2cc4f0c931
 //       
 //       Command:
-//           LottieGen -Language Cppwinrt -Namespace MU_XC_NAMESPACE -InputFile TB_01_Start.json
+//           LottieGen -Language Cppwinrt -Namespace MU_XC_NAMESPACE -InputFile TB_Start.json
 //       
 //       Input file:
-//           TB_01_Start.json (65511 bytes created 22:56-08:00 Nov 9 2020)
+//           TB_Start.json (65783 bytes created 10:53-08:00 Nov 13 2020)
 //       
 //       LottieGen source:
 //           http://aka.ms/Lottie
@@ -21,11 +21,11 @@
 // ____________________________________
 // |       Object stats       | Count |
 // |__________________________|_______|
-// | All CompositionObjects   |   591 |
+// | All CompositionObjects   |   607 |
 // |--------------------------+-------|
-// | Expression animators     |    89 |
-// | KeyFrame animators       |    64 |
-// | Reference parameters     |    89 |
+// | Expression animators     |    93 |
+// | KeyFrame animators       |    68 |
+// | Reference parameters     |    93 |
 // | Expression operations    |     4 |
 // |--------------------------+-------|
 // | Animated brushes         |    13 |
@@ -33,7 +33,7 @@
 // | ExpressionAnimations     |    26 |
 // | PathKeyFrameAnimations   |     - |
 // |--------------------------+-------|
-// | ContainerVisuals         |     9 |
+// | ContainerVisuals         |    11 |
 // | ShapeVisuals             |     6 |
 // |--------------------------+-------|
 // | ContainerShapes          |     6 |
@@ -44,7 +44,7 @@
 // | CompositionVisualSurface |     - |
 // ------------------------------------
 #include "pch.h"
-#include "MU_XC_NAMESPACE.TB_01_Start_1_.h"
+#include "TB_Start.h"
 #include <winrt/Windows.Foundation.Metadata.h>
 #include <winrt/Windows.UI.Composition.h>
 #include "d2d1.h"
@@ -62,11 +62,9 @@ using TimeSpan = winrt::Windows::Foundation::TimeSpan;
 
 namespace winrt::Microsoft::UI::Xaml::Controls
 {
-    CppWinRTActivatableClassWithBasicFactory(TB_01_Start_1_);
+    CppWinRTActivatableClassWithBasicFactory(TB_Start);
 }
-
-#include "TB_01_Start_1_.g.cpp"
-
+#include "TB_Start.g.cpp"
 
     class CanvasGeometry : public winrt::implements<CanvasGeometry,
         IGeometrySource2D,
@@ -95,7 +93,7 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return E_NOTIMPL;
         }
     };
-    class TB_01_Start_AnimatedVisual : public winrt::implements<TB_01_Start_AnimatedVisual,
+    class TB_Start_AnimatedVisual : public winrt::implements<TB_Start_AnimatedVisual,
             winrt::Microsoft::UI::Xaml::Controls::IAnimatedVisual,
             IClosable>
     {
@@ -135,21 +133,25 @@ namespace winrt::Microsoft::UI::Xaml::Controls
         CompositionPathGeometry _pathGeometry_6{ nullptr };
         ContainerVisual _root{ nullptr };
         CubicBezierEasingFunction _cubicBezierEasingFunction_0{ nullptr };
+        CubicBezierEasingFunction _cubicBezierEasingFunction_1{ nullptr };
         ExpressionAnimation _rootProgress{ nullptr };
         InsetClip _insetClip_0{ nullptr };
         ScalarKeyFrameAnimation _opacity0ScalarAnimation_0_to_255{ nullptr };
         ScalarKeyFrameAnimation _opacity0ScalarAnimation_255_to_0_0{ nullptr };
         ScalarKeyFrameAnimation _opacity0ScalarAnimation_255_to_0_1{ nullptr };
-        ScalarKeyFrameAnimation _scalarAnimation_0p6_to_0p48{ nullptr };
-        ScalarKeyFrameAnimation _scalarAnimation_0p48_to_0p6{ nullptr };
+        ScalarKeyFrameAnimation _scalarAnimation_0p6_to_0p48_0{ nullptr };
+        ScalarKeyFrameAnimation _scalarAnimation_0p6_to_0p48_1{ nullptr };
+        ScalarKeyFrameAnimation _scalarAnimation_0p48_to_0p6_0{ nullptr };
+        ScalarKeyFrameAnimation _scalarAnimation_0p48_to_0p6_1{ nullptr };
         StepEasingFunction _holdThenStepEasingFunction{ nullptr };
         StepEasingFunction _stepThenHoldEasingFunction{ nullptr };
         Vector2KeyFrameAnimation _shapeVisibilityAnimation_01{ nullptr };
         Vector2KeyFrameAnimation _shapeVisibilityAnimation_04{ nullptr };
+        Vector2KeyFrameAnimation _shapeVisibilityAnimation_09{ nullptr };
         Vector2KeyFrameAnimation _shapeVisibilityAnimation_10{ nullptr };
-        Vector2KeyFrameAnimation _shapeVisibilityAnimation_15{ nullptr };
-        Vector2KeyFrameAnimation _shapeVisibilityAnimation_18{ nullptr };
-        Vector2KeyFrameAnimation _shapeVisibilityAnimation_21{ nullptr };
+        Vector2KeyFrameAnimation _shapeVisibilityAnimation_14{ nullptr };
+        Vector2KeyFrameAnimation _shapeVisibilityAnimation_17{ nullptr };
+        Vector2KeyFrameAnimation _shapeVisibilityAnimation_20{ nullptr };
 
         static void StartProgressBoundAnimation(
             CompositionObject target,
@@ -217,14 +219,14 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // PreComp layer: TB - Start - 06 - PressedToHover
+        // PreComp layer: TB - 01 - 06 - Start - PressedToHover
         BooleanKeyFrameAnimation IsVisibleBooleanAnimation_0()
         {
             const auto result = CreateBooleanKeyFrameAnimation(0.714285731F, true);
             return result;
         }
 
-        // PreComp layer: TB - Start - 05 - PressedToNormal
+        // PreComp layer: TB - 01 - 05 - Start - PressedToNormal
         BooleanKeyFrameAnimation IsVisibleBooleanAnimation_1()
         {
             const auto result = CreateBooleanKeyFrameAnimation(0.571428597F, true);
@@ -232,7 +234,7 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // PreComp layer: TB - Start - 04 - Hover to Pressed
+        // PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
         BooleanKeyFrameAnimation IsVisibleBooleanAnimation_2()
         {
             const auto result = CreateBooleanKeyFrameAnimation(0.428571433F, true);
@@ -240,7 +242,7 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // PreComp layer: TB - Start - 03 - HoverToNormal
+        // PreComp layer: TB - 01 - 03 - Start - HoverToNormal
         BooleanKeyFrameAnimation IsVisibleBooleanAnimation_3()
         {
             const auto result = CreateBooleanKeyFrameAnimation(0.285714298F, true);
@@ -248,7 +250,7 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // PreComp layer: TB - Start - 02 - Normal to Pressed
+        // PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
         BooleanKeyFrameAnimation IsVisibleBooleanAnimation_4()
         {
             const auto result = CreateBooleanKeyFrameAnimation(0.142857149F, true);
@@ -256,7 +258,7 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // PreComp layer: TB - Start - 01 - NormalToHover
+        // PreComp layer: TB - 01 - 01 - Start - NormalToHover
         BooleanKeyFrameAnimation IsVisibleBooleanAnimation_5()
         {
             const auto result = CreateBooleanKeyFrameAnimation(0.142857149F, false);
@@ -353,8 +355,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - - - Layer aggregator
         // - - Layer: Layer 15
         winrt::com_ptr<CanvasGeometry> Geometry_5()
@@ -393,9 +395,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - - - - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - - - - - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // - - - - Layer aggregator
         // - - - Layer: Layer 1
         // - -  Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
         winrt::com_ptr<CanvasGeometry> Geometry_7()
@@ -427,8 +429,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - - Layer aggregator
         // - Layer: Layer 18
         // Color
@@ -442,8 +444,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - - Layer aggregator
         // - Layer: Layer 19
         // Color
@@ -468,9 +470,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - - - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // - - Layer aggregator
         // - Layer: Layer 18
         // Color
         ColorKeyFrameAnimation ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_1()
@@ -483,9 +485,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - - - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // - - Layer aggregator
         // - Layer: Layer 19
         // Color
         ColorKeyFrameAnimation ColorAnimation_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_2()
@@ -509,8 +511,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - - - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // - - Layer aggregator
         // - Layer: Layer 18
         // Color
@@ -524,8 +526,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - - - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // - - Layer aggregator
         // - Layer: Layer 19
         // Color
@@ -552,8 +554,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - - Layer aggregator
         // - Layer: Layer 15
         // Color
@@ -569,8 +571,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - - Layer aggregator
         // - Layer: Layer 14
         // Color
@@ -593,8 +595,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - Layer aggregator
         // Layer: Layer 18
         CompositionColorBrush AnimatedColorBrush_AlmostDarkCyan_FF0063B8_to_TransparentAlmostDarkCyan_000063B8_1()
@@ -604,8 +606,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - Layer aggregator
         // Layer: Layer 19
         CompositionColorBrush AnimatedColorBrush_AlmostDarkCyan_FF0063B8_to_TransparentAlmostDarkCyan_000063B8_2()
@@ -622,9 +624,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // - Layer aggregator
         // Layer: Layer 18
         CompositionColorBrush AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_1()
         {
@@ -633,9 +635,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // - Layer aggregator
         // Layer: Layer 19
         CompositionColorBrush AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_2()
         {
@@ -651,8 +653,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 18
         CompositionColorBrush AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_4()
@@ -662,8 +664,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 19
         CompositionColorBrush AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_5()
@@ -680,8 +682,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - Layer aggregator
         // Layer: Layer 15
         CompositionColorBrush AnimatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_1()
@@ -691,8 +693,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - Layer aggregator
         // Layer: Layer 14
         CompositionColorBrush AnimatedColorBrush_TransparentAlmostDeepSkyBlue_0000DBFF_to_TransparentAlmostDeepSkyBlue_0000DBFF_2()
@@ -710,9 +712,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - - - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - - - Layer aggregator
         // - - Layer: Layer 1
         // -  Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
         // Stop 0
@@ -723,9 +725,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - - - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - - - Layer aggregator
         // - - Layer: Layer 1
         // -  Scale:1.1,1.1, Offset:<-16.136, 20.639>
         // Stop 0
@@ -736,9 +738,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - - - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - - - Layer aggregator
         // - - Layer: Layer 1
         // -  Scale:1.1,1.1, Offset:<-14.866001, 19.364>
         // Stop 0
@@ -749,9 +751,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - - - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - - - Layer aggregator
         // - - Layer: Layer 1
         // -  Scale:1.1,1.1, Offset:<-16.2, 19.497002>
         // Stop 0
@@ -762,8 +764,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - - - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - - - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - - Layer: Layer 1
         // -  Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
@@ -775,8 +777,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - - - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - - - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - - Layer: Layer 1
         // -  Scale:1.1,1.1, Offset:<-16.136, 20.639>
@@ -788,8 +790,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - - - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - - - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - - Layer: Layer 1
         // -  Scale:1.1,1.1, Offset:<-14.866001, 19.364>
@@ -801,8 +803,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - - - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - - - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - - Layer: Layer 1
         // -  Scale:1.1,1.1, Offset:<-16.2, 19.497002>
@@ -814,8 +816,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // - - Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - Layer: Layer 13
         // Stop 0
@@ -826,8 +828,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // - - Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - Layer: Layer 13
         // Stop 0
@@ -838,8 +840,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // - - Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - Layer: Layer 13
         // Stop 0
@@ -850,8 +852,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // - - Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - Layer: Layer 13
         // Stop 0
@@ -862,9 +864,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - - - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - - - Layer aggregator
         // - - Layer: Layer 1
         // -  Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
         // Stop 1
@@ -875,9 +877,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - - - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - - - Layer aggregator
         // - - Layer: Layer 1
         // -  Scale:1.1,1.1, Offset:<-16.136, 20.639>
         // Stop 1
@@ -888,9 +890,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - - - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - - - Layer aggregator
         // - - Layer: Layer 1
         // -  Scale:1.1,1.1, Offset:<-14.866001, 19.364>
         // Stop 1
@@ -901,9 +903,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - - - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - - - Layer aggregator
         // - - Layer: Layer 1
         // -  Scale:1.1,1.1, Offset:<-16.2, 19.497002>
         // Stop 1
@@ -914,8 +916,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - - - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - - - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - - Layer: Layer 1
         // -  Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
@@ -927,8 +929,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - - - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - - - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - - Layer: Layer 1
         // -  Scale:1.1,1.1, Offset:<-16.136, 20.639>
@@ -940,8 +942,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - - - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - - - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - - Layer: Layer 1
         // -  Scale:1.1,1.1, Offset:<-14.866001, 19.364>
@@ -953,8 +955,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - - - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - - - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - - Layer: Layer 1
         // -  Scale:1.1,1.1, Offset:<-16.2, 19.497002>
@@ -966,8 +968,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // - - Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - Layer: Layer 13
         // Stop 1
@@ -978,8 +980,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // - - Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - Layer: Layer 13
         // Stop 1
@@ -990,8 +992,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // - - Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - Layer: Layer 13
         // Stop 1
@@ -1002,8 +1004,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // - - Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - Layer: Layer 13
         // Stop 1
@@ -1050,8 +1052,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return _gradientStop_1_AlmostDeepSkyBlue_FF00DCFF = _c.CreateColorGradientStop(1.0F, { 0xFF, 0x00, 0xDC, 0xFF });
         }
 
-        // - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - Transforms for TB - Start - 06 - PressedToHover
+        // - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - Transforms for TB - 01 - 06 - Start - PressedToHover
         // Layer aggregator
         // Layer: Layer 25
         CompositionContainerShape ContainerShape_0()
@@ -1071,9 +1073,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - PreComp layer: TB - Start - 05 - PressedToNormal
-        // Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // Layer aggregator
         // Layer: Layer 17
         CompositionContainerShape ContainerShape_1()
         {
@@ -1092,9 +1094,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - PreComp layer: TB - Start - 05 - PressedToNormal
-        // Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // Layer aggregator
         // Layer: Layer 1
         CompositionContainerShape ContainerShape_2()
         {
@@ -1113,9 +1115,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // Layer aggregator
         // Layer: Layer 1
         CompositionContainerShape ContainerShape_3()
         {
@@ -1134,8 +1136,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - PreComp layer: TB - Start - 03 - HoverToNormal
-        // Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 13
         CompositionContainerShape ContainerShape_4()
@@ -1151,12 +1153,12 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             shapes.Append(SpriteShape_30());
             // Scale:1.1,1.1, Offset:<-16.127998, 19.362>
             shapes.Append(SpriteShape_31());
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_13(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_12(), _rootProgress);
             return result;
         }
 
-        // - PreComp layer: TB - Start - 03 - HoverToNormal
-        // Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 1
         CompositionContainerShape ContainerShape_5()
@@ -1172,12 +1174,12 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             shapes.Append(SpriteShape_34());
             // Scale:1.1,1.1, Offset:<-16.2, 19.497002>
             shapes.Append(SpriteShape_35());
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_14(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_13(), _rootProgress);
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - - Layer aggregator
         // - Layer: Layer 25
         // Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
@@ -1193,8 +1195,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - - Layer aggregator
         // - Layer: Layer 25
         // Scale:1.1,1.1, Offset:<-16.136, 20.639>
@@ -1210,8 +1212,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - - Layer aggregator
         // - Layer: Layer 25
         // Scale:1.1,1.1, Offset:<-14.866001, 19.364>
@@ -1227,8 +1229,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - - Layer aggregator
         // - Layer: Layer 25
         // Scale:1.1,1.1, Offset:<-16.2, 19.497002>
@@ -1244,9 +1246,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - - Layer aggregator
         // - Layer: Layer 1
         // Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
         CompositionLinearGradientBrush LinearGradientBrush_04()
@@ -1264,9 +1266,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - - Layer aggregator
         // - Layer: Layer 1
         // Scale:1.1,1.1, Offset:<-16.136, 20.639>
         CompositionLinearGradientBrush LinearGradientBrush_05()
@@ -1284,9 +1286,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - - Layer aggregator
         // - Layer: Layer 1
         // Scale:1.1,1.1, Offset:<-14.866001, 19.364>
         CompositionLinearGradientBrush LinearGradientBrush_06()
@@ -1304,9 +1306,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - - Layer aggregator
         // - Layer: Layer 1
         // Scale:1.1,1.1, Offset:<-16.2, 19.497002>
         CompositionLinearGradientBrush LinearGradientBrush_07()
@@ -1324,9 +1326,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - - - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // - - Layer aggregator
         // - Layer: Layer 1
         // Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
         CompositionLinearGradientBrush LinearGradientBrush_08()
@@ -1341,9 +1343,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - - - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // - - Layer aggregator
         // - Layer: Layer 1
         // Scale:1.1,1.1, Offset:<-16.136, 20.639>
         CompositionLinearGradientBrush LinearGradientBrush_09()
@@ -1358,9 +1360,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - - - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // - - Layer aggregator
         // - Layer: Layer 1
         // Scale:1.1,1.1, Offset:<-14.866001, 19.364>
         CompositionLinearGradientBrush LinearGradientBrush_10()
@@ -1375,9 +1377,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - - - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // - - Layer aggregator
         // - Layer: Layer 1
         // Scale:1.1,1.1, Offset:<-16.2, 19.497002>
         CompositionLinearGradientBrush LinearGradientBrush_11()
@@ -1392,8 +1394,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - Layer: Layer 1
         // Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
@@ -1412,8 +1414,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - Layer: Layer 1
         // Scale:1.1,1.1, Offset:<-16.136, 20.639>
@@ -1432,8 +1434,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - Layer: Layer 1
         // Scale:1.1,1.1, Offset:<-14.866001, 19.364>
@@ -1452,8 +1454,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // - Layer: Layer 1
         // Scale:1.1,1.1, Offset:<-16.2, 19.497002>
@@ -1472,8 +1474,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 25
         CompositionLinearGradientBrush LinearGradientBrush_16()
@@ -1488,8 +1490,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 26
         CompositionLinearGradientBrush LinearGradientBrush_17()
@@ -1504,8 +1506,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 27
         CompositionLinearGradientBrush LinearGradientBrush_18()
@@ -1520,8 +1522,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 28
         CompositionLinearGradientBrush LinearGradientBrush_19()
@@ -1536,8 +1538,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // - Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 13
         CompositionLinearGradientBrush LinearGradientBrush_20()
@@ -1555,8 +1557,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // - Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 13
         CompositionLinearGradientBrush LinearGradientBrush_21()
@@ -1574,8 +1576,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // - Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 13
         CompositionLinearGradientBrush LinearGradientBrush_22()
@@ -1593,8 +1595,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 01 - NormalToHover
-        // - Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // - Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 13
         CompositionLinearGradientBrush LinearGradientBrush_23()
@@ -1637,8 +1639,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return _pathGeometry_4 = _c.CreatePathGeometry(CompositionPath(CanvasGeometryToIGeometrySource2D(Geometry_4())));
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - Layer aggregator
         // Layer: Layer 15
         CompositionPathGeometry PathGeometry_5()
@@ -1651,9 +1653,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return _pathGeometry_6 = _c.CreatePathGeometry(CompositionPath(CanvasGeometryToIGeometrySource2D(Geometry_6())));
         }
 
-        // - - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - - - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // - - Layer aggregator
         // - Layer: Layer 1
         // Scale:1.1,1.1, Offset:<-14.8619995, 20.632>
         CompositionPathGeometry PathGeometry_7()
@@ -1661,8 +1663,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return _c.CreatePathGeometry(CompositionPath(CanvasGeometryToIGeometrySource2D(Geometry_7())));
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - Layer aggregator
         // Layer: Layer 25
         // Path 1
@@ -1673,8 +1675,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - Layer aggregator
         // Layer: Layer 25
         // Path 1
@@ -1685,8 +1687,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - Layer aggregator
         // Layer: Layer 25
         // Path 1
@@ -1697,8 +1699,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - Layer aggregator
         // Layer: Layer 25
         // Path 1
@@ -1709,8 +1711,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - Transforms for TB - Start - 06 - PressedToHover
+        // - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - Transforms for TB - 01 - 06 - Start - PressedToHover
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_04()
@@ -1722,8 +1724,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - Transforms for TB - Start - 06 - PressedToHover
+        // - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - Transforms for TB - 01 - 06 - Start - PressedToHover
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_05()
@@ -1735,8 +1737,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - Transforms for TB - Start - 06 - PressedToHover
+        // - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - Transforms for TB - 01 - 06 - Start - PressedToHover
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_06()
@@ -1748,8 +1750,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - Transforms for TB - Start - 06 - PressedToHover
+        // - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - Transforms for TB - 01 - 06 - Start - PressedToHover
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_07()
@@ -1761,8 +1763,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - Transforms for TB - Start - 06 - PressedToHover
+        // - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - Transforms for TB - 01 - 06 - Start - PressedToHover
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_08()
@@ -1774,8 +1776,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - Transforms for TB - Start - 06 - PressedToHover
+        // - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - Transforms for TB - 01 - 06 - Start - PressedToHover
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_09()
@@ -1787,8 +1789,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - Transforms for TB - Start - 06 - PressedToHover
+        // - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - Transforms for TB - 01 - 06 - Start - PressedToHover
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_10()
@@ -1800,8 +1802,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - Transforms for TB - Start - 06 - PressedToHover
+        // - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - Transforms for TB - 01 - 06 - Start - PressedToHover
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_11()
@@ -1813,9 +1815,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - Layer aggregator
         // Layer: Layer 17
         // Path 1
         CompositionSpriteShape SpriteShape_12()
@@ -1825,9 +1827,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - Layer aggregator
         // Layer: Layer 17
         // Path 1
         CompositionSpriteShape SpriteShape_13()
@@ -1837,9 +1839,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - Layer aggregator
         // Layer: Layer 17
         // Path 1
         CompositionSpriteShape SpriteShape_14()
@@ -1849,9 +1851,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - Layer aggregator
         // Layer: Layer 17
         // Path 1
         CompositionSpriteShape SpriteShape_15()
@@ -1861,9 +1863,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - Layer aggregator
         // Layer: Layer 1
         // Path 1
         CompositionSpriteShape SpriteShape_16()
@@ -1873,9 +1875,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - Layer aggregator
         // Layer: Layer 1
         // Path 1
         CompositionSpriteShape SpriteShape_17()
@@ -1885,9 +1887,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - Layer aggregator
         // Layer: Layer 1
         // Path 1
         CompositionSpriteShape SpriteShape_18()
@@ -1897,9 +1899,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - Layer aggregator
         // Layer: Layer 1
         // Path 1
         CompositionSpriteShape SpriteShape_19()
@@ -1909,9 +1911,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // - Layer aggregator
         // Layer: Layer 1
         // Path 1
         CompositionSpriteShape SpriteShape_20()
@@ -1921,9 +1923,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // - Layer aggregator
         // Layer: Layer 1
         // Path 1
         CompositionSpriteShape SpriteShape_21()
@@ -1933,9 +1935,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // - Layer aggregator
         // Layer: Layer 1
         // Path 1
         CompositionSpriteShape SpriteShape_22()
@@ -1945,9 +1947,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // - Layer aggregator
         // Layer: Layer 1
         // Path 1
         CompositionSpriteShape SpriteShape_23()
@@ -1957,9 +1959,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_24()
         {
@@ -1970,35 +1972,35 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_25()
         {
             // Offset:<-18.6506, 20.4001>, Scale:<1.1, 1.1>
             const auto result = CreateSpriteShape(_pathGeometry_6, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_1());
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_11(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", _shapeVisibilityAnimation_09, _rootProgress);
             return result;
         }
 
-        // - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_26()
         {
             // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
             const auto result = CreateSpriteShape(_pathGeometry_2, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_2());
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_12(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_11(), _rootProgress);
             return result;
         }
 
-        // - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_27()
         {
@@ -2009,8 +2011,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 13
         // Path 1
@@ -2021,8 +2023,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 13
         // Path 1
@@ -2033,8 +2035,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 13
         // Path 1
@@ -2045,8 +2047,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 13
         // Path 1
@@ -2057,8 +2059,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 1
         // Path 1
@@ -2069,8 +2071,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 1
         // Path 1
@@ -2081,8 +2083,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 1
         // Path 1
@@ -2093,8 +2095,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 1
         // Path 1
@@ -2105,8 +2107,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_36()
@@ -2114,12 +2116,12 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
             const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, LinearGradientBrush_16());
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_15(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_14(), _rootProgress);
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_37()
@@ -2127,12 +2129,12 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             // Offset:<-18.6506, 20.4001>, Scale:<1.1, 1.1>
             const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, LinearGradientBrush_17());
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_16(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_15(), _rootProgress);
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_38()
@@ -2140,12 +2142,12 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
             const auto result = CreateSpriteShape(_pathGeometry_2, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, LinearGradientBrush_18());
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_17(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_16(), _rootProgress);
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_39()
@@ -2153,12 +2155,12 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             // Offset:<-18.650002, 20.399202>, Scale:<1.1, 1.1>
             const auto result = CreateSpriteShape(_pathGeometry_3, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, LinearGradientBrush_19());
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", _shapeVisibilityAnimation_15, _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", _shapeVisibilityAnimation_14, _rootProgress);
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_40()
@@ -2166,12 +2168,12 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             // Offset:<-18.6507, 20.4006>, Scale:<1.1, 1.1>
             const auto result = CreateSpriteShape(_pathGeometry_0, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506996F, 20.4006004F }, _themeColor_Foreground);
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_18(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_17(), _rootProgress);
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_41()
@@ -2179,12 +2181,12 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             // Offset:<-18.650301, 20.4>, Scale:<1.1, 1.1>
             const auto result = CreateSpriteShape(_pathGeometry_1, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.650301F, 20.3999996F }, _themeColor_Foreground);
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_19(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_18(), _rootProgress);
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_42()
@@ -2192,12 +2194,12 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
             const auto result = CreateSpriteShape(_pathGeometry_2, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, _themeColor_Foreground);
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_20(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_19(), _rootProgress);
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_43()
@@ -2205,12 +2207,12 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             // Offset:<-18.649698, 20.3998>, Scale:<1.1, 1.1>
             const auto result = CreateSpriteShape(_pathGeometry_3, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6496983F, 20.3997993F }, _themeColor_Foreground);
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", _shapeVisibilityAnimation_18, _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", _shapeVisibilityAnimation_17, _rootProgress);
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_44()
@@ -2218,12 +2220,12 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             // Offset:<-18.6495, 20.3994>, Scale:<1.1, 1.1>
             const auto result = CreateSpriteShape(_pathGeometry_4, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6494999F, 20.3994007F }, AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_3());
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_21(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_20(), _rootProgress);
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_45()
@@ -2231,12 +2233,12 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             // Offset:<-18.6506, 20.4001>, Scale:<1.1, 1.1>
             const auto result = CreateSpriteShape(_pathGeometry_6, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506004F, 20.4001007F }, AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_4());
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_22(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_21(), _rootProgress);
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_46()
@@ -2244,12 +2246,12 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             // Offset:<-18.650602, 20.400301>, Scale:<1.1, 1.1>
             const auto result = CreateSpriteShape(_pathGeometry_2, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6506023F, 20.400301F }, AnimatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_5());
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_23(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", ShapeVisibilityAnimation_22(), _rootProgress);
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // Layer aggregator
         // Path 1
         CompositionSpriteShape SpriteShape_47()
@@ -2257,12 +2259,12 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             // Offset:<-18.650002, 20.399202>, Scale:<1.1, 1.1>
             const auto result = CreateSpriteShape(_pathGeometry_3, { 1.10000002F, 0.0F, 0.0F, 1.10000002F, -18.6500015F, 20.3992023F }, _animatedColorBrush_TransparentAlmostDarkCyan_000063B8_to_AlmostDarkCyan_FF0063B8_3);
             result.Scale({ 0.0F, 0.0F });
-            StartProgressBoundAnimation(result, L"Scale", _shapeVisibilityAnimation_21, _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale", _shapeVisibilityAnimation_20, _rootProgress);
             return result;
         }
 
-        // - PreComp layer: TB - Start - 01 - NormalToHover
-        // Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Path 1
         CompositionSpriteShape SpriteShape_48()
@@ -2272,8 +2274,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - PreComp layer: TB - Start - 01 - NormalToHover
-        // Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Path 1
         CompositionSpriteShape SpriteShape_49()
@@ -2283,8 +2285,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - PreComp layer: TB - Start - 01 - NormalToHover
-        // Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Path 1
         CompositionSpriteShape SpriteShape_50()
@@ -2294,8 +2296,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - PreComp layer: TB - Start - 01 - NormalToHover
-        // Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Path 1
         CompositionSpriteShape SpriteShape_51()
@@ -2305,8 +2307,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - PreComp layer: TB - Start - 01 - NormalToHover
-        // Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Path 1
         CompositionSpriteShape SpriteShape_52()
@@ -2316,8 +2318,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - PreComp layer: TB - Start - 01 - NormalToHover
-        // Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Path 1
         CompositionSpriteShape SpriteShape_53()
@@ -2327,8 +2329,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - PreComp layer: TB - Start - 01 - NormalToHover
-        // Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Path 1
         CompositionSpriteShape SpriteShape_54()
@@ -2338,8 +2340,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - PreComp layer: TB - Start - 01 - NormalToHover
-        // Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+        // - PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        // Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Path 1
         CompositionSpriteShape SpriteShape_55()
@@ -2349,23 +2351,23 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // PreComp layer: TB - Start - 06 - PressedToHover
+        // PreComp layer: TB - 01 - 06 - Start - PressedToHover
         ContainerVisual ContainerVisual_0()
         {
             const auto result = _c.CreateContainerVisual();
             result.CenterPoint({ 16.0F, 16.0F, 0.0F });
             result.IsVisible(false);
             result.Offset({ -3.86100006F, -4.00199986F, 0.0F });
-            // Transforms for TB - Start - 06 - PressedToHover
+            // Transforms for TB - 01 - 06 - Start - PressedToHover
             result.Children().InsertAtTop(ContainerVisual_1());
             StartProgressBoundAnimation(result, L"IsVisible", IsVisibleBooleanAnimation_0(), _rootProgress);
-            StartProgressBoundAnimation(result, L"Scale.X", ScalarAnimation_0p48_to_0p6(), _rootProgress);
-            StartProgressBoundAnimation(result, L"Scale.Y", _scalarAnimation_0p48_to_0p6, _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale.X", ScalarAnimation_0p48_to_0p6_0(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale.Y", _scalarAnimation_0p48_to_0p6_0, _rootProgress);
             return result;
         }
 
-        // PreComp layer: TB - Start - 06 - PressedToHover
-        // Transforms for TB - Start - 06 - PressedToHover
+        // PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // Transforms for TB - 01 - 06 - Start - PressedToHover
         ContainerVisual ContainerVisual_1()
         {
             const auto result = _c.CreateContainerVisual();
@@ -2376,40 +2378,62 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // PreComp layer: TB - Start - 05 - PressedToNormal
+        // PreComp layer: TB - 01 - 05 - Start - PressedToNormal
         ContainerVisual ContainerVisual_2()
         {
             const auto result = _c.CreateContainerVisual();
-            result.Clip(_insetClip_0);
+            result.CenterPoint({ 16.0F, 16.0F, 0.0F });
             result.IsVisible(false);
-            result.Size({ 32.0F, 32.0F });
-            // Offset:<2.5389996, 2.3979998>, Scale:<0.6, 0.6>
-            result.TransformMatrix({ 0.600000024F, 0.0F, 0.0F, 0.0F, 0.0F, 0.600000024F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 2.53899956F, 2.39799976F, 0.0F, 1.0F });
-            // Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-            // Offset(-3.861,-4.002,0)
-            result.Children().InsertAtTop(ShapeVisual_1());
+            result.Offset({ -3.86100006F, -4.00199986F, 0.0F });
+            // Transforms for TB - 01 - 05 - Start - PressedToNormal
+            result.Children().InsertAtTop(ContainerVisual_3());
             StartProgressBoundAnimation(result, L"IsVisible", IsVisibleBooleanAnimation_1(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale.X", ScalarAnimation_0p48_to_0p6_1(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale.Y", _scalarAnimation_0p48_to_0p6_1, _rootProgress);
             return result;
         }
 
-        // PreComp layer: TB - Start - 04 - Hover to Pressed
+        // PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // Transforms for TB - 01 - 05 - Start - PressedToNormal
         ContainerVisual ContainerVisual_3()
         {
             const auto result = _c.CreateContainerVisual();
             result.Clip(_insetClip_0);
-            result.IsVisible(false);
             result.Size({ 32.0F, 32.0F });
-            // Offset:<2.5389996, 2.3979998>, Scale:<0.6, 0.6>
-            result.TransformMatrix({ 0.600000024F, 0.0F, 0.0F, 0.0F, 0.0F, 0.600000024F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 2.53899956F, 2.39799976F, 0.0F, 1.0F });
-            // Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-            // Offset(-3.861,-4.002,0)
-            result.Children().InsertAtTop(ShapeVisual_2());
-            StartProgressBoundAnimation(result, L"IsVisible", IsVisibleBooleanAnimation_2(), _rootProgress);
+            // Layer aggregator
+            result.Children().InsertAtTop(ShapeVisual_1());
             return result;
         }
 
-        // PreComp layer: TB - Start - 03 - HoverToNormal
+        // PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
         ContainerVisual ContainerVisual_4()
+        {
+            const auto result = _c.CreateContainerVisual();
+            result.CenterPoint({ 16.0F, 16.0F, 0.0F });
+            result.IsVisible(false);
+            result.Offset({ -3.86100006F, -4.00199986F, 0.0F });
+            // Transforms for TB - 01 - 04 - Start - Hover to Pressed
+            result.Children().InsertAtTop(ContainerVisual_5());
+            StartProgressBoundAnimation(result, L"IsVisible", IsVisibleBooleanAnimation_2(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale.X", ScalarAnimation_0p6_to_0p48_0(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale.Y", _scalarAnimation_0p6_to_0p48_0, _rootProgress);
+            return result;
+        }
+
+        // PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        ContainerVisual ContainerVisual_5()
+        {
+            const auto result = _c.CreateContainerVisual();
+            result.Clip(_insetClip_0);
+            result.Size({ 32.0F, 32.0F });
+            // Layer aggregator
+            result.Children().InsertAtTop(ShapeVisual_2());
+            return result;
+        }
+
+        // PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        ContainerVisual ContainerVisual_6()
         {
             const auto result = _c.CreateContainerVisual();
             result.Clip(_insetClip_0);
@@ -2417,31 +2441,31 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             result.Size({ 32.0F, 32.0F });
             // Offset:<2.5389996, 2.3979998>, Scale:<0.6, 0.6>
             result.TransformMatrix({ 0.600000024F, 0.0F, 0.0F, 0.0F, 0.0F, 0.600000024F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 2.53899956F, 2.39799976F, 0.0F, 1.0F });
-            // Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+            // Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
             // Offset(-3.861,-4.002,0)
             result.Children().InsertAtTop(ShapeVisual_3());
             StartProgressBoundAnimation(result, L"IsVisible", IsVisibleBooleanAnimation_3(), _rootProgress);
             return result;
         }
 
-        // PreComp layer: TB - Start - 02 - Normal to Pressed
-        ContainerVisual ContainerVisual_5()
+        // PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        ContainerVisual ContainerVisual_7()
         {
             const auto result = _c.CreateContainerVisual();
             result.CenterPoint({ 16.0F, 16.0F, 0.0F });
             result.IsVisible(false);
             result.Offset({ -3.86100006F, -4.00199986F, 0.0F });
-            // Transforms for TB - Start - 02 - Normal to Pressed
-            result.Children().InsertAtTop(ContainerVisual_6());
+            // Transforms for TB - 01 - 02 - Start - Normal to Pressed
+            result.Children().InsertAtTop(ContainerVisual_8());
             StartProgressBoundAnimation(result, L"IsVisible", IsVisibleBooleanAnimation_4(), _rootProgress);
-            StartProgressBoundAnimation(result, L"Scale.X", ScalarAnimation_0p6_to_0p48(), _rootProgress);
-            StartProgressBoundAnimation(result, L"Scale.Y", _scalarAnimation_0p6_to_0p48, _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale.X", ScalarAnimation_0p6_to_0p48_1(), _rootProgress);
+            StartProgressBoundAnimation(result, L"Scale.Y", _scalarAnimation_0p6_to_0p48_1, _rootProgress);
             return result;
         }
 
-        // PreComp layer: TB - Start - 02 - Normal to Pressed
-        // Transforms for TB - Start - 02 - Normal to Pressed
-        ContainerVisual ContainerVisual_6()
+        // PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // Transforms for TB - 01 - 02 - Start - Normal to Pressed
+        ContainerVisual ContainerVisual_8()
         {
             const auto result = _c.CreateContainerVisual();
             result.Clip(_insetClip_0);
@@ -2451,15 +2475,15 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // PreComp layer: TB - Start - 01 - NormalToHover
-        ContainerVisual ContainerVisual_7()
+        // PreComp layer: TB - 01 - 01 - Start - NormalToHover
+        ContainerVisual ContainerVisual_9()
         {
             const auto result = _c.CreateContainerVisual();
             result.Clip(_insetClip_0);
             result.Size({ 32.0F, 32.0F });
             // Offset:<2.5389996, 2.3979998>, Scale:<0.6, 0.6>
             result.TransformMatrix({ 0.600000024F, 0.0F, 0.0F, 0.0F, 0.0F, 0.600000024F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 2.53899956F, 2.39799976F, 0.0F, 1.0F });
-            // Transforms for TB - Start - 01 - NormalToHover Scale(0.6,0.6,0),
+            // Transforms for TB - 01 - 01 - Start - NormalToHover Scale(0.6,0.6,0),
             // Offset(-3.861,-4.002,0)
             result.Children().InsertAtTop(ShapeVisual_5());
             StartProgressBoundAnimation(result, L"IsVisible", IsVisibleBooleanAnimation_5(), _rootProgress);
@@ -2473,24 +2497,29 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             const auto propertySet = result.Properties();
             propertySet.InsertScalar(L"Progress", 0.0F);
             const auto children = result.Children();
-            // PreComp layer: TB - Start - 06 - PressedToHover
+            // PreComp layer: TB - 01 - 06 - Start - PressedToHover
             children.InsertAtTop(ContainerVisual_0());
-            // PreComp layer: TB - Start - 05 - PressedToNormal
+            // PreComp layer: TB - 01 - 05 - Start - PressedToNormal
             children.InsertAtTop(ContainerVisual_2());
-            // PreComp layer: TB - Start - 04 - Hover to Pressed
-            children.InsertAtTop(ContainerVisual_3());
-            // PreComp layer: TB - Start - 03 - HoverToNormal
+            // PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
             children.InsertAtTop(ContainerVisual_4());
-            // PreComp layer: TB - Start - 02 - Normal to Pressed
-            children.InsertAtTop(ContainerVisual_5());
-            // PreComp layer: TB - Start - 01 - NormalToHover
+            // PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+            children.InsertAtTop(ContainerVisual_6());
+            // PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
             children.InsertAtTop(ContainerVisual_7());
+            // PreComp layer: TB - 01 - 01 - Start - NormalToHover
+            children.InsertAtTop(ContainerVisual_9());
             return result;
         }
 
         CubicBezierEasingFunction CubicBezierEasingFunction_0()
         {
             return _cubicBezierEasingFunction_0 = _c.CreateCubicBezierEasingFunction({ 0.166999996F, 0.166999996F }, { 0.833000004F, 0.833000004F });
+        }
+
+        CubicBezierEasingFunction CubicBezierEasingFunction_1()
+        {
+            return _cubicBezierEasingFunction_1 = _c.CreateCubicBezierEasingFunction({ 0.850000024F, 0.0F }, { 0.75F, 1.0F });
         }
 
         ExpressionAnimation RootProgress()
@@ -2533,25 +2562,43 @@ namespace winrt::Microsoft::UI::Xaml::Controls
         }
 
         // Scale
-        ScalarKeyFrameAnimation ScalarAnimation_0p6_to_0p48()
+        ScalarKeyFrameAnimation ScalarAnimation_0p6_to_0p48_0()
         {
-            const auto result = _scalarAnimation_0p6_to_0p48 = CreateScalarKeyFrameAnimation(0.0F, 0.600000024F, _stepThenHoldEasingFunction);
-            result.InsertKeyFrame(0.142857149F, 0.600000024F, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.214285716F, 0.479999989F, _c.CreateCubicBezierEasingFunction({ 0.850000024F, 0.0F }, { 0.75F, 1.0F }));
+            const auto result = _scalarAnimation_0p6_to_0p48_0 = CreateScalarKeyFrameAnimation(0.0F, 0.600000024F, _stepThenHoldEasingFunction);
+            result.InsertKeyFrame(0.428571433F, 0.600000024F, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.5F, 0.479999989F, CubicBezierEasingFunction_1());
             return result;
         }
 
         // Scale
-        ScalarKeyFrameAnimation ScalarAnimation_0p48_to_0p6()
+        ScalarKeyFrameAnimation ScalarAnimation_0p6_to_0p48_1()
         {
-            const auto result = _scalarAnimation_0p48_to_0p6 = CreateScalarKeyFrameAnimation(0.0F, 0.479999989F, _stepThenHoldEasingFunction);
+            const auto result = _scalarAnimation_0p6_to_0p48_1 = CreateScalarKeyFrameAnimation(0.0F, 0.600000024F, _stepThenHoldEasingFunction);
+            result.InsertKeyFrame(0.142857149F, 0.600000024F, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.214285716F, 0.479999989F, _cubicBezierEasingFunction_1);
+            return result;
+        }
+
+        // Scale
+        ScalarKeyFrameAnimation ScalarAnimation_0p48_to_0p6_0()
+        {
+            const auto result = _scalarAnimation_0p48_to_0p6_0 = CreateScalarKeyFrameAnimation(0.0F, 0.479999989F, _stepThenHoldEasingFunction);
             result.InsertKeyFrame(0.714285731F, 0.479999989F, _holdThenStepEasingFunction);
             result.InsertKeyFrame(0.985714257F, 0.600000024F, _c.CreateCubicBezierEasingFunction({ 0.349999994F, 0.0F }, { 0.0F, 1.0F }));
             return result;
         }
 
-        // - PreComp layer: TB - Start - 06 - PressedToHover
-        // Transforms for TB - Start - 06 - PressedToHover
+        // Scale
+        ScalarKeyFrameAnimation ScalarAnimation_0p48_to_0p6_1()
+        {
+            const auto result = _scalarAnimation_0p48_to_0p6_1 = CreateScalarKeyFrameAnimation(0.0F, 0.479999989F, _stepThenHoldEasingFunction);
+            result.InsertKeyFrame(0.571428597F, 0.479999989F, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.642857134F, 0.600000024F, _c.CreateCubicBezierEasingFunction({ 0.25F, 0.0F }, { 0.150000006F, 1.0F }));
+            return result;
+        }
+
+        // - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // Transforms for TB - 01 - 06 - Start - PressedToHover
         // Layer aggregator
         ShapeVisual ShapeVisual_0()
         {
@@ -2579,7 +2626,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // PreComp layer: TB - Start - 05 - PressedToNormal
+        // - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // Transforms for TB - 01 - 05 - Start - PressedToNormal
         // Layer aggregator
         ShapeVisual ShapeVisual_1()
         {
@@ -2593,7 +2641,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // PreComp layer: TB - Start - 04 - Hover to Pressed
+        // - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // Transforms for TB - 01 - 04 - Start - Hover to Pressed
         // Layer aggregator
         ShapeVisual ShapeVisual_2()
         {
@@ -2613,7 +2662,7 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // PreComp layer: TB - Start - 03 - HoverToNormal
+        // PreComp layer: TB - 01 - 03 - Start - HoverToNormal
         // Layer aggregator
         ShapeVisual ShapeVisual_3()
         {
@@ -2627,8 +2676,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // Transforms for TB - Start - 02 - Normal to Pressed
+        // - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // Layer aggregator
         ShapeVisual ShapeVisual_4()
         {
@@ -2662,7 +2711,7 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // PreComp layer: TB - Start - 01 - NormalToHover
+        // PreComp layer: TB - 01 - 01 - Start - NormalToHover
         // Layer aggregator
         ShapeVisual ShapeVisual_5()
         {
@@ -2702,8 +2751,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - Layer aggregator
         // Layer: Layer 25
         Vector2KeyFrameAnimation ShapeVisibilityAnimation_00()
@@ -2718,8 +2767,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - Layer aggregator
         // Layer: Layer 15
         Vector2KeyFrameAnimation ShapeVisibilityAnimation_02()
@@ -2729,8 +2778,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - Layer aggregator
         // Layer: Layer 14
         Vector2KeyFrameAnimation ShapeVisibilityAnimation_03()
@@ -2746,8 +2795,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - Layer aggregator
         // Layer: Layer 18
         Vector2KeyFrameAnimation ShapeVisibilityAnimation_05()
@@ -2757,8 +2806,8 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 06 - PressedToHover
-        // - - Transforms for TB - Start - 06 - PressedToHover
+        // - - - PreComp layer: TB - 01 - 06 - Start - PressedToHover
+        // - - Transforms for TB - 01 - 06 - Start - PressedToHover
         // - Layer aggregator
         // Layer: Layer 19
         Vector2KeyFrameAnimation ShapeVisibilityAnimation_06()
@@ -2768,9 +2817,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - Layer aggregator
         // Layer: Layer 17
         Vector2KeyFrameAnimation ShapeVisibilityAnimation_07()
         {
@@ -2779,9 +2828,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 05 - PressedToNormal
-        // - Transforms for TB - Start - 05 - PressedToNormal Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
+        // - - - PreComp layer: TB - 01 - 05 - Start - PressedToNormal
+        // - - Transforms for TB - 01 - 05 - Start - PressedToNormal
+        // - Layer aggregator
         // Layer: Layer 1
         Vector2KeyFrameAnimation ShapeVisibilityAnimation_08()
         {
@@ -2790,13 +2839,9 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 1
         Vector2KeyFrameAnimation ShapeVisibilityAnimation_09()
         {
-            const auto result = CreateVector2KeyFrameAnimation(0.428571433F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            const auto result = _shapeVisibilityAnimation_09 = CreateVector2KeyFrameAnimation(0.428571433F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
             result.InsertKeyFrame(0.571428597F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
@@ -2808,131 +2853,120 @@ namespace winrt::Microsoft::UI::Xaml::Controls
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 18
+        // - - - PreComp layer: TB - 01 - 04 - Start - Hover to Pressed
+        // - - Transforms for TB - 01 - 04 - Start - Hover to Pressed
+        // - Layer aggregator
+        // Layer: Layer 19
         Vector2KeyFrameAnimation ShapeVisibilityAnimation_11()
         {
-            const auto result = CreateVector2KeyFrameAnimation(0.428571433F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.54285717F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
-            return result;
-        }
-
-        // - - PreComp layer: TB - Start - 04 - Hover to Pressed
-        // - Transforms for TB - Start - 04 - Hover to Pressed Scale(0.6,0.6,0),
-        // Offset(-3.861,-4.002,0)
-        // Layer: Layer 19
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_12()
-        {
             const auto result = CreateVector2KeyFrameAnimation(0.442857146F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
-            result.InsertKeyFrame(0.557142854F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
+            result.InsertKeyFrame(0.571428597F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 13
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_13()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_12()
         {
             const auto result = CreateVector2KeyFrameAnimation(0.300000012F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
             result.InsertKeyFrame(0.442857146F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
-        // - - PreComp layer: TB - Start - 03 - HoverToNormal
-        // - Transforms for TB - Start - 03 - HoverToNormal Scale(0.6,0.6,0),
+        // - - PreComp layer: TB - 01 - 03 - Start - HoverToNormal
+        // - Transforms for TB - 01 - 03 - Start - HoverToNormal Scale(0.6,0.6,0),
         // Offset(-3.861,-4.002,0)
         // Layer: Layer 1
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_14()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_13()
         {
             const auto result = CreateVector2KeyFrameAnimation(0.285714298F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
             result.InsertKeyFrame(0.571428597F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_15()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_14()
         {
-            const auto result = _shapeVisibilityAnimation_15 = CreateVector2KeyFrameAnimation(0.22857143F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            const auto result = _shapeVisibilityAnimation_14 = CreateVector2KeyFrameAnimation(0.22857143F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
             result.InsertKeyFrame(0.285714298F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 26
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_16()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_15()
         {
             const auto result = CreateVector2KeyFrameAnimation(0.200000003F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
             result.InsertKeyFrame(0.285714298F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 27
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_17()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_16()
         {
             const auto result = CreateVector2KeyFrameAnimation(0.214285716F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
             result.InsertKeyFrame(0.285714298F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_18()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_17()
         {
-            const auto result = _shapeVisibilityAnimation_18 = CreateVector2KeyFrameAnimation(0.142857149F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            const auto result = _shapeVisibilityAnimation_17 = CreateVector2KeyFrameAnimation(0.142857149F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
             result.InsertKeyFrame(0.22857143F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 22
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_19()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_18()
         {
             const auto result = CreateVector2KeyFrameAnimation(0.142857149F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
             result.InsertKeyFrame(0.200000003F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 23
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_20()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_19()
         {
             const auto result = CreateVector2KeyFrameAnimation(0.142857149F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
             result.InsertKeyFrame(0.214285716F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_21()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_20()
         {
-            const auto result = _shapeVisibilityAnimation_21 = CreateVector2KeyFrameAnimation(0.171428576F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
+            const auto result = _shapeVisibilityAnimation_20 = CreateVector2KeyFrameAnimation(0.171428576F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
             result.InsertKeyFrame(0.285714298F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 18
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_22()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_21()
         {
             const auto result = CreateVector2KeyFrameAnimation(0.142857149F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
             result.InsertKeyFrame(0.285714298F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
             return result;
         }
 
-        // - - - PreComp layer: TB - Start - 02 - Normal to Pressed
-        // - - Transforms for TB - Start - 02 - Normal to Pressed
+        // - - - PreComp layer: TB - 01 - 02 - Start - Normal to Pressed
+        // - - Transforms for TB - 01 - 02 - Start - Normal to Pressed
         // - Layer aggregator
         // Layer: Layer 19
-        Vector2KeyFrameAnimation ShapeVisibilityAnimation_23()
+        Vector2KeyFrameAnimation ShapeVisibilityAnimation_22()
         {
             const auto result = CreateVector2KeyFrameAnimation(0.157142863F, { 1.0F, 1.0F }, _holdThenStepEasingFunction);
             result.InsertKeyFrame(0.285714298F, { 0.0F, 0.0F }, _holdThenStepEasingFunction);
@@ -2945,7 +2979,7 @@ namespace winrt::Microsoft::UI::Xaml::Controls
         }
 
     public:
-        TB_01_Start_AnimatedVisual(
+        TB_Start_AnimatedVisual(
             Compositor compositor,
             CompositionPropertySet themeProperties)
             : _c{compositor}
@@ -2985,12 +3019,12 @@ namespace winrt::Microsoft::UI::Xaml::Controls
         }
     };
 
-    winrt::float4 TB_01_Start_1_::ColorAsVector4(Color color)
+    winrt::float4 TB_Start::ColorAsVector4(Color color)
     {
         return { static_cast<float>(color.R), static_cast<float>(color.G), static_cast<float>(color.B), static_cast<float>(color.A) };
     }
 
-    CompositionPropertySet TB_01_Start_1_::EnsureThemeProperties(Compositor compositor)
+    CompositionPropertySet TB_Start::EnsureThemeProperties(Compositor compositor)
     {
         if (_themeProperties == nullptr)
         {
@@ -3001,12 +3035,12 @@ namespace winrt::Microsoft::UI::Xaml::Controls
         return _themeProperties;
     }
 
-    Color TB_01_Start_1_::Foreground()
+    Color TB_Start::Foreground()
     {
         return _themeForeground;
     }
 
-    void TB_01_Start_1_::Foreground(Color value)
+    void TB_Start::Foreground(Color value)
     {
         _themeForeground = value;
         if (_themeProperties != nullptr)
@@ -3015,27 +3049,27 @@ namespace winrt::Microsoft::UI::Xaml::Controls
         }
     }
 
-    winrt::Microsoft::UI::Xaml::Controls::IAnimatedVisual TB_01_Start_1_::TryCreateAnimatedVisual(
+    winrt::Microsoft::UI::Xaml::Controls::IAnimatedVisual TB_Start::TryCreateAnimatedVisual(
         Compositor const& compositor,
-        winrt::IInspectable& diagnostics)
+        IInspectable& diagnostics)
     {
         const auto _ = EnsureThemeProperties(compositor);
         diagnostics = nullptr;
 
-        if (TB_01_Start_AnimatedVisual::IsRuntimeCompatible())
+        if (TB_Start_AnimatedVisual::IsRuntimeCompatible())
         {
-            return winrt::make<TB_01_Start_AnimatedVisual>(compositor, _themeProperties);
+            return winrt::make<TB_Start_AnimatedVisual>(compositor, _themeProperties);
         }
 
         return nullptr;
     }
 
-    double TB_01_Start_1_::FrameToProgress(double frameNumber)
+    double TB_Start::FrameToProgress(double frameNumber)
     {
         return frameNumber / 70.0;
     }
 
-    winrt::Windows::Foundation::Collections::IMapView<hstring, double> TB_01_Start_1_::Markers()
+    winrt::Windows::Foundation::Collections::IMapView<hstring, double> TB_Start::Markers()
     {
         return winrt::single_threaded_map<winrt::hstring, double>(
             std::map<winrt::hstring, double>
@@ -3056,7 +3090,7 @@ namespace winrt::Microsoft::UI::Xaml::Controls
         ).GetView();
     }
 
-    void TB_01_Start_1_::SetColorProperty(hstring const& propertyName, Color value)
+    void TB_Start::SetColorProperty(hstring const& propertyName, Color value)
     {
         if (propertyName == L"Foreground")
         {
@@ -3073,6 +3107,6 @@ namespace winrt::Microsoft::UI::Xaml::Controls
         }
     }
 
-    void TB_01_Start_1_::SetScalarProperty(hstring const&, double)
+    void TB_Start::SetScalarProperty(hstring const&, double)
     {
     }

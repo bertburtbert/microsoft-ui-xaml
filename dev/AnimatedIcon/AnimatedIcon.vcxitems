@@ -17,21 +17,25 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedIcon.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedIconTestHooks.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisuals\AnimatedVisuals.Controls_02_UpDown_Dropdown.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisuals\AnimatedVisuals.Controls_09_Hamburger.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisuals\MU_XC_NAMESPACE.TB_Start.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisualWrappers\DropDownWrapper.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)HamburgerWrapper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisuals\Controls_02_UpDown_Dropdown.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisuals\Controls_07_Settings.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisuals\Controls_08_Back.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisuals\Controls_01_Checkmark.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisuals\Controls_09_Hamburger.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisuals\Controls_10_Search.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)AnimatedVisuals\TB_Start.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)..\Generated\AnimatedIcon.properties.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedIcon.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedIconTestHooks.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisuals\AnimatedVisuals.Controls_02_UpDown_Dropdown.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisuals\AnimatedVisuals.Controls_09_Hamburger.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisuals\MU_XC_NAMESPACE.TB_Start.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisualWrappers\DropDownWrapper.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)HamburgerWrapper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisuals\Controls_02_UpDown_Dropdown.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisuals\Controls_07_Settings.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisuals\Controls_08_Back.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisuals\Controls_01_Checkmark.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisuals\Controls_09_Hamburger.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisuals\Controls_10_Search.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)AnimatedVisuals\TB_Start.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)AnimatedIcon.xaml">
@@ -46,11 +50,13 @@
   <ItemGroup>
     <Midl Include="$(MSBuildThisFileDirectory)AnimatedIcon.idl" />
     <Midl Include="$(MSBuildThisFileDirectory)AnimatedIconTestHooks.idl" />
-    <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisuals\AnimatedVisuals.Controls_02_UpDown_Dropdown.idl" />
-    <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisuals\AnimatedVisuals.Controls_09_Hamburger.idl" />
-    <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisuals\MU_XC_NAMESPACE.TB_Start.idl" />
-    <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisualWrappers\DropDownWrapper.idl" />
-    <Midl Include="$(MSBuildThisFileDirectory)HamburgerWrapper.idl" />
+    <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisuals\Controls_02_UpDown_Dropdown.idl" />
+    <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisuals\Controls_07_Settings.idl" />
+    <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisuals\Controls_08_Back.idl" />
+    <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisuals\Controls_01_Checkmark.idl" />
+    <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisuals\Controls_09_Hamburger.idl" />
+    <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisuals\Controls_10_Search.idl" />
+    <Midl Include="$(MSBuildThisFileDirectory)AnimatedVisuals\TB_Start.idl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)AnimatedIconDevDesign.md" />

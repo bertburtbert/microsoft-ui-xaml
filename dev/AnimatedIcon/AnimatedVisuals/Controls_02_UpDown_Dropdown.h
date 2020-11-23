@@ -7,10 +7,10 @@
 //           7.0.0-build.57+g2cc4f0c931
 //       
 //       Command:
-//           LottieGen -Language Cppwinrt -InputFile Controls_09_Hamburger.json
+//           LottieGen -Language Cppwinrt -InputFile Controls_02_UpDown_Dropdown.json
 //       
 //       Input file:
-//           Controls_09_Hamburger.json (2410 bytes created 10:15-08:00 Nov 2 2020)
+//           Controls_02_UpDown_Dropdown.json (2116 bytes created 9:26-08:00 Nov 6 2020)
 //       
 //       LottieGen source:
 //           http://aka.ms/Lottie
@@ -22,9 +22,9 @@
 
 #include "pch.h"
 #include "common.h"
-#include "Controls_09_Hamburger.g.h"
+#include "Controls_02_UpDown_Dropdown.g.h"
 
-// Name:        Controls_09_Hamburger
+// Name:        Controls_02_UpDown_Dropdown
 // Frame rate:  60 fps
 // Frame count: 60
 // Duration:    1000.0 mS
@@ -38,9 +38,19 @@
 // | End_On    | M_End_On    |  50.0 | 833.3 | 0.833333313F |
 // | End_Off   | M_End_Off   |  59.0 | 983.3 | 0.983333349F |
 // ----------------------------------------------------------
-class Controls_09_Hamburger
-    : public winrt::implementation::Controls_09_HamburgerT<Controls_09_Hamburger>
+// _________________________________________________________
+// | Theme property |  Accessor  | Type  |  Default value  |
+// |________________|____________|_______|_________________|
+// | Foreground     | Foreground | Color | #FF000000 Black |
+// ---------------------------------------------------------
+class Controls_02_UpDown_Dropdown
+    : public winrt::implementation::Controls_02_UpDown_DropdownT<Controls_02_UpDown_Dropdown>
 {
+    winrt::Windows::UI::Composition::CompositionPropertySet _themeProperties{ nullptr };
+    winrt::Windows::UI::Color _themeForeground{ 0xFF, 0x00, 0x00, 0x00 };
+    winrt::Windows::UI::Composition::CompositionPropertySet EnsureThemeProperties(winrt::Windows::UI::Composition::Compositor compositor);
+
+    static winrt::Windows::Foundation::Numerics::float4 ColorAsVector4(winrt::Windows::UI::Color color);
 public:
     // Animation duration: 1.000 seconds.
     static constexpr int64_t c_durationTicks{ 10000000L };
@@ -63,6 +73,13 @@ public:
     // Marker: End_Off.
     static constexpr float M_End_Off{ 0.983333349F };
 
+    // Theme property: Foreground.
+    static inline const winrt::Windows::UI::Color c_themeForeground{ 0xFF, 0x00, 0x00, 0x00 };
+
+
+    winrt::Windows::UI::Color Foreground();
+    void Foreground(winrt::Windows::UI::Color value);
+
     winrt::Microsoft::UI::Xaml::Controls::IAnimatedVisual TryCreateAnimatedVisual(
         winrt::Windows::UI::Composition::Compositor const& compositor,
         winrt::Windows::Foundation::IInspectable& diagnostics);
@@ -71,20 +88,13 @@ public:
     double FrameToProgress(double frameNumber);
 
     // Returns a map from marker names to corresponding progress values.
-    winrt::Windows::Foundation::Collections::IMapView<winrt::hstring, double> Markers();
+    winrt::Windows::Foundation::Collections::IMapView<hstring, double> Markers();
 
     // Sets the color property with the given name, or does nothing if no such property
     // exists.
-    void SetColorProperty(winrt::hstring const& propertyName, winrt::Windows::UI::Color value);
+    void SetColorProperty(hstring const& propertyName, winrt::Windows::UI::Color value);
 
     // Sets the scalar property with the given name, or does nothing if no such property
     // exists.
-    void SetScalarProperty(winrt::hstring const& propertyName, double value);
+    void SetScalarProperty(hstring const& propertyName, double value);
 };
-
-//namespace factory_implementation
-//{
-//    struct Controls_09_Hamburger : winrt::Microsoft::UI::Xaml::Controls::AnimatedVisuals::implementation::Controls_09_HamburgerT<Controls_09_Hamburger, implementation::Controls_09_Hamburger>
-//    {
-//    };
-//}

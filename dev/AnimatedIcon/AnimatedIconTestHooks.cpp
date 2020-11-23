@@ -22,3 +22,11 @@ void AnimatedIconTestHooks::SetAnimationQueueBehavior(const winrt::AnimatedIcon&
         winrt::get_self<AnimatedIcon>(animatedIcon)->SetAnimationQueueBehavior(behavior);
     }
 }
+
+void AnimatedIconTestHooks::SetDurationMultiplier(const winrt::AnimatedIcon& animatedIcon, double multiplier)
+{
+    if (animatedIcon)
+    {
+        winrt::get_self<AnimatedIcon>(animatedIcon)->SetDurationMultiplier(multiplier);
+    }
+}

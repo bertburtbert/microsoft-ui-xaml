@@ -44,21 +44,14 @@
 // | CompositionVisualSurface |     - |
 // ------------------------------------
 #include "pch.h"
-#include "AnimatedVisuals.Controls_09_Hamburger.h"
+#include "Controls_09_Hamburger.h"
 #include <winrt/Windows.Foundation.Metadata.h>
 #include <winrt/Windows.UI.Composition.h>
 #include "d2d1.h"
 #include <d2d1_1.h>
 #include <d2d1helper.h>
 #include <Windows.Graphics.Interop.h>
-#ifdef BUILD_WINDOWS
-namespace ABI
-{
-#include <Windows.Graphics.Effects.Interop.h>
-}
-#else
 #include <winrt/Windows.Graphics.Effects.h>
-#endif
 
 using namespace winrt::Windows::Foundation;
 using namespace winrt::Windows::Foundation::Numerics;
@@ -71,46 +64,11 @@ namespace winrt::Microsoft::UI::Xaml::Controls
 {
     CppWinRTActivatableClassWithBasicFactory(Controls_09_Hamburger)
 }
-
 #include "Controls_09_Hamburger.g.cpp"
-
-//class CanvasGeometry : public winrt::implements<CanvasGeometry,
-//    IGeometrySource2D,
-//    ::ABI::Windows::Graphics::IGeometrySource2DInterop>
-//{
-//    winrt::com_ptr<ID2D1Geometry> _geometry{ nullptr };
-//
-//public:
-//    CanvasGeometry(winrt::com_ptr<ID2D1Geometry> geometry)
-//        : _geometry{ geometry }
-//    { }
-//
-//    // IGeometrySource2D.
-//    winrt::com_ptr<ID2D1Geometry> Geometry() { return _geometry; }
-//
-//    // IGeometrySource2DInterop.
-//    IFACEMETHODIMP GetGeometry(ID2D1Geometry** value) override
-//    {
-//        _geometry.copy_to(value);
-//        return S_OK;
-//    }
-//
-//    // IGeometrySource2DInterop.
-//    IFACEMETHODIMP TryGetGeometryUsingFactory(ID2D1Factory*, ID2D1Geometry**) override
-//    {
-//        return E_NOTIMPL;
-//    }
-//};
-
-interface IGeometrySource2DInterop
-{
-    winrt::com_ptr<ID2D1Geometry> GetGeometry();
-    winrt::com_ptr<ID2D1Geometry> TryGetGeometryUsingFactory(ID2D1Factory* factory);
-};
 
 class CanvasGeometry : public winrt::implements<CanvasGeometry,
     IGeometrySource2D,
-    IGeometrySource2DInterop>
+    Windows::Graphics::IGeometrySource2DInterop>
 {
     winrt::com_ptr<ID2D1Geometry> _geometry{ nullptr };
 
@@ -123,15 +81,16 @@ public:
     winrt::com_ptr<ID2D1Geometry> Geometry() { return _geometry; }
 
     // IGeometrySource2DInterop.
-    winrt::com_ptr<ID2D1Geometry> GetGeometry()
+    IFACEMETHODIMP GetGeometry(ID2D1Geometry** value) override
     {
-        return _geometry;
+        _geometry.copy_to(value);
+        return S_OK;
     }
 
     // IGeometrySource2DInterop.
-    winrt::com_ptr<ID2D1Geometry> TryGetGeometryUsingFactory(ID2D1Factory*)
+    IFACEMETHODIMP TryGetGeometryUsingFactory(ID2D1Factory*, ID2D1Geometry**) override
     {
-        return nullptr;
+        return E_NOTIMPL;
     }
 };
 
@@ -460,12 +419,18 @@ winrt::Windows::Foundation::Collections::IMapView<winrt::hstring, double> Contro
     return winrt::single_threaded_map<winrt::hstring, double>(
         std::map<winrt::hstring, double>
         {
-            { L"Hover_On", 0.0 },
-            { L"Hover_Off", 0.316666666666667 },
-            { L"Click_On", 0.333333333333333 },
-            { L"Click_Off", 0.816666666666667 },
-            { L"End_On", 0.833333333333333 },
-            { L"End_Off", 0.983333333333333 },
+            { L"NormalToHover_Start", 0.0 },
+            { L"NormalToHover_End", 0.303},
+            { L"NormalToPressed_Start", 0.0},
+            { L"NormalToPressed_End", 0.810},
+            { L"HoverToNormal_Start", 0.303},
+            { L"HoverToNormal_End", 0.0},
+            { L"HoverToPressed_Start", 0.303 },
+            { L"HoverToPressed_End", 0.810 },
+            { L"PressedToNormal_Start", 0.810 },
+            { L"PressedToNormal_End", 1.0 },
+            { L"PressedToHover_Start", 0.810},
+            { L"PressedToHover_End", 0.303},
         }
     ).GetView();
 }

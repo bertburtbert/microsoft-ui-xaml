@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using Windows.UI;
 using Windows.UI.Composition;
 using Windows.UI.Xaml;
-using Controls_09_Hamburger = AnimatedVisuals.Controls_09_Hamburger;
-//using Controls_09_Hamburger = Microsoft.UI.Xaml.Controls.Controls_09_Hamburger;
+//using Controls_09_Hamburger = AnimatedVisuals.Controls_09_Hamburger;
+using Controls_09_Hamburger = Microsoft.UI.Xaml.Controls.Controls_09_Hamburger;
 
 namespace MUXControlsTestApp
 {
@@ -14,7 +14,7 @@ namespace MUXControlsTestApp
     {
         Dictionary<string, double> markers = new Dictionary<string, double>();
 
-        IAnimatedVisualSource visual = new Controls_09_Hamburger();
+        IRichAnimatedVisualSource visual = new Controls_09_Hamburger();
         public MockIRichAnimatedIconSource()
         {
             markers.Add("NormalToPointerOverStart", 0.0);
@@ -39,7 +39,7 @@ namespace MUXControlsTestApp
 
         public void SetColorProperty(string propertyName, Color value)
         {
-            throw new NotImplementedException();
+            visual.SetColorProperty(propertyName, value);
         }
 
         public IReadOnlyDictionary<string, double> Markers => markers;

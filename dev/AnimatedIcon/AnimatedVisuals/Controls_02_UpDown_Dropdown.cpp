@@ -44,7 +44,7 @@
 // | CompositionVisualSurface |     - |
 // ------------------------------------
 #include "pch.h"
-#include "AnimatedVisuals.Controls_02_UpDown_Dropdown.h"
+#include "Controls_02_UpDown_Dropdown.h"
 #include <winrt/Windows.Foundation.Metadata.h>
 #include <winrt/Windows.UI.Composition.h>
 #include "d2d1.h"
@@ -52,13 +52,6 @@
 #include <d2d1helper.h>
 #include <Windows.Graphics.Interop.h>
 #include <winrt/Windows.Graphics.Effects.h>
-#ifdef BUILD_WINDOWS
-namespace ABI
-{
-#include <Windows.Graphics.Effects.Interop.h>
-}
-#else
-#endif
 
 
 using namespace winrt::Windows::Foundation;
@@ -103,39 +96,6 @@ public:
         return E_NOTIMPL;
     }
 };
-
-//interface IGeometrySource2DInterop
-//{
-//    winrt::com_ptr<ID2D1Geometry> GetGeometry();
-//    winrt::com_ptr<ID2D1Geometry> TryGetGeometryUsingFactory(ID2D1Factory* factory);
-//};
-//
-//class CanvasGeometry : public winrt::implements<CanvasGeometry,
-//    IGeometrySource2D,
-//    IGeometrySource2DInterop>
-//{
-//    winrt::com_ptr<ID2D1Geometry> _geometry{ nullptr };
-//
-//public:
-//    CanvasGeometry(winrt::com_ptr<ID2D1Geometry> geometry)
-//        : _geometry{ geometry }
-//    { }
-//
-//    // IGeometrySource2D.
-//    winrt::com_ptr<ID2D1Geometry> Geometry() { return _geometry; }
-//
-//    // IGeometrySource2DInterop.
-//    winrt::com_ptr<ID2D1Geometry> GetGeometry()
-//    {
-//        return _geometry;
-//    }
-//
-//    // IGeometrySource2DInterop.
-//    winrt::com_ptr<ID2D1Geometry> TryGetGeometryUsingFactory(ID2D1Factory*)
-//    {
-//        return nullptr;
-//    }
-//};
 
 class Controls_02_UpDown_Dropdown_AnimatedVisual : public winrt::implements<Controls_02_UpDown_Dropdown_AnimatedVisual,
         winrt::Microsoft::UI::Xaml::Controls::IAnimatedVisual,
@@ -439,12 +399,19 @@ winrt::Windows::Foundation::Collections::IMapView<hstring, double> Controls_02_U
     return winrt::single_threaded_map<winrt::hstring, double>(
         std::map<winrt::hstring, double>
         {
-            { L"Hover_On", 0.0 },
-            { L"Hover_Off", 0.316666666666667 },
-            { L"Click_On", 0.333333333333333 },
-            { L"Click_Off", 0.816666666666667 },
-            { L"End_On", 0.833333333333333 },
-            { L"End_Off", 0.983333333333333 },
+            { L"NormalToHover_Start", 0.0 },
+            { L"NormalToHover_End", 0.316666663 },
+            { L"NormalToPressed_Start", 0.0 },
+            { L"NormalToPressed_End", 0.816666663 },
+            { L"HoverToNormal_Start", 0.316666663 },
+            { L"HoverToNormal_End", 0.0 },
+            { L"HoverToPressed_Start", 0.333333343 },
+            { L"HoverToPressed_End", 0.816666663 },
+            { L"PressedToNormal_Start", 0.833333313 },
+            { L"PressedToNormal_End", 0.983333349 },
+            { L"PressedToHover_Start", 0.816666663 },
+            { L"PressedToHover_End", 0.333333343 },
+            { L"Disabled", 0.0 }
         }
     ).GetView();
 }

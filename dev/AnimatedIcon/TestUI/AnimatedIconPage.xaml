@@ -15,60 +15,270 @@
         <Grid.Resources>
             <local:DoubleToStringConverter x:Key="DoubleToStringConverter"/>
         </Grid.Resources>
-        <StackPanel Orientation="Vertical">
-            <StackPanel Orientation="Horizontal" Windows10FallCreatorsUpdate:Spacing="5">
-                <StackPanel.Resources>
-                    <local:DoubleToStringConverter x:Key="DoubleToStringConverter"/>
-                </StackPanel.Resources>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Center" Text="Animation Duration Multiplier" Grid.Row="0"/>
+            <Slider HorizontalAlignment="Center" Minimum="0.1" Maximum="5.0" StepFrequency="0.1" Value="1.0" ValueChanged="Slider_ValueChanged" Width="150" Grid.Row="1"/>
+            <ScrollViewer Grid.Row="2">
                 <StackPanel>
-                    <local:AnimatedIconHost x:Name="CutIcon" Background="DarkSlateGray">
-                        <local:AnimatedIconHost.IconSource>
-                            <controls:AnimatedIconSource>
-                                <controls:AnimatedIconSource.Source>
-                                    <controls:TB_Start/>
-                                </controls:AnimatedIconSource.Source>
-                            </controls:AnimatedIconSource>
-                        </local:AnimatedIconHost.IconSource>
-                    </local:AnimatedIconHost>
-                    <TextBlock Text="Cut Behavior" HorizontalAlignment="Center"/>
-                </StackPanel>
-                <StackPanel>
-                    <local:AnimatedIconHost x:Name="QueueIcon" Background="DarkSlateGray">
-                        <local:AnimatedIconHost.IconSource>
-                            <controls:AnimatedIconSource>
-                                <controls:AnimatedIconSource.Source>
-                                    <controls:TB_Start/>
-                                </controls:AnimatedIconSource.Source>
-                            </controls:AnimatedIconSource>
-                        </local:AnimatedIconHost.IconSource>
-                    </local:AnimatedIconHost>
-                    <TextBlock Text="Queue Behavior" HorizontalAlignment="Center"/>
-                </StackPanel>
-                <StackPanel>
-                    <local:AnimatedIconHost x:Name="SpeedUpQueueIcon" Background="DarkSlateGray">
-                        <local:AnimatedIconHost.IconSource>
-                            <controls:AnimatedIconSource>
-                                <controls:AnimatedIconSource.Source>
-                                    <controls:TB_Start/>
-                                </controls:AnimatedIconSource.Source>
-                            </controls:AnimatedIconSource>
-                        </local:AnimatedIconHost.IconSource>
-                    </local:AnimatedIconHost>
-                    <TextBlock Text="Speed Up Queue Behavior" HorizontalAlignment="Center"/>
-                </StackPanel>
-            </StackPanel>
+                    <StackPanel Orientation="Horizontal" Windows10FallCreatorsUpdate:Spacing="5">
+                        <StackPanel>
+                            <local:AnimatedIconHost x:Name="StartIcon_Cut" Background="DarkSlateGray">
+                                <local:AnimatedIconHost.IconSource>
+                                    <controls:AnimatedIconSource>
+                                        <controls:AnimatedIconSource.Source>
+                                            <controls:TB_Start/>
+                                        </controls:AnimatedIconSource.Source>
+                                    </controls:AnimatedIconSource>
+                                </local:AnimatedIconHost.IconSource>
+                            </local:AnimatedIconHost>
+                            <TextBlock Text="Cut Behavior" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <local:AnimatedIconHost x:Name="StartIcon_Queue" Background="DarkSlateGray">
+                                <local:AnimatedIconHost.IconSource>
+                                    <controls:AnimatedIconSource>
+                                        <controls:AnimatedIconSource.Source>
+                                            <controls:TB_Start/>
+                                        </controls:AnimatedIconSource.Source>
+                                    </controls:AnimatedIconSource>
+                                </local:AnimatedIconHost.IconSource>
+                            </local:AnimatedIconHost>
+                            <TextBlock Text="Queue Behavior" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <local:AnimatedIconHost x:Name="StartIcon_SpeedUpQueue" Background="DarkSlateGray">
+                                <local:AnimatedIconHost.IconSource>
+                                    <controls:AnimatedIconSource>
+                                        <controls:AnimatedIconSource.Source>
+                                            <controls:TB_Start/>
+                                        </controls:AnimatedIconSource.Source>
+                                    </controls:AnimatedIconSource>
+                                </local:AnimatedIconHost.IconSource>
+                            </local:AnimatedIconHost>
+                            <TextBlock Text="Speed Up Queue Behavior" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Background="Gray" Width="250" Height="250">
-                <Slider x:Name="Slider" Minimum="0" Maximum="100" Width="100" Value="{x:Bind Mode=TwoWay, Path=SliderIcon.(controls:AnimatedIcon.State), Converter={StaticResource DoubleToStringConverter}}">
-                    <Slider.Header>
-                        <controls:AnimatedIcon x:Name="SliderIcon" Height="100" Width="100">
-                            <controls:AnimatedIcon.Source>
-                                <local:MockIRichAnimatedIconSource/>
-                            </controls:AnimatedIcon.Source>
-                        </controls:AnimatedIcon>
-                    </Slider.Header>
-                </Slider>
-            </StackPanel>
-        </StackPanel>
+                    <StackPanel Orientation="Horizontal" Windows10FallCreatorsUpdate:Spacing="5">
+                        <StackPanel>
+                            <local:AnimatedIconHost x:Name="DropDownIcon_Cut" Background="DarkSlateGray">
+                                <local:AnimatedIconHost.IconSource>
+                                    <controls:AnimatedIconSource>
+                                        <controls:AnimatedIconSource.Source>
+                                            <controls:Controls_02_UpDown_Dropdown/>
+                                        </controls:AnimatedIconSource.Source>
+                                    </controls:AnimatedIconSource>
+                                </local:AnimatedIconHost.IconSource>
+                            </local:AnimatedIconHost>
+                            <TextBlock Text="Cut Behavior" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <local:AnimatedIconHost x:Name="DropDownIcon_Queue" Background="DarkSlateGray">
+                                <local:AnimatedIconHost.IconSource>
+                                    <controls:AnimatedIconSource>
+                                        <controls:AnimatedIconSource.Source>
+                                            <controls:Controls_02_UpDown_Dropdown/>
+                                        </controls:AnimatedIconSource.Source>
+                                    </controls:AnimatedIconSource>
+                                </local:AnimatedIconHost.IconSource>
+                            </local:AnimatedIconHost>
+                            <TextBlock Text="Queue Behavior" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <local:AnimatedIconHost x:Name="DropDownIcon_SpeedUpQueue" Background="DarkSlateGray">
+                                <local:AnimatedIconHost.IconSource>
+                                    <controls:AnimatedIconSource>
+                                        <controls:AnimatedIconSource.Source>
+                                            <controls:Controls_02_UpDown_Dropdown/>
+                                        </controls:AnimatedIconSource.Source>
+                                    </controls:AnimatedIconSource>
+                                </local:AnimatedIconHost.IconSource>
+                            </local:AnimatedIconHost>
+                            <TextBlock Text="Speed Up Queue Behavior" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Windows10FallCreatorsUpdate:Spacing="5">
+                        <StackPanel>
+                            <local:AnimatedIconHost x:Name="HamburgerIcon_Cut" Background="DarkSlateGray">
+                                <local:AnimatedIconHost.IconSource>
+                                    <controls:AnimatedIconSource>
+                                        <controls:AnimatedIconSource.Source>
+                                            <controls:Controls_09_Hamburger/>
+                                        </controls:AnimatedIconSource.Source>
+                                    </controls:AnimatedIconSource>
+                                </local:AnimatedIconHost.IconSource>
+                            </local:AnimatedIconHost>
+                            <TextBlock Text="Cut Behavior" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <local:AnimatedIconHost x:Name="HamburgerIcon_Queue" Background="DarkSlateGray">
+                                <local:AnimatedIconHost.IconSource>
+                                    <controls:AnimatedIconSource>
+                                        <controls:AnimatedIconSource.Source>
+                                            <controls:Controls_09_Hamburger/>
+                                        </controls:AnimatedIconSource.Source>
+                                    </controls:AnimatedIconSource>
+                                </local:AnimatedIconHost.IconSource>
+                            </local:AnimatedIconHost>
+                            <TextBlock Text="Queue Behavior" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <local:AnimatedIconHost x:Name="HamburgerIcon_SpeedUpQueue" Background="DarkSlateGray">
+                                <local:AnimatedIconHost.IconSource>
+                                    <controls:AnimatedIconSource>
+                                        <controls:AnimatedIconSource.Source>
+                                            <controls:Controls_09_Hamburger/>
+                                        </controls:AnimatedIconSource.Source>
+                                    </controls:AnimatedIconSource>
+                                </local:AnimatedIconHost.IconSource>
+                            </local:AnimatedIconHost>
+                            <TextBlock Text="Speed Up Queue Behavior" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Windows10FallCreatorsUpdate:Spacing="5">
+                        <StackPanel>
+                            <local:AnimatedIconHost x:Name="SettingsIcon_Cut" Background="DarkSlateGray">
+                                <local:AnimatedIconHost.IconSource>
+                                    <controls:AnimatedIconSource>
+                                        <controls:AnimatedIconSource.Source>
+                                            <controls:Controls_07_Settings/>
+                                        </controls:AnimatedIconSource.Source>
+                                    </controls:AnimatedIconSource>
+                                </local:AnimatedIconHost.IconSource>
+                            </local:AnimatedIconHost>
+                            <TextBlock Text="Cut Behavior" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <local:AnimatedIconHost x:Name="SettingsIcon_Queue" Background="DarkSlateGray">
+                                <local:AnimatedIconHost.IconSource>
+                                    <controls:AnimatedIconSource>
+                                        <controls:AnimatedIconSource.Source>
+                                            <controls:Controls_07_Settings/>
+                                        </controls:AnimatedIconSource.Source>
+                                    </controls:AnimatedIconSource>
+                                </local:AnimatedIconHost.IconSource>
+                            </local:AnimatedIconHost>
+                            <TextBlock Text="Queue Behavior" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <local:AnimatedIconHost x:Name="SettingsIcon_SpeedUpQueue" Background="DarkSlateGray">
+                                <local:AnimatedIconHost.IconSource>
+                                    <controls:AnimatedIconSource>
+                                        <controls:AnimatedIconSource.Source>
+                                            <controls:Controls_07_Settings/>
+                                        </controls:AnimatedIconSource.Source>
+                                    </controls:AnimatedIconSource>
+                                </local:AnimatedIconHost.IconSource>
+                            </local:AnimatedIconHost>
+                            <TextBlock Text="Speed Up Queue Behavior" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Windows10FallCreatorsUpdate:Spacing="5">
+                        <StackPanel>
+                            <local:AnimatedIconHost x:Name="BackIcon_Cut" Background="DarkSlateGray">
+                                <local:AnimatedIconHost.IconSource>
+                                    <controls:AnimatedIconSource>
+                                        <controls:AnimatedIconSource.Source>
+                                            <controls:Controls_08_Back/>
+                                        </controls:AnimatedIconSource.Source>
+                                    </controls:AnimatedIconSource>
+                                </local:AnimatedIconHost.IconSource>
+                            </local:AnimatedIconHost>
+                            <TextBlock Text="Cut Behavior" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <local:AnimatedIconHost x:Name="BackIcon_Queue" Background="DarkSlateGray">
+                                <local:AnimatedIconHost.IconSource>
+                                    <controls:AnimatedIconSource>
+                                        <controls:AnimatedIconSource.Source>
+                                            <controls:Controls_08_Back/>
+                                        </controls:AnimatedIconSource.Source>
+                                    </controls:AnimatedIconSource>
+                                </local:AnimatedIconHost.IconSource>
+                            </local:AnimatedIconHost>
+                            <TextBlock Text="Queue Behavior" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <local:AnimatedIconHost x:Name="BackIcon_SpeedUpQueue" Background="DarkSlateGray">
+                                <local:AnimatedIconHost.IconSource>
+                                    <controls:AnimatedIconSource>
+                                        <controls:AnimatedIconSource.Source>
+                                            <controls:Controls_08_Back/>
+                                        </controls:AnimatedIconSource.Source>
+                                    </controls:AnimatedIconSource>
+                                </local:AnimatedIconHost.IconSource>
+                            </local:AnimatedIconHost>
+                            <TextBlock Text="Speed Up Queue Behavior" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Windows10FallCreatorsUpdate:Spacing="5">
+                        <StackPanel>
+                            <local:AnimatedIconHost x:Name="SearchIcon_Cut" Background="DarkSlateGray">
+                                <local:AnimatedIconHost.IconSource>
+                                    <controls:AnimatedIconSource>
+                                        <controls:AnimatedIconSource.Source>
+                                            <controls:Controls_10_Search/>
+                                        </controls:AnimatedIconSource.Source>
+                                    </controls:AnimatedIconSource>
+                                </local:AnimatedIconHost.IconSource>
+                            </local:AnimatedIconHost>
+                            <TextBlock Text="Cut Behavior" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <local:AnimatedIconHost x:Name="SearchIcon_Queue" Background="DarkSlateGray">
+                                <local:AnimatedIconHost.IconSource>
+                                    <controls:AnimatedIconSource>
+                                        <controls:AnimatedIconSource.Source>
+                                            <controls:Controls_10_Search/>
+                                        </controls:AnimatedIconSource.Source>
+                                    </controls:AnimatedIconSource>
+                                </local:AnimatedIconHost.IconSource>
+                            </local:AnimatedIconHost>
+                            <TextBlock Text="Queue Behavior" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel>
+                            <local:AnimatedIconHost x:Name="SearchIcon_SpeedUpQueue" Background="DarkSlateGray">
+                                <local:AnimatedIconHost.IconSource>
+                                    <controls:AnimatedIconSource>
+                                        <controls:AnimatedIconSource.Source>
+                                            <controls:Controls_10_Search/>
+                                        </controls:AnimatedIconSource.Source>
+                                    </controls:AnimatedIconSource>
+                                </local:AnimatedIconHost.IconSource>
+                            </local:AnimatedIconHost>
+                            <TextBlock Text="Speed Up Queue Behavior" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Background="Gray" Width="250" Height="250">
+                        <Slider x:Name="Slider" Minimum="0" Maximum="100" Width="100" Value="{x:Bind Mode=TwoWay, Path=SliderIcon.(controls:AnimatedIcon.State), Converter={StaticResource DoubleToStringConverter}}">
+                            <Slider.Header>
+                                <controls:AnimatedIcon x:Name="SliderIcon" Height="100" Width="100" Foreground="Red">
+                                    <controls:AnimatedIcon.Source>
+                                        <local:MockIRichAnimatedIconSource/>
+                                    </controls:AnimatedIcon.Source>
+                                </controls:AnimatedIcon>
+                            </Slider.Header>
+                        </Slider>
+                    </StackPanel>
+                    <StackPanel Background="Gray">
+                        <TextBlock Text="Checkbox with AnimatedIcon check."/>
+                        <CheckBox x:Name="AnimatedCheckbox" HorizontalAlignment="Center"/>
+                        <Viewbox Height="200" Width="800">
+                            <CheckBox x:Name="LargeAnimatedCheckbox" HorizontalAlignment="Center"/>
+                        </Viewbox>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
     </Grid>
 </local:TestPage>

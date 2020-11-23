@@ -14,6 +14,8 @@ AnimatedIcon::AnimatedIcon()
     __RP_Marker_ClassById(RuntimeProfiler::ProfId_AnimatedIcon);
     m_progressPropertySet = winrt::Window::Current().Compositor().CreatePropertySet();
     m_progressPropertySet.InsertScalar(L"Progress", 0);
+
+    RegisterPropertyChangedCallback(winrt::IconElement::ForegroundProperty(), { this, &AnimatedIcon::OnForegroundPropertyChanged});
 }
 
 void AnimatedIcon::OnApplyTemplate()
@@ -219,7 +221,7 @@ void AnimatedIcon::PlaySegment(float from, float to, float playbackMultiplier)
 
     auto compositor = m_progressPropertySet.Compositor();
     auto animation = compositor.CreateScalarKeyFrameAnimation();
-    animation.Duration(std::chrono::duration_cast<winrt::TimeSpan>(m_animatedVisual.get().Duration() * segmentLength * (1.0 / playbackMultiplier)));
+    animation.Duration(std::chrono::duration_cast<winrt::TimeSpan>(m_animatedVisual.get().Duration() * segmentLength * (1.0 / playbackMultiplier) * m_durationMultiplier));
     auto linearEasing = compositor.CreateLinearEasingFunction();
 
     // Play from fromProgress.
@@ -255,6 +257,10 @@ void AnimatedIcon::OnSourcePropertyChanged(const winrt::DependencyPropertyChange
     {
         if (auto const source = Source())
         {
+            if (auto const ForegroundSolidColorBrush = Foreground().try_as<winrt::SolidColorBrush>())
+            {
+                source.SetColorProperty(L"Foreground", ForegroundSolidColorBrush.Color());
+            }
             winrt::IInspectable diagnostics{};
             auto const visual = source.TryCreateAnimatedVisual(winrt::Window::Current().Compositor(), diagnostics);
             m_animatedVisual.set(visual);
@@ -279,6 +285,17 @@ void AnimatedIcon::OnSourcePropertyChanged(const winrt::DependencyPropertyChange
     auto progressAnimation = compositor.CreateExpressionAnimation(L"_.Progress");
     progressAnimation.SetReferenceParameter(L"_", m_progressPropertySet);
     visual.Properties().StartAnimation(L"Progress", progressAnimation);
+}
+
+void AnimatedIcon::OnForegroundPropertyChanged(const winrt::DependencyObject& sender, const winrt::DependencyProperty& args)
+{
+    if (auto const ForegroundSolidColorBrush = Foreground().try_as<winrt::SolidColorBrush>())
+    {
+        if (auto const source = Source())
+        {
+            source.SetColorProperty(L"Foreground", ForegroundSolidColorBrush.Color());
+        }
+    }
 }
 
 void AnimatedIcon::OnAnimationCompleted(winrt::IInspectable const&, winrt::CompositionBatchCompletedEventArgs const&)
@@ -319,4 +336,10 @@ void AnimatedIcon::OnAnimationCompleted(winrt::IInspectable const&, winrt::Compo
 void AnimatedIcon::SetAnimationQueueBehavior(winrt::AnimatedIconAnimationQueueBehavior behavior)
 {
     m_queueBehavior = behavior;
+}
+
+
+void AnimatedIcon::SetDurationMultiplier(double multiplier)
+{
+    m_durationMultiplier = multiplier;
 }
